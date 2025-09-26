@@ -10,6 +10,7 @@ import OurServices from "./components/OurServices";
 import OurProducts from "./components/OurProducts";
 import CallToAction from "./components/CallToAction";
 import ContactUs from "./components/ContactUs";
+import Careers from "./components/Careers";
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
         <Route path="/services" element={<OurServices/>}/>
         <Route path="/products" element={<OurProducts/>}/>
         <Route path="/contact" element={<ContactUs/>}/>
+        <Route path="/careers" element={<Careers/>}/>
       </Routes>
       <Footer />
     </>

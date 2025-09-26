@@ -101,7 +101,7 @@ export default function Hero() {
 
       {/* WhatsApp Floating Button */}
       <a
-        href="https://wa.me/1234567890"
+        href="https://wa.me/7842770089"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-green-500 rounded-full p-4 shadow-lg hover:bg-green-600 transition transform hover:scale-110 z-20"

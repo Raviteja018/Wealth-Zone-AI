@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import logo from "../assets/WG.png"; // your uploaded logo
+import logo from "../assets/WGZAI.png"; // your uploaded logo
 import {
   FaFacebookF,
   FaInstagram,
@@ -82,20 +82,20 @@ export default function Footer() {
             </li>
             <li>
               <span className="font-medium">Phone: </span>
-              +91 8000000000
+              +91 7842770089
             </li>
             <li>
               <span className="font-medium">Email: </span>
-              info@.com
+              info@wealthzonegroupai.com
             </li>
           </ul>
         </div>
 
         {/* Logo & About */}
         <div className="flex flex-col items-start">
-          <img src={logo} alt="Cr" className="w-20 mb-4" />
+          <img src={logo} alt="Cr" className="w-26 mb-4" />
           <p className="text-blue-900 text-sm leading-relaxed">
-            Leading technology solutions provider delivering innovative IT and
+            Leading technology solutions <br/>provider delivering innovative <br/>IT and
             business services worldwide.
           </p>
           <div className="flex space-x-4 mt-4 text-blue-900 text-xl">

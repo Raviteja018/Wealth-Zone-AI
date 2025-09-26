@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom"; // ✅ import Link
-import logo from "../assets/WG.png";
+import logo from "../assets/WGZAI.png";
 import { motion } from "framer-motion";
-import brain from "../assets/brain1.png";
+import logoText from "../assets/logo-text.png"
 
 export default function AIWebxNavbar() {
   const [open, setOpen] = useState(false);
@@ -17,16 +17,16 @@ export default function AIWebxNavbar() {
   ];
 
   return (
-    <header className="w-full sticky top-0 z-50 bg-white/50 backdrop-blur-sm border-b border-[#0f1724]/40">
+    <header className="w-full sticky top-0 z-50 bg-sky-100 backdrop-blur-sm border-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo + Running Text */}
           <div className="flex items-center gap-0">
             <div className="relative flex items-center">
               <img src={logo} alt="AI WebX" className="h-18 w-18 object-contain" />
-              <span>
+              {/* <span>
                 <img className="h-18 w-18 object-contain" src={brain} alt="Brain" />
-              </span>
+              </span> */}
             </div>
             <div className="leading-tight overflow-hidden w-48">
               <motion.div
@@ -39,7 +39,7 @@ export default function AIWebxNavbar() {
                   ease: "linear",
                 }}
               >
-                WEALTH ZONE GROUP AI
+                <span><img src={logoText} alt="logo text"/></span>
               </motion.div>
             </div>
           </div>

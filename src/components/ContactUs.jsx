@@ -31,7 +31,7 @@ export default function ContactUs() {
               </div>
               <div>
                 <h4 className="font-semibold text-gray-900">Phone</h4>
-                <p className="text-gray-700">+91 8949393939939</p>
+                <p className="text-gray-700">+91 7842770089</p>
               </div>
             </div>
 
@@ -41,7 +41,7 @@ export default function ContactUs() {
               </div>
               <div>
                 <h4 className="font-semibold text-gray-900">Email</h4>
-                <p className="text-gray-700">info@wealthzonegroup.com</p>
+                <p className="text-gray-700">info@wealthzonegroupai.com</p>
               </div>
             </div>
 
