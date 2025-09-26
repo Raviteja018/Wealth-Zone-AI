@@ -30,10 +30,12 @@ export default function Hero() {
       }}
 
     >
-    <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent z-0"></div>
+    {/* <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent to-80% z-0"></div> */}
+<div className="absolute inset-0 bg-gradient-to-r from-white/100 via-white/95 to-transparent to-85% z-0"></div>
+
 
       {/* Decorative Blurred Circles */}
-      <div className="absolute -top-20 -left-20 w-72 h-72 bg-sky-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-pulse"></div>
+      {/* <div className="absolute -top-20 -left-20 w-72 h-72 bg-sky-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-pulse"></div> */}
       <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-sky-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 flex flex-col lg:flex-row items-center justify-between relative z-10">

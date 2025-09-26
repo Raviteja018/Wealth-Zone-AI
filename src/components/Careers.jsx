@@ -17,8 +17,8 @@ export default function Careers() {
   return (
     <div className="min-h-screen bg-gray-50 py-16 px-6 sm:px-12 relative overflow-hidden">
       {/* Decorative blurred circles */}
-      <div className="absolute top-0 -left-10 w-72 h-72 bg-sky-200 rounded-full filter blur-3xl opacity-50"></div>
-      <div className="absolute bottom-0 -right-10 w-96 h-96 bg-sky-300 rounded-full filter blur-3xl opacity-40"></div>
+      {/* <div className="absolute top-0 -left-10 w-72 h-72 bg-sky-200 rounded-full filter blur-3xl opacity-50"></div>
+      <div className="absolute bottom-0 -right-10 w-96 h-96 bg-sky-300 rounded-full filter blur-3xl opacity-40"></div> */}
 
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
