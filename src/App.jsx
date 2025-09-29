@@ -12,6 +12,7 @@ import CallToAction from "./components/CallToAction";
 import ContactUs from "./components/ContactUs";
 import Careers from "./components/Careers";
 import ScrollToTop from "./components/ScrollToTop";
+import AboutUs from "./components/AboutUs";
 
 function App() {
   return (
@@ -42,6 +43,8 @@ function App() {
         <Route path="/products" element={<OurProducts />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/about" element={<AboutUs />} />
+
       </Routes>
       <Footer />
     </>

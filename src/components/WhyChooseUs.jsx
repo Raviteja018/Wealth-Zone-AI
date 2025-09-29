@@ -4,32 +4,57 @@ import {
   FaLightbulb,
   FaCheckCircle,
   FaChalkboardTeacher,
-  FaUserFriends,
-  FaComments,
+  FaShieldAlt,
+  FaRocket,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
-import vector from "../assets/client.png";
 
 export default function WhyChooseUs() {
   const features = [
-    { icon: <FaUsers size={22} />, text: "Expertise & Experience" },
-    { icon: <FaLightbulb size={22} />, text: "Tailored Solutions" },
-    { icon: <FaCheckCircle size={22} />, text: "Reliability & Quality" },
-    { icon: <FaChalkboardTeacher size={22} />, text: "Innovative Approach" },
-    { icon: <FaUserFriends size={22} />, text: "User-Centric Design" },
-    { icon: <FaComments size={22} />, text: "Transparent Communication" },
+    {
+      icon: <FaUsers size={28} />,
+      title: "Strong Leadership",
+      description:
+        "We collaborate closely with governments and enterprises, ensuring strategic guidance and impactful solutions.",
+    },
+    {
+      icon: <FaLightbulb size={28} />,
+      title: "Scalable & Secure Solutions",
+      description:
+        "Our platforms are designed to grow with your business while maintaining top-level security and reliability.",
+    },
+    {
+      icon: <FaCheckCircle size={28} />,
+      title: "End-to-End Execution",
+      description:
+        "From ideation to deployment, we deliver innovative solutions that meet your business objectives efficiently.",
+    },
+    {
+      icon: <FaChalkboardTeacher size={28} />,
+      title: "Proven AI Expertise",
+      description:
+        "We have extensive experience in AI-driven digital transformation, helping organizations leverage data effectively.",
+    },
+    {
+      icon: <FaShieldAlt size={28} />,
+      title: "Trust & Transparency",
+      description:
+        "We maintain complete transparency in processes and decisions, building long-term trust with our clients.",
+    },
+    {
+      icon: <FaRocket size={28} />,
+      title: "Innovation Focus",
+      description:
+        "We constantly explore new technologies and methodologies to keep your business ahead of the curve.",
+    },
   ];
 
   return (
     <section className="relative py-24 bg-gradient-to-b from-white via-sky-50 to-blue-50 overflow-hidden">
-      {/* Background Blurs */}
-      <div className="absolute -top-20 -left-20 w-96 h-96 bg-sky-200 rounded-full blur-3xl opacity-30"></div>
-      <div className="absolute -bottom-20 -right-20 w-[28rem] h-[28rem] bg-blue-300 rounded-full blur-3xl opacity-20"></div>
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+      <div className="max-w-5xl mx-auto px-6 lg:px-12 relative z-10">
         {/* Section Heading */}
         <motion.h2
-          className="text-sky-700 font-semibold tracking-widest uppercase text-xs text-center"
+          className="text-sky-700 font-bold tracking-widest uppercase text-2xl  text-center"
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -62,49 +87,30 @@ export default function WhyChooseUs() {
           thrive in today’s digital age.
         </motion.p>
 
-        {/* Content: Split Layout */}
-        <div className="mt-20 grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Illustration */}
-          <motion.div
-            className="relative flex justify-center"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-tr from-sky-200 to-blue-200 
-                            rounded-full blur-3xl opacity-40"></div>
-            <motion.img
-              src={vector}
-              alt="Why Choose Us"
-              className="w-80 lg:w-[28rem] drop-shadow-2xl relative z-10 rounded-xl"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            />
-          </motion.div>
+        {/* Zig-Zag Feature Cards */}
+        <div className="mt-16 flex flex-col space-y-12">
+  {features.map((f, i) => (
+    <motion.div
+      key={i}
+      className={`flex flex-col md:flex-row items-center gap-6 w-auto transform transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl ${
+        i % 2 !== 0 ? "md:flex-row-reverse md:text-right" : "md:text-left"
+      }`}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: i * 0.15 }}
+      viewport={{ once: true }}
+    >
+      <div className="flex-shrink-0 bg-gradient-to-br from-sky-600 to-blue-700 text-white p-8 rounded-xl shadow-lg transition-all duration-500 group-hover:from-blue-500 group-hover:to-sky-500 group-hover:scale-105 w-auto">
+        {f.icon}
+      </div>
+      <div className="p-4 bg-white rounded-xl shadow-md transition-all duration-500 hover:bg-sky-50 w-auto">
+        <h4 className="text-xl font-semibold text-gray-900">{f.title}</h4>
+        <p className="mt-2 text-gray-600">{f.description}</p>
+      </div>
+    </motion.div>
+  ))}
+</div>
 
-          {/* Right Features */}
-          <div className="grid sm:grid-cols-2 gap-14">
-            {features.map((f, i) => (
-              <motion.div
-                key={i}
-                className="flex items-center gap-4 group"
-                initial={{ opacity: 0, x: 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: i * 0.15 }}
-                viewport={{ once: true }}
-              >
-                <div className="bg-gradient-to-br from-sky-600 to-blue-700 text-white p-4 rounded-xl shadow-lg 
-                                group-hover:scale-110 transition-transform duration-500">
-                  {f.icon}
-                </div>
-                <p className="font-medium text-gray-700 group-hover:text-sky-700 transition-colors duration-300">
-                  {f.text}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -32,10 +32,10 @@ export default function Footer() {
             <a href="#" className="hover:text-blue transition-colors">
               <FaTwitter />
             </a>
-            <a href="#" className="hover:text-blue transition-colors">
+            <a href="https://www.linkedin.com/company/wealth-zone-group-ai/about/?viewAsMember=true" className="hover:text-blue transition-colors">
               <FaLinkedinIn />
             </a>
-            <a href="#" className="hover:text-blue transition-colors">
+            <a href="https://www.instagram.com/wealth_zone_group_ai?igsh=MTVvdzI2dXUwZDR4bg==" className="hover:text-blue transition-colors">
               <FaInstagram />
             </a>
           </div>

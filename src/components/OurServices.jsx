@@ -63,7 +63,7 @@ const services = [
 export default function OurServices() {
   return (
     <section className="py-16 px-6 bg-gray-50" id="services">
-      <h2 className="text-4xl font-extrabold text-center mb-12 text-gray-800">
+      <h2 className="text-4xl font-extrabold text-center mb-12 text-sky-700">
         Our Services
       </h2>
 
@@ -73,7 +73,7 @@ export default function OurServices() {
             key={index}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            className="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 flex flex-col items-start space-y-4"
+            className="p-6 bg-white rounded-2xl shadow-md transition-all duration-300 flex flex-col items-start space-y-4 hover:bg-blue-50 hover:shadow-xl"
           >
             <div className="p-3 bg-gray-100 rounded-xl">{service.icon}</div>
             <h3 className="text-xl font-semibold text-gray-800">

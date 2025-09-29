@@ -68,7 +68,7 @@ export default function Careers() {
               >
                 <h3 className="text-xl font-bold text-gray-800 mb-2">{intern.title}</h3>
                 <p className="text-gray-600 mb-1">Duration: {intern.duration}</p>
-                <p className="text-gray-600 font-semibold">Stipend: {intern.stipend}</p>
+                {/* <p className="text-gray-600 font-semibold">Stipend: {intern.stipend}</p> */}
                 <button className="mt-4 w-full bg-sky-600 text-white py-2 rounded-lg hover:bg-blue-500 transition-colors">
                   Apply Now
                 </button>

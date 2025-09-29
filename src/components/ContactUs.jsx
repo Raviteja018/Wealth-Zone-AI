@@ -89,86 +89,81 @@ export default function ContactUs() {
           <div className="mt-8">
             <h4 className="font-semibold text-gray-900 mb-4">Our Location</h4>
             <iframe
-              title="Wealth Zone AI Location"
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15228.639502681564!2d78.387580!3d17.451116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1698251734567!5m2!1sen!2sin"
-              width="100%"
-              height="300"
-              style={{ border: 0 }}
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15224.772545436412!2d78.3692229!3d17.4504677!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91005bd4ba91%3A0x58aec90f176a664d!2sWzg%20Ai!5e0!3m2!1sen!2sin!4v1759085298585!5m2!1sen!2sin"
+              className="w-[600px] h-[250px]"
               allowFullScreen=""
               loading="lazy"
-              className="rounded-xl shadow-md"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
         </div>
 
-{/* Contact Form */}
-<div className="bg-white rounded-xl shadow-md p-8 flex flex-col gap-4">
-  <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-    Send Us a Message
-  </h3>
-  <form className="flex flex-col gap-4">
-    <div className="grid grid-cols-1 gap-4">
-      <input
-        type="text"
-        placeholder="Full Name *"
-        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
-      />
-      <input
-        type="email"
-        placeholder="Email Address *"
-        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
-      />
-    </div>
+        {/* Contact Form */}
+        <div className="bg-white rounded-xl shadow-md p-8 flex flex-col gap-4">
+          <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+            Send Us a Message
+          </h3>
+          <form className="flex flex-col gap-4">
+            <div className="grid grid-cols-1 gap-4">
+              <input
+                type="text"
+                placeholder="Full Name *"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              />
+              <input
+                type="email"
+                placeholder="Email Address *"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              />
+            </div>
 
-    <div className="grid grid-cols-1  gap-4">
-      <input
-        type="text"
-        placeholder="Company"
-        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
-      />
-      <input
-        type="text"
-        placeholder="Phone Number"
-        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
-      />
-    </div>
+            <div className="grid grid-cols-1  gap-4">
+              <input
+                type="text"
+                placeholder="Company"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              />
+              <input
+                type="text"
+                placeholder="Phone Number"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              />
+            </div>
 
-    {/* Service Dropdown */}
-    <select
-      value={selectedService}
-      onChange={(e) => setSelectedService(e.target.value)}
-      className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
-    >
-      <option value="">Select a Service *</option>
-      {services.map((service, idx) => (
-        <option key={idx} value={service}>
-          {service}
-        </option>
-      ))}
-    </select>
+            {/* Service Dropdown */}
+            <select
+              value={selectedService}
+              onChange={(e) => setSelectedService(e.target.value)}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
+            >
+              <option value="">Select a Service *</option>
+              {services.map((service, idx) => (
+                <option key={idx} value={service}>
+                  {service}
+                </option>
+              ))}
+            </select>
 
-    <input
-      type="text"
-      placeholder="Subject *"
-      className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
-    />
+            <input
+              type="text"
+              placeholder="Subject *"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
+            />
 
-    <textarea
-      placeholder="Message *"
-      rows="5"
-      className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300 resize-none"
-    ></textarea>
+            <textarea
+              placeholder="Message *"
+              rows="5"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300 resize-none"
+            ></textarea>
 
-    <button
-      type="submit"
-      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2"
-    >
-      <span>Send Message</span>
-    </button>
-  </form>
-</div>
-
+            <button
+              type="submit"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2"
+            >
+              <span>Send Message</span>
+            </button>
+          </form>
+        </div>
       </div>
     </section>
   );
