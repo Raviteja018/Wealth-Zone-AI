@@ -7,7 +7,7 @@ export default function ContactUs() {
       {/* Heading */}
       <div className="text-center mb-16">
         <h2 className="text-4xl font-extrabold text-gray-900">
-           <span className="text-blue-600">Get InTouch</span>
+          <span className="text-blue-600">Get InTouch</span>
         </h2>
         <p className="mt-4 text-gray-700 max-w-xl mx-auto">
           Ready to transform your business? Let's start the conversation today
@@ -21,7 +21,8 @@ export default function ContactUs() {
             Contact Information
           </h3>
           <p className="text-gray-700">
-            Reach out to our team for any inquiries about our services or to discuss your project requirements.
+            Reach out to our team for any inquiries about our services or to
+            discuss your project requirements.
           </p>
 
           <div className="space-y-4">
@@ -41,7 +42,9 @@ export default function ContactUs() {
               </div>
               <div>
                 <h4 className="font-semibold text-gray-900">Email</h4>
-                <p className="text-gray-700">info@wealthzonegroupai.com</p>
+                <p className="text-gray-700">
+                  info@wealthzonegroupai.com
+                </p>
               </div>
             </div>
 
@@ -52,9 +55,9 @@ export default function ContactUs() {
               <div>
                 <h4 className="font-semibold text-gray-900">Address</h4>
                 <p className="text-gray-700">
-                 2nd floor, A2 Square, Buliding, Jai Hind Gandhi Rd, Cyber Hills
-              Colony, VIP Hills, Silicon Valley, Madhapur, Hyderabad, Telangana
-              500081, India
+                  2nd floor, A2 Square, Buliding, Jai Hind Gandhi Rd, Cyber
+                  Hills Colony, VIP Hills, Silicon Valley, Madhapur, Hyderabad,
+                  Telangana 500081, India
                 </p>
               </div>
             </div>
@@ -65,15 +68,33 @@ export default function ContactUs() {
               </div>
               <div>
                 <h4 className="font-semibold text-gray-900">Business Hours</h4>
-                <p className="text-gray-700">Mon - Fri: 9:00 AM - 6:00 PM IST</p>
+                <p className="text-gray-700">24/7 Working</p>
               </div>
             </div>
+          </div>
+
+          {/* Google Map */}
+          <div className="mt-8">
+            <h4 className="font-semibold text-gray-900 mb-4">Our Location</h4>
+            <iframe
+              title="Wealth Zone AI Location"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15228.639502681564!2d78.387580!3d17.451116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1698251734567!5m2!1sen!2sin"
+              width="100%"
+              height="300"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              className="rounded-xl shadow-md"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
 
         {/* Contact Form */}
         <div className="bg-white rounded-xl shadow-md p-8">
-          <h3 className="text-2xl font-semibold text-gray-900 mb-6">Send Us a Message</h3>
+          <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+            Send Us a Message
+          </h3>
           <form className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <input

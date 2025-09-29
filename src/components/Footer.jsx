@@ -41,9 +41,10 @@ export default function Footer() {
         </div>
 
         {/* Services */}
-        <div>
-          <h4 className="text-blue-900 font-semibold mb-4 text-lg">Services</h4>
-          <ul className="space-y-2 text-blue-900 text-sm">
+        <div className="mr-4 -ml-12">
+          <h4 className="text-blue-900 font-semibold mb-4 text-lg text-center">Services</h4>
+          {/* 🔹 Use grid instead of stacked list */}
+          <ul className="grid grid-cols-2 gap-y-2 gap-x-6 text-blue-900 text-sm">
             {[
               "Data Analytics",
               "Software Development",
@@ -76,7 +77,7 @@ export default function Footer() {
           <ul className="space-y-2 text-blue-900 text-sm">
             <li>
               <span className="font-medium">Address: </span>
-              2nd floor, A2 Square, Buliding, Jai Hind Gandhi Rd, Cyber Hills
+              2nd floor, A2 Square, Building, Jai Hind Gandhi Rd, Cyber Hills
               Colony, VIP Hills, Silicon Valley, Madhapur, Hyderabad, Telangana
               500081, India
             </li>
@@ -95,8 +96,8 @@ export default function Footer() {
         <div className="flex flex-col items-start">
           <img src={logo} alt="Cr" className="w-26 mb-4" />
           <p className="text-blue-900 text-sm leading-relaxed">
-            Leading technology solutions <br/>provider delivering innovative <br/>IT and
-            business services worldwide.
+            Leading technology solutions <br /> provider delivering innovative{" "}
+            <br /> IT and business services worldwide.
           </p>
           <div className="flex space-x-4 mt-4 text-blue-900 text-xl">
             <a href="#" className="hover:text-blue transition-colors">

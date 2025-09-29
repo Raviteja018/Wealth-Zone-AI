@@ -1,33 +1,30 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // ✅ import Link
-import logo from "../assets/WGZAI.png";
 import { motion } from "framer-motion";
-import logoText from "../assets/logo-text.png"
+import logo from "../assets/white_logo.png";
+import logoText from "../assets/logo_text-white.png";
 
 export default function AIWebxNavbar() {
   const [open, setOpen] = useState(false);
 
-  // ✅ Define links with paths
-  const links = [
-    { label: "Home", path: "/" },
-    { label: "About Us", path: "/about" },
-    { label: "Careers", path: "/careers" },
-    { label: "Services", path: "/services" },
-    { label: "Products", path: "/products" },
+  const services = [
+    "Data Analytics",
+    "Software Development",
+    "IT Consulting",
+    "Cloud Services",
+    "Software Testing",
+    "AI Agents",
+    "BPO Services",
+    "Customer Support",
+    "Marketing Services",
   ];
 
   return (
-    <header className="w-full sticky top-0 z-50 bg-sky-100 backdrop-blur-sm border-0">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-[#0e468d] backdrop-blur-lg shadow-md sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
         <div className="flex items-center justify-between h-20">
-          {/* Logo + Running Text */}
-          <div className="flex items-center gap-0">
-            <div className="relative flex items-center">
-              <img src={logo} alt="AI WebX" className="h-18 w-18 object-contain" />
-              {/* <span>
-                <img className="h-18 w-18 object-contain" src={brain} alt="Brain" />
-              </span> */}
-            </div>
+          {/* Logo */}
+          <div className="flex items-center gap-3">
+            <img src={logo} alt="WZG-AI" className="h-20 w-20 -mt-2 object-contain" />
             <div className="leading-tight overflow-hidden w-48">
               <motion.div
                 className="text-lg font-bold tracking-wide text-sky-600 whitespace-nowrap"
@@ -39,84 +36,115 @@ export default function AIWebxNavbar() {
                   ease: "linear",
                 }}
               >
-                <span><img src={logoText} alt="logo text"/></span>
+                <span>
+                  <img src={logoText} alt="logo text" />
+                </span>
               </motion.div>
             </div>
           </div>
 
           {/* Nav Links */}
-          <nav className="hidden md:flex items-center gap-6">
-            {links.map(({ label, path }) => (
-              <Link
-                key={label}
-                to={path} // ✅ actual path
-                className="relative group px-2 py-1 font-medium text-gray-800 transition-colors duration-300 hover:text-emerald-500"
+          <div className="hidden md:flex space-x-8 text-white font-medium items-center relative">
+            <a href="/" className="hover:text-sky-600 transition">
+              Home
+            </a>
+
+            {/* Services with dropdown */}
+            {/* Services with dropdown */}
+            <div className="group relative">
+              <a
+                href="/services"
+                className="hover:text-sky-600 transition inline-block"
               >
-                <span className="font-sans">{label}</span>
-                <span className="absolute left-0 right-0 -bottom-2 h-0.5 bg-emerald-400 scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" />
-              </Link>
-            ))}
+                Services
+              </a>
 
-            {/* Contact Button */}
-            <Link
-              to="/contact"
-              className="ml-4 px-4 py-2 bg-blue-500 text-white rounded-md font-semibold shadow-lg hover:brightness-105 transition"
+              {/* Dropdown */}
+              <div className="absolute left-0 mt-2 w-56 bg-white rounded-xl shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition duration-300">
+                <ul className="py-2">
+                  {services.map((service, idx) => (
+                    <li key={idx}>
+                      <a
+                        href={`/services/${service
+                          .toLowerCase()
+                          .replace(/\s+/g, "-")}`}
+                        className="block px-4 py-2 text-gray-700 hover:bg-sky-100 hover:text-sky-700 rounded-lg transition"
+                      >
+                        {service}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <a href="/about" className="hover:text-sky-600 transition">
+              About
+            </a>
+            <a href="/careers" className="hover:text-sky-600 transition">
+              Careers
+            </a>
+
+            {/* Contact styled as button */}
+            <a
+              href="/contact"
+              className="bg-sky-600 text-white px-4 py-2 rounded-lg shadow hover:bg-sky-700 transition"
             >
-              Contact Us
-            </Link>
-          </nav>
+              Contact
+            </a>
+          </div>
 
-          {/* Mobile Hamburger */}
-          <div className="md:hidden flex items-center">
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
             <button
               onClick={() => setOpen(!open)}
-              aria-label="Toggle menu"
-              className="p-2 rounded-md inline-flex items-center justify-center text-slate-200 hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-emerald-400"
+              className="text-gray-700 hover:text-sky-600 focus:outline-none"
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                {open ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+              ☰
             </button>
           </div>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      <div
-        className={`md:hidden transition-max-height duration-300 ease-in-out overflow-hidden ${
-          open ? "max-h-60" : "max-h-0"
-        }`}
-      >
-        <div className="px-4 pt-4 pb-6 space-y-3 bg-gradient-to-b from-[#071021]/60 to-transparent border-t border-[#0f1724]/30">
-          {links.map(({ label, path }) => (
-            <Link
-              key={label}
-              to={path}
-              className="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-white/5"
-              onClick={() => setOpen(false)} // ✅ closes menu on click
-            >
-              {label}
-            </Link>
-          ))}
+      {open && (
+        <div className="md:hidden bg-white shadow-lg">
+          <a href="/" className="block px-4 py-2 hover:bg-sky-100">
+            Home
+          </a>
+          <div className="border-t">
+            <p className="px-4 py-2 font-medium text-gray-600">Services</p>
+            <ul>
+              {services.map((service, idx) => (
+                <li key={idx}>
+                  <a
+                    href={`/services/${service
+                      .toLowerCase()
+                      .replace(/\s+/g, "-")}`}
+                    className="block px-6 py-2 text-gray-700 hover:bg-sky-100 hover:text-sky-700 transition"
+                  >
+                    {service}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <a href="/about" className="block px-4 py-2 hover:bg-sky-100">
+            About
+          </a>
+          <a href="/careers" className="block px-4 py-2 hover:bg-sky-100">
+            Careers
+          </a>
 
-          <Link
-            to="/contact"
-            className="w-full mt-1 block text-center px-4 py-2 bg-emerald-400 text-slate-900 rounded-md font-semibold"
-            onClick={() => setOpen(false)}
+          {/* Contact styled as button in mobile */}
+          <a
+            href="/contact"
+            className="block mx-4 my-3 text-center bg-sky-600 text-white px-4 py-2 rounded-lg shadow hover:bg-sky-700 transition"
           >
-            Get Started
-          </Link>
+            Contact
+          </a>
         </div>
-      </div>
-    </header>
+      )}
+    </nav>
   );
 }

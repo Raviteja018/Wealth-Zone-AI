@@ -11,12 +11,14 @@ import OurProducts from "./components/OurProducts";
 import CallToAction from "./components/CallToAction";
 import ContactUs from "./components/ContactUs";
 import Careers from "./components/Careers";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
 
   return (
     <>
       <Navbar />
+      <ScrollToTop/>
       <Routes>
         <Route
           path="/"

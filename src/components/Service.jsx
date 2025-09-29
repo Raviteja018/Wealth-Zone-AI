@@ -49,7 +49,7 @@ const services = [
     bg: "bg-gradient-to-r from-sky-500 to-blue-600",
   },
   {
-    title: "SEO & Digital Marketing",
+    title: "Digital Marketing & SEO",
     icon: <BarChart className="w-8 h-8 text-white" />,
     bg: "bg-gradient-to-r from-sky-500 to-blue-600",
   },
@@ -82,7 +82,7 @@ export default function Services() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl font-extrabold text-gray-900 mb-3">
-             <span className="text-sky-600"> Our Services</span>
+            <span className="text-sky-600"> Our Services</span>
           </h2>
           <div className="w-24 h-1 bg-sky-600 mx-auto mb-6 rounded-full"></div>
           <p className="text-gray-600 mb-12 max-w-3xl mx-auto">
@@ -112,9 +112,12 @@ export default function Services() {
                 visible: { opacity: 1, y: 0 },
               }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{
+                scale: 1.05,
+                x: [0, 8, -8, 0], // float left <-> right
+              }}
             >
-              <Card>
+              <Card className="hover:bg-sky-100 transition-colors duration-300">
                 <CardContent className="flex flex-col items-center">
                   <motion.div
                     className={`rounded-full p-4 mb-4 shadow-lg ${service.bg}`}
