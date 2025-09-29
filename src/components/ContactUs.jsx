@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from "react-icons/fa";
 
 export default function ContactUs() {
+  const services = [
+    "Data Analytics",
+    "Software Development",
+    "IT Consulting",
+    "Cloud Services",
+    "Software Testing",
+    "AI Agents",
+    "BPO Services",
+    "Customer Support",
+    "Marketing Services",
+  ];
+
+  const [selectedService, setSelectedService] = useState("");
+
   return (
     <section className="bg-blue-50 min-h-screen py-20">
       {/* Heading */}
@@ -42,9 +56,7 @@ export default function ContactUs() {
               </div>
               <div>
                 <h4 className="font-semibold text-gray-900">Email</h4>
-                <p className="text-gray-700">
-                  info@wealthzonegroupai.com
-                </p>
+                <p className="text-gray-700">info@wealthzonegroupai.com</p>
               </div>
             </div>
 
@@ -90,58 +102,73 @@ export default function ContactUs() {
           </div>
         </div>
 
-        {/* Contact Form */}
-        <div className="bg-white rounded-xl shadow-md p-8">
-          <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-            Send Us a Message
-          </h3>
-          <form className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input
-                type="text"
-                placeholder="Full Name *"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
-              />
-              <input
-                type="email"
-                placeholder="Email Address *"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
-              />
-            </div>
+{/* Contact Form */}
+<div className="bg-white rounded-xl shadow-md p-8 flex flex-col gap-4">
+  <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+    Send Us a Message
+  </h3>
+  <form className="flex flex-col gap-4">
+    <div className="grid grid-cols-1 gap-4">
+      <input
+        type="text"
+        placeholder="Full Name *"
+        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
+      />
+      <input
+        type="email"
+        placeholder="Email Address *"
+        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
+      />
+    </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input
-                type="text"
-                placeholder="Company"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
-              />
-              <input
-                type="text"
-                placeholder="Phone Number"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
-              />
-            </div>
+    <div className="grid grid-cols-1  gap-4">
+      <input
+        type="text"
+        placeholder="Company"
+        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
+      />
+      <input
+        type="text"
+        placeholder="Phone Number"
+        className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
+      />
+    </div>
 
-            <input
-              type="text"
-              placeholder="Subject *"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
-            />
+    {/* Service Dropdown */}
+    <select
+      value={selectedService}
+      onChange={(e) => setSelectedService(e.target.value)}
+      className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
+    >
+      <option value="">Select a Service *</option>
+      {services.map((service, idx) => (
+        <option key={idx} value={service}>
+          {service}
+        </option>
+      ))}
+    </select>
 
-            <textarea
-              placeholder="Message *"
-              rows="5"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
-            ></textarea>
+    <input
+      type="text"
+      placeholder="Subject *"
+      className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300"
+    />
 
-            <button
-              type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2"
-            >
-              <span>Send Message</span>
-            </button>
-          </form>
-        </div>
+    <textarea
+      placeholder="Message *"
+      rows="5"
+      className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-300 resize-none"
+    ></textarea>
+
+    <button
+      type="submit"
+      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 flex items-center justify-center space-x-2"
+    >
+      <span>Send Message</span>
+    </button>
+  </form>
+</div>
+
       </div>
     </section>
   );

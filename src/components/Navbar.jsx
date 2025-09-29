@@ -37,7 +37,7 @@ export default function AIWebxNavbar() {
                 }}
               >
                 <span>
-                  <img src={logoText} alt="logo text" />
+                  <img src={logoText} className="h-42" alt="logo text" />
                 </span>
               </motion.div>
             </div>
@@ -48,8 +48,10 @@ export default function AIWebxNavbar() {
             <a href="/" className="hover:text-sky-600 transition">
               Home
             </a>
+            <a href="/about" className="hover:text-sky-600 transition">
+              About
+            </a>
 
-            {/* Services with dropdown */}
             {/* Services with dropdown */}
             <div className="group relative">
               <a
@@ -78,9 +80,7 @@ export default function AIWebxNavbar() {
               </div>
             </div>
 
-            <a href="/about" className="hover:text-sky-600 transition">
-              About
-            </a>
+            
             <a href="/careers" className="hover:text-sky-600 transition">
               Careers
             </a>
@@ -112,6 +112,9 @@ export default function AIWebxNavbar() {
           <a href="/" className="block px-4 py-2 hover:bg-sky-100">
             Home
           </a>
+          <a href="/about" className="block px-4 py-2 hover:bg-sky-100">
+            About
+          </a>
           <div className="border-t">
             <p className="px-4 py-2 font-medium text-gray-600">Services</p>
             <ul>
@@ -129,9 +132,7 @@ export default function AIWebxNavbar() {
               ))}
             </ul>
           </div>
-          <a href="/about" className="block px-4 py-2 hover:bg-sky-100">
-            About
-          </a>
+          
           <a href="/careers" className="block px-4 py-2 hover:bg-sky-100">
             Careers
           </a>

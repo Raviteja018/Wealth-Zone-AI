@@ -14,11 +14,18 @@ import Careers from "./components/Careers";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
-
   return (
     <>
+      <marquee className="bg-yellow-200 text-[#692315] px-4 py-2 text-lg font-medium mt-[-1px] mb-[-6px]">
+
+        !!!---Oyster Technologies Company to be Established in 2006. .---!!!
+        !!!--- Congratulations Oyster Technologies successfully completed 20
+        years”.---!!! Oyster Technologies is one of the fastest growing and most
+        successful Information Technology Consulting and Software development
+        firms.
+      </marquee>
       <Navbar />
-      <ScrollToTop/>
+      <ScrollToTop />
       <Routes>
         <Route
           path="/"
@@ -27,14 +34,14 @@ function App() {
               <Hero />
               <WhyChooseUs />
               <Services />
-              <CallToAction/>
+              <CallToAction />
             </>
           }
         />
-        <Route path="/services" element={<OurServices/>}/>
-        <Route path="/products" element={<OurProducts/>}/>
-        <Route path="/contact" element={<ContactUs/>}/>
-        <Route path="/careers" element={<Careers/>}/>
+        <Route path="/services" element={<OurServices />} />
+        <Route path="/products" element={<OurProducts />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/careers" element={<Careers />} />
       </Routes>
       <Footer />
     </>

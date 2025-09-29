@@ -19,6 +19,27 @@ export default function Footer() {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
+      <div className="flex flex-col items-start">
+          <img src={logo} alt="Cr" className="w-26 mb-4" />
+          <p className="text-blue-900 text-sm leading-relaxed">
+            Leading Technology Solutions <br /> provider delivering innovative{" "}
+            <br /> IT and business services worldwide.
+          </p>
+          <div className="flex space-x-4 mt-4 text-blue-900 text-xl">
+            <a href="#" className="hover:text-blue transition-colors">
+              <FaFacebookF />
+            </a>
+            <a href="#" className="hover:text-blue transition-colors">
+              <FaTwitter />
+            </a>
+            <a href="#" className="hover:text-blue transition-colors">
+              <FaLinkedinIn />
+            </a>
+            <a href="#" className="hover:text-blue transition-colors">
+              <FaInstagram />
+            </a>
+          </div>
+        </div>
         {/* Quick Links */}
         <div>
           <h4 className="text-blue-900 font-semibold mb-4 text-lg">
@@ -93,32 +114,12 @@ export default function Footer() {
         </div>
 
         {/* Logo & About */}
-        <div className="flex flex-col items-start">
-          <img src={logo} alt="Cr" className="w-26 mb-4" />
-          <p className="text-blue-900 text-sm leading-relaxed">
-            Leading technology solutions <br /> provider delivering innovative{" "}
-            <br /> IT and business services worldwide.
-          </p>
-          <div className="flex space-x-4 mt-4 text-blue-900 text-xl">
-            <a href="#" className="hover:text-blue transition-colors">
-              <FaFacebookF />
-            </a>
-            <a href="#" className="hover:text-blue transition-colors">
-              <FaTwitter />
-            </a>
-            <a href="#" className="hover:text-blue transition-colors">
-              <FaLinkedinIn />
-            </a>
-            <a href="#" className="hover:text-blue transition-colors">
-              <FaInstagram />
-            </a>
-          </div>
-        </div>
+        
       </motion.div>
 
       {/* Copyright */}
       <div className="border-t border-gray-700 text-center py-6 text-gray-500 text-xs">
-        © {new Date().getFullYear()} Wealth Zone Group AI. All rights reserved.
+        © 2006 Wealth Zone Group AI. All rights reserved.
       </div>
     </footer>
   );

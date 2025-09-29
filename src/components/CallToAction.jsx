@@ -1,7 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+
 
 export default function CallToAction() {
+  const navigate = useNavigate()
+  const handleClick = () => {
+    navigate('/contact')
+  }
   return (
     <section className="py-20 bg-blue-50 text-center">
       <motion.div
@@ -21,6 +27,7 @@ export default function CallToAction() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="bg-blue-600 text-white font-semibold px-8 py-4 rounded-xl shadow-md hover:bg-blue-700 transition-all duration-300"
+          onClick={handleClick}
         >
           Start Your Journey &rarr;
         </motion.button>
