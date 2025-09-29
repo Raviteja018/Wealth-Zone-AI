@@ -26,12 +26,12 @@ export default function Footer() {
             <br /> IT and business services worldwide.
           </p>
           <div className="flex space-x-4 mt-4 text-blue-900 text-xl">
-            <a href="#" className="hover:text-blue transition-colors">
+            <a href="https://www.facebook.com/profile.php?id=61581608061964" className="hover:text-blue transition-colors">
               <FaFacebookF />
             </a>
-            <a href="#" className="hover:text-blue transition-colors">
+            {/* <a href="#" className="hover:text-blue transition-colors">
               <FaTwitter />
-            </a>
+            </a> */}
             <a href="https://www.linkedin.com/company/wealth-zone-group-ai/about/?viewAsMember=true" className="hover:text-blue transition-colors">
               <FaLinkedinIn />
             </a>
