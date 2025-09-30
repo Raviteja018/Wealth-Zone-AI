@@ -57,6 +57,8 @@ export default function ContactUs() {
               <div>
                 <h4 className="font-semibold text-gray-900">Email</h4>
                 <p className="text-gray-700">info@wealthzonegroupai.com</p>
+                <p className="text-gray-700">hr@wealthzonegroupai.com</p>
+                <p className="text-gray-700">careers@wealthzonegroupai.com</p>
               </div>
             </div>
 

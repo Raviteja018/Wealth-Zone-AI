@@ -8,11 +8,45 @@ const jobs = [
     title: "UI/UX Designer – Fresher",
     company: "Wealth Zone Technologies",
     type: "Full-Time",
-    location: "Remote / Bangalore",
+    location: "Hyderabad",
+  },
+    {
+    title: "Python Full-Stack Developer – Fresher",
+    company: "Wealth Zone Technologies",
+    type: "Full-Time",
+    location: "Hyderabad",
+  },
+    {
+    title: "Java Full-Stack Developer – Fresher",
+    company: "Wealth Zone Technologies",
+    type: "Full-Time",
+    location: "Hyderabad",
   },
 ];
 
-const internships = []; // <-- Empty to test "No internships"
+const internships = [
+  {
+    title: "UI/UX Designer – Intern",
+    company: "Wealth Zone Technologies",
+    type: "Internship",
+    location: "Hyderabad",
+    duration: "3-6 months"
+  },
+  {
+    title: "Python Full-Stack Developer – Intern",
+    company: "Wealth Zone Technologies",
+    type: "Internship",
+    location: "Hyderabad",
+    duration: "3-6 months"
+  },
+  {
+    title: "Java Full-Stack Developer – Intern",
+    company: "Wealth Zone Technologies",
+    type: "Internship",
+    location: "Hyderabad",
+    duration: "3-6 months"
+  },
+]; // <-- Empty to test "No internships"
 
 export default function Careers() {
   const navigate = useNavigate();
@@ -68,7 +102,7 @@ export default function Careers() {
           {internships.length === 0 ? (
             <p className="text-gray-600 italic">No internships right now.</p>
           ) : (
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {internships.map((intern, index) => (
                 <motion.div
                   key={index}
@@ -76,7 +110,8 @@ export default function Careers() {
                   whileHover={{ scale: 1.03 }}
                 >
                   <h3 className="text-xl font-bold text-gray-800 mb-2">{intern.title}</h3>
-                  <p className="text-gray-600 mb-1">Duration: {intern.duration}</p>
+                  <p className="text-gray-600 mb-1">{intern.location}</p>
+                  <p className="text-gray-600 font-semibold">{intern.type} • {intern.duration}</p>
                   <button
                     onClick={() => handleApply(intern.title)}
                     className="mt-4 w-full bg-sky-600 text-white py-2 rounded-lg hover:bg-blue-500 transition-colors"

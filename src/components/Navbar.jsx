@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import logo from "../assets/white_logo.png";
+import logo_white from "../assets/WGZAI-white.png";
 import logoText from "../assets/logo_text-white.png";
 
 export default function AIWebxNavbar() {
@@ -23,8 +24,8 @@ export default function AIWebxNavbar() {
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center gap-3">
-            <img src={logo} alt="WZG-AI" className="h-20 w-20 -mt-2 object-contain" />
+          <div className="flex items-center gap-3 cursor-pointer">
+            <img src={logo_white} alt="WZG-AI" className="h-20 w-20 object-contain" />
             <div className="leading-tight overflow-hidden w-48">
               <motion.div
                 className="text-lg font-bold tracking-wide text-sky-600 whitespace-nowrap"

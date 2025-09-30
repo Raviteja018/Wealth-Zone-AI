@@ -100,7 +100,7 @@ export default function WhyChooseUs() {
       transition={{ duration: 0.6, delay: i * 0.15 }}
       viewport={{ once: true }}
     >
-      <div className="flex-shrink-0 bg-gradient-to-br from-sky-600 to-blue-700 text-white p-8 rounded-xl shadow-lg transition-all duration-500 group-hover:from-blue-500 group-hover:to-sky-500 group-hover:scale-105 w-auto">
+      <div className="flex-shrink-0 bg-gradient-to-br from-sky-400 to-blue-800 text-white p-8 rounded-xl shadow-lg transition-all duration-500 group-hover:from-blue-500 group-hover:to-sky-500 group-hover:scale-105 w-auto">
         {f.icon}
       </div>
       <div className="p-4 bg-white rounded-xl shadow-md transition-all duration-500 hover:bg-sky-50 w-auto">

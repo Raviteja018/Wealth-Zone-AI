@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import logo from "../assets/WGZAI.png"; // your uploaded logo
+import logo from "../assets/WGZAI-blue.png"; // your uploaded logo
 import {
   FaFacebookF,
   FaInstagram,
@@ -46,19 +46,40 @@ export default function Footer() {
             Quick Links
           </h4>
           <ul className="space-y-2 text-blue-900 text-sm">
-            {["Home", "Company Profile", "About Us", "Careers", "Contact"].map(
-              (link, i) => (
-                <li key={i}>
+                <li>
                   <a
-                    href="#"
-                    className="hover:text-blue transition-colors duration-300"
+                    href="/"
+                    className="hover:text-blue-600 transition-colors duration-300"
                   >
-                    {link}
+                    Home
                   </a>
                 </li>
-              )
-            )}
-          </ul>
+                <li>
+                  <a
+                    href="/about"
+                    className="hover:text-blue-600 transition-colors duration-300"
+                  >
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/careers"
+                    className="hover:text-blue-600 transition-colors duration-300"
+                  >
+                    Careers
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/contact"
+                    className="hover:text-blue-600 transition-colors duration-300"
+                  >
+                    Contact
+                  </a>
+                </li>
+              </ul>
+
         </div>
 
         {/* Services */}
