@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom"; // ✅ Import
+import { useNavigate } from "react-router-dom";
 import logo_white from "../assets/WGZAI-white.png";
 import logoText from "../assets/logo_text-white.png";
 import { FiMenu } from "react-icons/fi";
 
 export default function AIWebxNavbar() {
   const [open, setOpen] = useState(false);
-  const navigate = useNavigate(); // ✅ Initialize
+  const navigate = useNavigate();
 
   const services = [
     "Data Analytics",
@@ -21,6 +21,12 @@ export default function AIWebxNavbar() {
     "Marketing Services",
   ];
 
+  // Helper function to close mobile menu and navigate
+  const handleNavigate = (path) => {
+    setOpen(false);
+    navigate(path);
+  };
+
   return (
     <nav className="bg-[#0e468d] backdrop-blur-lg shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
@@ -28,7 +34,7 @@ export default function AIWebxNavbar() {
           {/* Logo */}
           <div
             className="flex items-center gap-3 cursor-pointer"
-            onClick={() => navigate("/")}
+            onClick={() => handleNavigate("/")}
           >
             <img
               src={logo_white}
@@ -53,32 +59,40 @@ export default function AIWebxNavbar() {
             </div>
           </div>
 
-          {/* Nav Links */}
+          {/* Nav Links for Desktop */}
           <div className="hidden md:flex space-x-8 text-white font-medium items-center relative">
-            <button onClick={() => navigate("/")} className="hover:text-sky-600 transition">
+            <button
+              onClick={() => handleNavigate("/")}
+              className="hover:text-sky-600 transition"
+            >
               Home
             </button>
-            <button onClick={() => navigate("/about")} className="hover:text-sky-600 transition">
+            <button
+              onClick={() => handleNavigate("/about")}
+              className="hover:text-sky-600 transition"
+            >
               About
             </button>
 
             {/* Services with dropdown */}
             <div className="group relative">
               <button
-                onClick={() => navigate("/services")}
+                onClick={() => handleNavigate("/services")}
                 className="hover:text-sky-600 transition inline-block"
               >
                 Services
               </button>
-
-              {/* Dropdown */}
               <div className="absolute left-0 mt-2 w-56 bg-white rounded-xl shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition duration-300">
                 <ul className="py-2">
                   {services.map((service, idx) => (
                     <li key={idx}>
                       <button
                         onClick={() =>
-                          navigate(`/services/${service.toLowerCase().replace(/\s+/g, "-")}`)
+                          handleNavigate(
+                            `/services/${service
+                              .toLowerCase()
+                              .replace(/\s+/g, "-")}`
+                          )
                         }
                         className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-sky-100 hover:text-sky-700 rounded-lg transition"
                       >
@@ -90,13 +104,15 @@ export default function AIWebxNavbar() {
               </div>
             </div>
 
-            <button onClick={() => navigate("/careers")} className="hover:text-sky-600 transition">
+            <button
+              onClick={() => handleNavigate("/careers")}
+              className="hover:text-sky-600 transition"
+            >
               Careers
             </button>
 
-            {/* Contact styled as button */}
             <button
-              onClick={() => navigate("/contact")}
+              onClick={() => handleNavigate("/contact")}
               className="bg-sky-600 text-white px-4 py-2 rounded-lg shadow hover:bg-sky-700 transition"
             >
               Contact
@@ -109,7 +125,7 @@ export default function AIWebxNavbar() {
               onClick={() => setOpen(!open)}
               className="text-gray-700 hover:text-sky-600 focus:outline-none"
             >
-                <FiMenu className="text-white text-3xl "/>
+              <FiMenu className="text-white text-3xl" />
             </button>
           </div>
         </div>
@@ -117,13 +133,20 @@ export default function AIWebxNavbar() {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden bg-white shadow-lg">
-          <button onClick={() => navigate("/")} className="block px-4 py-2 hover:bg-sky-100">
+        <div className="md:hidden bg-white shadow-lg pb-6">
+          <button
+            onClick={() => handleNavigate("/")}
+            className="block px-4 py-2 hover:bg-sky-100"
+          >
             Home
           </button>
-          <button onClick={() => navigate("/about")} className="block px-4 py-2 hover:bg-sky-100">
+          <button
+            onClick={() => handleNavigate("/about")}
+            className="block px-4 py-2 hover:bg-sky-100"
+          >
             About
           </button>
+
           <div className="border-t">
             <p className="px-4 py-2 font-medium text-gray-600">Services</p>
             <ul>
@@ -131,7 +154,11 @@ export default function AIWebxNavbar() {
                 <li key={idx}>
                   <button
                     onClick={() =>
-                      navigate(`/services/${service.toLowerCase().replace(/\s+/g, "-")}`)
+                      handleNavigate(
+                        `/services/${service
+                          .toLowerCase()
+                          .replace(/\s+/g, "-")}`
+                      )
                     }
                     className="block w-full text-left px-6 py-2 text-gray-700 hover:bg-sky-100 hover:text-sky-700 transition"
                   >
@@ -142,13 +169,15 @@ export default function AIWebxNavbar() {
             </ul>
           </div>
 
-          <button onClick={() => navigate("/careers")} className="block px-4 py-2 hover:bg-sky-100">
+          <button
+            onClick={() => handleNavigate("/careers")}
+            className="block px-4 py-2 hover:bg-sky-100"
+          >
             Careers
           </button>
 
-          {/* Contact styled as button in mobile */}
           <button
-            onClick={() => navigate("/contact")}
+            onClick={() => handleNavigate("/contact")}
             className="block mx-4 my-3 text-center bg-sky-600 text-white px-4 py-2 rounded-lg shadow hover:bg-sky-700 transition"
           >
             Contact

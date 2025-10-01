@@ -13,7 +13,6 @@ import ContactUs from "./components/ContactUs";
 import Careers from "./components/Careers";
 import ScrollToTop from "./components/ScrollToTop";
 import AboutUs from "./components/AboutUs";
-import ApplyPage from "./components/ApplyPage";
 import JobDetails from "./components/JobDetails";
 import SplashModal from "./components/SplasModal";
 
@@ -47,10 +46,8 @@ function App() {
         <Route path="/products" element={<OurProducts />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/careers" element={<Careers />} />
-        <Route path="/apply" element={<ApplyPage />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/job-details" element={<JobDetails />} />
-
       </Routes>
       <Footer />
     </>
