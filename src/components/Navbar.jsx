@@ -148,7 +148,12 @@ export default function AIWebxNavbar() {
           </button>
 
           <div className="border-t">
-            <p className="px-4 py-2 font-medium text-gray-600">Services</p>
+            <button 
+              onClick={() => handleNavigate("/services")}
+              className="w-full text-left px-4 py-2 font-medium text-gray-600 hover:bg-sky-100"
+            >
+              Services
+            </button>
             <ul>
               {services.map((service, idx) => (
                 <li key={idx}>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import splashImage from "../assets/oyster-ad.png"; // <-- replace with your image
+import splashImage from "../assets/oyster-ad.jpg"; // <-- replace with your image
 
 export default function SplashModal({ showOnce = false, duration = 0 }) {
   const [open, setOpen] = useState(false);
