@@ -5,15 +5,18 @@ import aboutImg from "../assets/aboutus.jpg"; // Add your about image here
 
 export default function AboutUs() {
   const team = [
-    { name: "B.Sri Lakkshhmi", designation: "Founder", color: "bg-green-500" },
-    { name: "B.Chakravarthy", designation: "Operation Manager", color: "bg-pink-500" },
+    { name: "B.Sri Lakkshhmi", designation: "Founder", color: "bg-green-500", Qualification:"MBA (Finanace & IT)" },
+    { name: "B.Chakravarthy", designation: "Operation Manager", color: "bg-pink-500",Qualification:"MBA (Finanace & IT)"},
     { name: "R.Thulasi", designation: "Tech Lead", color: "bg-orange-500" },
     { name: "G.Giri Ram", designation: "Tech Lead", color: "bg-yellow-500" },
+    { name: "K.Ram Prasad", designation: "Network Engineer", color: "bg-red-500" },
     { name: "G.Revanth", designation: "Senior Developer", color: "bg-sky-500" },
     { name: "G.Rama Mohan", designation: "Senior Developer", color: "bg-sky-500" },
     { name: "Y.Sravani", designation: "Senior Developer", color: "bg-sky-500" },
     { name: "Sk.Pervez", designation: "Senior Developer", color: "bg-sky-500" },
     { name: "B.Raviteja", designation: "Senior Developer", color: "bg-sky-500" },
+    { name: "M.Pradeep", designation: "System Engineer", color: "bg-sky-500" },
+    { name: "Ch.Nikhil", designation: "UI/UX Designer", color: "bg-sky-500" },
   ];
 
   const [index, setIndex] = useState(0);
@@ -129,6 +132,7 @@ export default function AboutUs() {
                 </div>
                 <h4 className="text-xl font-semibold mb-3">{item.title}</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                
               </motion.div>
             ))}
           </div>
@@ -193,6 +197,7 @@ export default function AboutUs() {
                       </div>
                       <h3 className="text-lg font-semibold">{member.name}</h3>
                       <p className="text-gray-600">{member.designation}</p>
+                      <p className="text-gray-800">{member?.Qualification}</p>
                     </motion.div>
                   );
                 })}

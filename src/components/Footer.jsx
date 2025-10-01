@@ -83,33 +83,38 @@ export default function Footer() {
         </div>
 
         {/* Services */}
-        <div className="mr-4 -ml-12">
-          <h4 className="text-blue-900 font-semibold mb-4 text-lg text-center">Services</h4>
-          {/* 🔹 Use grid instead of stacked list */}
-          <ul className="grid grid-cols-2 gap-y-2 gap-x-6 text-blue-900 text-sm">
-            {[
-              "Data Analytics",
-              "Software Development",
-              "IT Consulting",
-              "Cloud Services",
-              "Software Testing",
-              "AI Agents",
-              "BPO Services",
-              "Customer Support",
-              "Marketing Services",
-              "Image Conversion",
-            ].map((service, i) => (
-              <li key={i}>
-                <a
-                  href="#"
-                  className="hover:text-blue transition-colors duration-300"
-                >
-                  {service}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+<div className="">
+  <h4 className="text-blue-900 font-semibold mb-4 text-lg text-left">
+    Services
+  </h4>
+
+  {/* 🔹 Responsive Grid */}
+  <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-2 gap-x-6 text-blue-900 text-sm">
+    {[
+      "Data Analytics",
+      "Software Development",
+      "IT Consulting",
+      "Cloud Services",
+      "Software Testing",
+      "AI Agents",
+      "BPO Services",
+      "Customer Support",
+      "Marketing Services",
+      "Image Conversion",
+    ].map((service, i) => (
+      <li key={i}>
+        <a
+          href="#"
+          className="hover:text-blue-600 transition-colors duration-300 block text-left"
+        >
+          {service}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+
+
 
         {/* Contact Info */}
         <div>

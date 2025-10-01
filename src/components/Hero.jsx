@@ -42,7 +42,7 @@ export default function Hero() {
         {/* Left Content */}
         <div className="max-w-2xl text-center lg:text-left">
           <h1 className="text-[2.5rem] lg:text-5xl font-bold leading-tight mt-4 bg-gradient-to-r from-sky-600 to-blue-800 bg-clip-text text-transparent">
-            Wealth Zone AI – <br />
+            Wealth Zone Group AI – <br />
             Powering the Future with Intelligent Solutions
           </h1>
 
