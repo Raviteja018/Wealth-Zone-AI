@@ -15,6 +15,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import AboutUs from "./components/AboutUs";
 import JobDetails from "./components/JobDetails";
 import SplashModal from "./components/SplasModal";
+import Collaborations from "./components/Collaborations";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
               <Hero />
               <WhyChooseUs />
               <Services />
+              <Collaborations/>
               <CallToAction />
             </>
           }
