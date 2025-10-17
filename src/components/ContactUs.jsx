@@ -31,7 +31,9 @@ export default function ContactUs() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Contact Information */}
         <div className="space-y-8">
-          <h3 className="text-2xl font-semibold text-gray-900">Contact Information</h3>
+          <h3 className="text-2xl font-semibold text-gray-900">
+            Contact Information
+          </h3>
           <p className="text-gray-700">
             Reach out to our team for any inquiries about our services or to
             discuss your project requirements.
@@ -94,7 +96,7 @@ export default function ContactUs() {
             <h4 className="font-semibold text-gray-900 mb-3">Our Location</h4>
             <div className="w-full h-64 rounded-lg overflow-hidden shadow">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15224.772545436412!2d78.3692229!3d17.4504677!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91005bd4ba91%3A0x58aec90f176a664d!2sWzg%20Ai!5e0!3m2!1sen!2sin!4v1759085298585!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15224.6!2d78.387556!3d17.451194!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDI3JzA0LjMiTiA3OMKwMjMnMTUuMiJF!5e0!3m2!1sen!2sin!4v1759085298585!5m2!1sen!2sin"
                 className="w-full h-full"
                 allowFullScreen=""
                 loading="lazy"
