@@ -15,7 +15,9 @@ import ScrollToTop from "./components/ScrollToTop";
 import AboutUs from "./components/AboutUs";
 import JobDetails from "./components/JobDetails";
 import SplashModal from "./components/SplasModal";
+import OurStaffing from "./components/OurStaffing";
 import Collaborations from "./components/Collaborations";
+
 
 function App() {
   return (
@@ -39,12 +41,14 @@ function App() {
               <Hero />
               <WhyChooseUs />
               <Services />
-              <Collaborations/>
+              <Collaborations />
               <CallToAction />
             </>
           }
         />
         <Route path="/services" element={<OurServices />} />
+        <Route path="/collaborations" element={<Collaborations />} />
+        <Route path="/staffing" element={<OurStaffing />} />
         <Route path="/products" element={<OurProducts />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/careers" element={<Careers />} />

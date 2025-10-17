@@ -9,12 +9,12 @@ export default function AboutUs() {
     { name: "B.Chakravarthy", designation: "Operation Manager", color: "bg-pink-500", Qualification:"MBA (Finance & IT)"},
     { name: "R.Thulasi", designation: "Tech Lead", color: "bg-orange-500" },
     { name: "G.Giri Ram", designation: "Tech Lead", color: "bg-yellow-500" },
-    { name: "K.Ram Prasad", designation: "Network Engineer", color: "bg-red-500" },
     { name: "G.Revanth", designation: "Senior Developer", color: "bg-sky-500" },
     { name: "G.Rama Mohan", designation: "Senior Developer", color: "bg-sky-500" },
     { name: "Y.Sravani", designation: "Senior Developer", color: "bg-sky-500" },
     { name: "Sk.Pervez", designation: "Senior Developer", color: "bg-sky-500" },
     { name: "B.Raviteja", designation: "Senior Developer", color: "bg-sky-500" },
+    { name: "K.Ram Prasad", designation: "Network Engineer", color: "bg-red-500" },
     { name: "M.Pradeep", designation: "System Engineer", color: "bg-sky-500" },
     { name: "Ch.Nikhil", designation: "UI/UX Designer", color: "bg-sky-500" },
   ];
@@ -146,7 +146,7 @@ export default function AboutUs() {
               Projects
               <span className="block h-1 w-16 bg-blue-400 mx-auto mt-2"></span>
             </h2>
-            <p className="mt-4 sm:mt-6 text-gray-600 text-sm sm:text-base sm:text-lg leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-gray-600 text-sm sm:text-lg leading-relaxed">
               <span className="text-sky-500">Wealth-Zone-Group-AI</span> brings a wealth of experience and expertise to every
               project. We stay abreast of industry trends and emerging technologies
               to deliver innovative solutions that address the evolving needs of our
@@ -215,14 +215,14 @@ export default function AboutUs() {
             <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-sky-200 h-full"></div>
             <div className="space-y-12">
               {[
-                { year: "2006", text: "Company founded with a vision to innovate in the digital space." },
-                { year: "2010", text: "Launched our first flagship digital product and expanded our local presence." },
-                { year: "2014", text: "Introduced cloud-based solutions and scaled operations nationally." },
-                { year: "2018", text: "Adopted AI and machine learning technologies to enhance services." },
-                { year: "2021", text: "Founded with a vision to redefine digital innovation." },
-                { year: "2022", text: "Expanded our team and introduced AI-driven solutions." },
-                { year: "2023", text: "Achieved partnerships with global enterprises." },
-                { year: "2025", text: "Our goal is to become a trusted leader in digital transformation worldwide." },
+                { year: "2006", text: "Company Founded With A Vision To Innovate In The Digital Space." },
+                { year: "2010", text: "Launched Our First Flagship Digital Product And Expanded Our Local Presence." },
+                { year: "2014", text: "Introduced Cloud-Based Solutions And Scaled Operations Nationally." },
+                { year: "2018", text: "Adopted AI And Machine Learning Technologies To Enhance Services." },
+                { year: "2021", text: "Founded With A Vision To Redefine Digital Innovation." },
+                { year: "2022", text: "Expanded Our Team And Introduced AI-Driven Solutions." },
+                { year: "2023", text: "Achieved Partnerships With Global Enterprises." },
+                { year: "2025", text: "Our Goal Is To Become A Trusted Leader In Digital Transformation Worldwide." },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -248,3 +248,7 @@ export default function AboutUs() {
     </section>
   );
 }
+
+
+
+

@@ -73,7 +73,9 @@ export default function AIWebxNavbar() {
             >
               About
             </button>
-
+            <button onClick={()=>handleNavigate("/staffing")} className="hover:text-sky-600 transition">
+             Staffing
+            </button>
             {/* Services with dropdown */}
             <div className="group relative">
               <button
