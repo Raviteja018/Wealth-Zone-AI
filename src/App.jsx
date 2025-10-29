@@ -15,20 +15,17 @@ import ScrollToTop from "./components/ScrollToTop";
 import AboutUs from "./components/AboutUs";
 import JobDetails from "./components/JobDetails";
 import SplashModal from "./components/SplasModal";
+import OurStaffing from "./components/OurStaffing";
+import RequestEmployee from "./components/RequestEmployee";
+import DirectStaffing from "./components/DirectStaffing";
+import TempToHireStaffing from "./components/TempToHireStaffing";
+import ContractualStaffing from "./components/ContractualStaffing";
 import Collaborations from "./components/Collaborations";
-
+ 
+ 
 function App() {
   return (
     <>
-    <SplashModal  showOnce={true}/>
-      <marquee className="bg-yellow-200 text-[#692315] px-4 py-2 text-lg font-medium mt-[-1px] mb-[-6px]">
-
-        !!!---Oyster Technologies Company to be Established in 2006. .---!!!
-        !!!--- Congratulations Oyster Technologies successfully completed 20
-        years”.---!!! Oyster Technologies is one of the fastest growing and most
-        successful Information Technology Consulting and Software development
-        firms.
-      </marquee>
       <Navbar />
       <ScrollToTop />
       <Routes>
@@ -45,6 +42,11 @@ function App() {
           }
         />
         <Route path="/services" element={<OurServices />} />
+        <Route path="/request-employee" element={<RequestEmployee />} />
+        <Route path="/direct-staffing" element={<DirectStaffing />} />
+        <Route path="/contractual-staffing" element={<ContractualStaffing />} />
+        <Route path="/temp-to-hire-staffing" element={<TempToHireStaffing />} />
+        <Route path="/staffing" element={<OurStaffing />} />
         <Route path="/products" element={<OurProducts />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/careers" element={<Careers />} />
@@ -55,5 +57,5 @@ function App() {
     </>
   );
 }
-
+ 
 export default App;

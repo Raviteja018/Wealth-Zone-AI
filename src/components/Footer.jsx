@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import logo from "../assets/WGZAI-blue.png";
+import logo from "../assets/blue_logo.png";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 

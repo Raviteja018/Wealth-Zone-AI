@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import logo_white from "../assets/WGZAI-white.png";
+import logo_white from "../assets/white_logo.png";
 import logoText from "../assets/logo_text-white.png";
 import { FiMenu } from "react-icons/fi";
 
@@ -21,7 +21,6 @@ export default function AIWebxNavbar() {
     "Marketing Services",
   ];
 
-  // Helper function to close mobile menu and navigate
   const handleNavigate = (path) => {
     setOpen(false);
     navigate(path);
@@ -39,7 +38,7 @@ export default function AIWebxNavbar() {
             <img
               src={logo_white}
               alt="WZG-AI"
-              className="h-20 w-20 object-contain"
+              className="h-24 w-24 object-contain pb-2"
             />
             <div className="leading-tight overflow-hidden w-48">
               <motion.div
@@ -59,7 +58,7 @@ export default function AIWebxNavbar() {
             </div>
           </div>
 
-          {/* Nav Links for Desktop */}
+          {/* Desktop Nav */}
           <div className="hidden md:flex space-x-8 text-white font-medium items-center relative">
             <button
               onClick={() => handleNavigate("/")}
@@ -73,8 +72,14 @@ export default function AIWebxNavbar() {
             >
               About
             </button>
+            <button
+              onClick={() => handleNavigate("/staffing")}
+              className="hover:text-sky-600 transition"
+            >
+              Staffing
+            </button>
 
-            {/* Services with dropdown */}
+            {/* Services Dropdown */}
             <div className="group relative">
               <button
                 onClick={() => handleNavigate("/services")}
@@ -146,9 +151,15 @@ export default function AIWebxNavbar() {
           >
             About
           </button>
+          <button
+            onClick={() => handleNavigate("/staffing")}
+            className="block px-4 py-2 hover:bg-sky-100"
+          >
+            Staffing
+          </button>
 
           <div className="border-t">
-            <button 
+            <button
               onClick={() => handleNavigate("/services")}
               className="w-full text-left px-4 py-2 font-medium text-gray-600 hover:bg-sky-100"
             >
