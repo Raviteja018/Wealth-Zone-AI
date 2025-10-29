@@ -26,7 +26,7 @@ export default function CallToAction() {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="bg-blue-600 text-white font-semibold px-8 py-4 rounded-xl shadow-md hover:bg-blue-700 transition-all duration-300"
+          className="bg-blue-600 text-white font-semibold px-8 py-4 rounded-xl shadow-md hover:bg-blue-700 transition-all duration-300 cursor-pointer"
           onClick={handleClick}
         >
           Start Your Journey &rarr;

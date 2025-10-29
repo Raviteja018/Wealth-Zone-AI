@@ -111,7 +111,7 @@ const Collaborations = () => {
               <img
                 src={item.image}
                 alt={item.name}
-                className="max-h-[70%] max-w-[80%] object-contain"
+                className="max-h-[70%] max-w-[80%] object-contain cursor-pointer"
                 loading="lazy"
               />
             </div>

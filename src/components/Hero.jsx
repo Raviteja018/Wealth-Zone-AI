@@ -60,13 +60,13 @@ export default function Hero() {
           <div className="mt-8 flex flex-col sm:flex-row sm:space-x-4 gap-4 justify-center lg:justify-start">
             <button
               onClick={handleService}
-              className="px-6 sm:px-8 py-3 rounded-full bg-gradient-to-r from-sky-600 to-sky-700 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transform transition-all duration-300"
+              className="px-6 sm:px-8 py-3 rounded-full bg-gradient-to-r from-sky-600 to-sky-700 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transform transition-all duration-300 cursor-pointer"
             >
               Our Services
             </button>
             <button
               onClick={handleProducts}
-              className="px-6 sm:px-8 py-3 rounded-full border border-sky-600 text-sky-700 font-semibold hover:bg-sky-50 transition-all duration-300"
+              className="px-6 sm:px-8 py-3 rounded-full border border-sky-600 text-sky-700 font-semibold hover:bg-sky-50 transition-all duration-300 cursor-pointer"
             >
               Our Products
             </button>

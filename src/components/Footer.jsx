@@ -25,7 +25,7 @@ export default function Footer() {
       >
         {/* Logo + About */}
         <div>
-          <img src={logo} alt="Wealth Zone Group AI" className="w-32 mb-4" />
+          <img src={logo} alt="Wealth Zone Group AI" className="w-32 mb-4 cursor-pointer" />
           <p className="text-blue-900 text-sm leading-relaxed">
             Leading Technology Solutions provider delivering innovative IT and
             business services worldwide.
@@ -60,7 +60,7 @@ export default function Footer() {
           <li key={i}>
             <button
               onClick={() => navigate(link.href)}
-              className="hover:text-blue-600 transition-colors duration-300 block text-left w-full"
+              className="hover:text-blue-600 transition-colors duration-300 block text-left w-full cursor-pointer"
             >
               {link.name}
             </button>

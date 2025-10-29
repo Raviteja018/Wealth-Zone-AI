@@ -62,25 +62,25 @@ export default function AIWebxNavbar() {
           <div className="hidden md:flex space-x-8 text-white font-medium items-center relative">
             <button
               onClick={() => handleNavigate("/")}
-              className="hover:text-sky-600 transition"
+              className="hover:text-sky-600 transition cursor-pointer"
             >
               Home
             </button>
             <button
               onClick={() => handleNavigate("/about")}
-              className="hover:text-sky-600 transition"
+              className="hover:text-sky-600 transition cursor-pointer"
             >
               About
             </button>
             <button
               onClick={() => handleNavigate("/staffing")}
-              className="hover:text-sky-600 transition"
+              className="hover:text-sky-600 transition cursor-pointer"
             >
               Staffing
             </button>
 
             {/* Services Dropdown */}
-            <div className="group relative">
+            <div className="group relative cursor-pointer">
               <button
                 onClick={() => handleNavigate("/services")}
                 className="hover:text-sky-600 transition inline-block"
@@ -111,14 +111,14 @@ export default function AIWebxNavbar() {
 
             <button
               onClick={() => handleNavigate("/careers")}
-              className="hover:text-sky-600 transition"
+              className="hover:text-sky-600 transition cursor-pointer"
             >
               Careers
             </button>
 
             <button
               onClick={() => handleNavigate("/contact")}
-              className="bg-sky-600 text-white px-4 py-2 rounded-lg shadow hover:bg-sky-700 transition"
+              className="bg-sky-600 text-white px-4 py-2 rounded-lg shadow hover:bg-sky-700 transition cursor-pointer"
             >
               Contact
             </button>

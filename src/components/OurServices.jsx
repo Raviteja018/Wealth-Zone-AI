@@ -67,7 +67,7 @@ export default function OurServices() {
         Our Services
       </h2>
 
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 cursor-pointer">
         {services.map((service, index) => (
           <motion.div
             key={index}
