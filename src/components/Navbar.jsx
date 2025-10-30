@@ -27,7 +27,7 @@ export default function AIWebxNavbar() {
   };
 
   return (
-    <nav className="bg-[#0e468d] backdrop-blur-lg shadow-md sticky top-0 z-50">
+    <nav className="bg-[#0e468d] backdrop-blur-lg shadow-md sticky top-0 z-60">
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -38,7 +38,7 @@ export default function AIWebxNavbar() {
             <img
               src={logo_white}
               alt="WZG-AI"
-              className="h-10 object-contain pb-2"
+              className="h-8 object-contain"
             />
             <div className="leading-tight overflow-hidden w-48">
               <motion.div

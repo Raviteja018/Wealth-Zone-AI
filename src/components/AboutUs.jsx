@@ -35,6 +35,11 @@ export default function AboutUs() {
       designation: "Senior Developer",
       color: "bg-sky-500",
     },
+    {
+      name: "Ch.Nikhil",
+      designation: "UI/UX Designer",
+      color: "bg-sky-500",
+    },
     { name: "Y.Sravani", designation: "Senior Developer", color: "bg-sky-500" },
     {
       name: "Srikanth",
@@ -63,6 +68,11 @@ export default function AboutUs() {
       designation: "Accountant",
       color: "bg-sky-500",
     },
+     {
+      name: "Ch.Sri Ram",
+      designation: "Tester",
+      color: "bg-sky-500",
+    },
   ];
 
   const [expandedProject, setExpandedProject] = useState(null);
@@ -81,7 +91,7 @@ export default function AboutUs() {
         "Scheduled deliveries",
         "Loyalty program integration",
       ],
-      technologies: ["React Native", "Node.js", "MongoDB", "AWS"],
+      technologies: ["React Native", "Java", "MySql", "AWS"],
       image: Delivery,
     },
     {
@@ -113,7 +123,7 @@ export default function AboutUs() {
         "Leave and attendance tracking",
         "Compliance management",
       ],
-      technologies: ["React", "Django", "MySQL", "Redis"],
+      technologies: ["React","Python", "Django", "MySQL", "Redis"],
       image: HRM,
     },
     {
@@ -129,7 +139,7 @@ export default function AboutUs() {
         "Progress tracking and assessments",
         "Educator dashboard",
       ],
-      technologies: ["Vue.js", "Python", "TensorFlow", "Firebase"],
+      technologies: ["React", "Python", "TensorFlow", "Firebase"],
       image: ai,
     },
     {
@@ -145,7 +155,7 @@ export default function AboutUs() {
         "Interactive learning modules",
         "Community challenges and competitions",
       ],
-      technologies: ["React", "Node.js", "Docker", "Kubernetes"],
+      technologies: ["React", "Python", "Docker", "Kubernetes"],
       image: cyber,
     },
   ];
@@ -197,9 +207,16 @@ export default function AboutUs() {
     transition={{ duration: 0.8 }}
     className="relative"
   >
-    <h3 className="text-2xl sm:text-3xl font-bold text-sky-700 mb-4">
-      Who We Are
-    </h3>
+    <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
+      <h3 className="text-2xl sm:text-3xl font-bold text-sky-700">
+        Who We Are
+      </h3>
+      <div className="inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-sky-500 to-blue-600 text-white text-sm font-medium rounded-full shadow-md">
+        <span className="animate-pulse">✨</span>
+        <span>Celebrating 19 Years of Excellence</span>
+        <span className="animate-pulse">🎉</span>
+      </div>
+    </div>
 
     {/* Floating Image */}
     <img
@@ -367,7 +384,7 @@ export default function AboutUs() {
         {/* Team Carousel Section */}
         <section className="py-16 lg:py-20 bg-gradient-to-b from-sky-50 to-white">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-sky-700 mb-12">Our Team</h2>
+            <h2 className="text-3xl font-bold text-sky-700 mb-12">Our Senior Team</h2>
             <div className="relative h-80 flex items-center justify-center overflow-hidden">
               <AnimatePresence>
                 {team.map((member, i) => {
@@ -424,7 +441,7 @@ export default function AboutUs() {
       {/* Project Details Modal */}
       <AnimatePresence>
         {expandedProject !== null && (
-          <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+          <div className="fixed inset-0 bg-black/50 z-70 flex items-center justify-center p-4">
             <motion.div
               className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
               initial={{ opacity: 0, y: 50 }}
