@@ -30,7 +30,7 @@ export default function OurStaffing() {
             </p>
             <button
             onClick={() => navigate("/request-employee")}
-             className="bg-blue-600 text-white px-6 py-3 rounded-full shadow-md hover:bg-blue-700 transition-all duration-300">
+             className="bg-blue-600 text-white px-6 py-3 rounded-full shadow-md hover:bg-blue-700 transition-all duration-300 cursor-pointer">
               Request an Employee
             </button>
           </div>
@@ -66,7 +66,7 @@ export default function OurStaffing() {
                 qualified candidates for you to choose from.
               </p>
               <button onClick={() => navigate("/direct-staffing")}
-               className="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition-all duration-300">
+               className="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition-all duration-300 cursor-pointer">
                 Get Started
               </button>
             </div>
@@ -81,7 +81,7 @@ export default function OurStaffing() {
                 your permanent workforce. We provide qualified, reliable staff when you need them most.
               </p>
               <button  onClick={()=>navigate("/contractual-staffing")}
-               className="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition-all duration-300">
+               className="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition-all duration-300 cursor-pointer">
                 Get Started
               </button>
             </div>
@@ -96,7 +96,7 @@ export default function OurStaffing() {
                 business. Evaluate performance before making a full-time hiring decision.
               </p>
               <button onClick={() => navigate("/temp-to-hire-staffing")}
-               className="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition-all duration-300">
+               className="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition-all duration-300 cursor-pointer">
                 Get Started
               </button>
             </div>
@@ -114,16 +114,16 @@ export default function OurStaffing() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
             {/* Card 1 */}
             <div className="flex flex-col items-center text-center">
-              <div className="bg-blue-500 text-white p-4 rounded-full mb-4">
+              <div className="bg-blue-500 text-white p-4 rounded-full mb-4 cursor-pointer">
                 <FaTools className="text-2xl" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Build</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2 ">Build</h3>
               <p className="text-gray-600">a great work culture.</p>
             </div>
  
             {/* Card 2 */}
             <div className="flex flex-col items-center text-center">
-              <div className="bg-blue-500 text-white p-4 rounded-full mb-4">
+              <div className="bg-blue-500 text-white p-4 rounded-full mb-4 cursor-pointer">
                 <FaLightbulb className="text-2xl" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Focus</h3>
@@ -132,7 +132,7 @@ export default function OurStaffing() {
  
             {/* Card 3 */}
             <div className="flex flex-col items-center text-center">
-              <div className="bg-blue-500 text-white p-4 rounded-full mb-4">
+              <div className="bg-blue-500 text-white p-4 rounded-full mb-4 cursor-pointer">
                 <FaStar className="text-2xl" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Create</h3>
@@ -141,7 +141,7 @@ export default function OurStaffing() {
  
             {/* Card 4 */}
             <div className="flex flex-col items-center text-center">
-              <div className="bg-blue-500 text-white p-4 rounded-full mb-4">
+              <div className="bg-blue-500 text-white p-4 rounded-full mb-4 cursor-pointer">
                 <FaBullhorn className="text-2xl" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Showcase</h3>
@@ -150,7 +150,7 @@ export default function OurStaffing() {
  
             {/* Card 5 */}
             <div className="flex flex-col items-center text-center">
-              <div className="bg-blue-500 text-white p-4 rounded-full mb-4">
+              <div className="bg-blue-500 text-white p-4 rounded-full mb-4 cursor-pointer">
                 <FaChartLine className="text-2xl" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Exceed</h3>
@@ -159,7 +159,7 @@ export default function OurStaffing() {
  
             {/* Card 6 */}
             <div className="flex flex-col items-center text-center">
-              <div className="bg-blue-500 text-white p-4 rounded-full mb-4">
+              <div className="bg-blue-500 text-white p-4 rounded-full mb-4 cursor-pointer">
                 <FaRocket className="text-2xl" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Achieve</h3>

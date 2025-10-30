@@ -25,7 +25,7 @@ export default function Footer() {
       >
         {/* Logo + About */}
         <div>
-          <img src={logo} alt="Wealth Zone Group AI" className="w-32 mb-4 cursor-pointer" />
+          <img src={logo} alt="Wealth Zone Group AI" className="w-42 -mt-10 -mb-8 cursor-pointer" />
           <p className="text-blue-900 text-sm leading-relaxed">
             Leading Technology Solutions provider delivering innovative IT and
             business services worldwide.

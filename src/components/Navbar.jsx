@@ -38,7 +38,7 @@ export default function AIWebxNavbar() {
             <img
               src={logo_white}
               alt="WZG-AI"
-              className="h-24 w-24 object-contain pb-2"
+              className="h-10 object-contain pb-2"
             />
             <div className="leading-tight overflow-hidden w-48">
               <motion.div
