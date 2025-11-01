@@ -78,6 +78,12 @@ export default function AIWebxNavbar() {
             >
               Staffing
             </button>
+            <button
+              onClick={() => handleNavigate("/team")}
+              className="hover:text-sky-600 transition cursor-pointer"
+            >
+              Our Team
+            </button>
 
             {/* Services Dropdown */}
             <div className="group relative cursor-pointer">
@@ -157,13 +163,25 @@ export default function AIWebxNavbar() {
           >
             Staffing
           </button>
+          <button
+            onClick={() => handleNavigate("/team")}
+            className="block px-4 py-2 hover:bg-sky-100"
+          >
+            Our Team
+          </button>
 
           <div className="border-t">
             <button
-              onClick={() => handleNavigate("/services")}
-              className="w-full text-left px-4 py-2 font-medium text-gray-600 hover:bg-sky-100"
+              onClick={() => handleNavigate("/staffing")}
+              className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
             >
-              Services
+              Staffing
+            </button>
+            <button
+              onClick={() => handleNavigate("/team")}
+              className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            >
+              Our Team
             </button>
             <ul>
               {services.map((service, idx) => (

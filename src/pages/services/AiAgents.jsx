@@ -41,7 +41,7 @@ const AIAgents = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -85,7 +85,7 @@ const AIAgents = () => {
         </div>
 
         <motion.div
-          className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-2xl p-8 mb-16"
+          className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}

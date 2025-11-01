@@ -41,7 +41,7 @@ const CustomerSupport = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -85,7 +85,7 @@ const CustomerSupport = () => {
         </div>
 
         <motion.div
-          className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 mb-16"
+          className="bg-gradient-to-br from-sky-50 to-cyan-50 rounded-2xl p-8 mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}

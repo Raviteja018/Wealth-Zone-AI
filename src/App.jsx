@@ -5,7 +5,7 @@ import Hero from "./components/Hero";
 import WhyChooseUs from "./components/WhyChooseUs";
 import Services from "./components/Service";
 import Footer from "./components/Footer";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import OurServices from "./pages/Services"; 
 import OurProducts from "./components/OurProducts";
 import CallToAction from "./components/CallToAction";
@@ -32,9 +32,15 @@ import AIAgents from "./pages/services/AIAgents";
 import BPOServices from "./pages/services/BPOServices";
 import CustomerSupport from "./pages/services/CustomerSupport";
 import MarketingServices from "./pages/services/MarketingServices";
+import Leadership from "./components/Leadership";
+import Team from "./components/Team";
 
  
 function App() {
+  const location = useLocation();
+  const hideFooterPaths = ['/about'];
+  const shouldShowFooter = !hideFooterPaths.includes(location.pathname);
+
   return (
     <>
       <Navbar />
@@ -72,8 +78,10 @@ function App() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/job-details" element={<JobDetails />} />
+        <Route path="/leadership" element={<Leadership />} />
+        <Route path="/team" element={<Team />} />
       </Routes>
-      <Footer />
+      {shouldShowFooter && <Footer />}
     </>
   );
 }

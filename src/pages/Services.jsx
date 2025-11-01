@@ -29,8 +29,8 @@ const services = [
     link: '/services/software-development',
     image: SoftwareDevelopment,
     icon: Code,
-    gradient: 'from-purple-500 to-pink-500',
-    iconBg: 'bg-purple-100',
+    gradient: 'from-blue-500 to-cyan-500',
+    iconBg: 'bg-blue-100',
     iconColor: 'text-purple-600'
   },
   {
@@ -39,7 +39,7 @@ const services = [
     link: '/services/it-consulting',
     image: ITConsulting,
     icon: TrendingUp,
-    gradient: 'from-emerald-500 to-teal-500',
+    gradient: 'from-blue-500 to-cyan-500',
     iconBg: 'bg-emerald-100',
     iconColor: 'text-emerald-600'
   },
@@ -59,7 +59,7 @@ const services = [
     link: '/services/software-testing',
     image: SoftwareTesting,
     icon: TestTube,
-    gradient: 'from-orange-500 to-red-500',
+    gradient: 'from-blue-500 to-cyan-500',
     iconBg: 'bg-orange-100',
     iconColor: 'text-orange-600'
   },
@@ -69,7 +69,7 @@ const services = [
     link: '/services/ai-agents',
     image: AIAgents,
     icon: Bot,
-    gradient: 'from-violet-500 to-purple-500',
+    gradient: 'from-blue-500 to-cyan-500',
     iconBg: 'bg-violet-100',
     iconColor: 'text-violet-600'
   },
@@ -79,7 +79,7 @@ const services = [
     link: '/services/bpo-services',
     image: BPOServices,
     icon: Headphones,
-    gradient: 'from-indigo-500 to-blue-500',
+    gradient: 'from-blue-500 to-cyan-500',
     iconBg: 'bg-indigo-100',
     iconColor: 'text-indigo-600'
   },
@@ -89,7 +89,7 @@ const services = [
     link: '/services/customer-support',
     image: CustomerSupport,
     icon: Phone,
-    gradient: 'from-green-500 to-emerald-500',
+    gradient: 'from-blue-500 to-cyan-500',
     iconBg: 'bg-green-100',
     iconColor: 'text-green-600'
   },
@@ -99,7 +99,7 @@ const services = [
     link: '/services/marketing-services',
     image: MarketingServices,
     icon: Megaphone,
-    gradient: 'from-pink-500 to-rose-500',
+    gradient: 'from-blue-500 to-cyan-500',
     iconBg: 'bg-pink-100',
     iconColor: 'text-pink-600'
   }
@@ -107,86 +107,71 @@ const services = [
 
 const Services = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-purple-50 to-white py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          {/* <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 rounded-full mb-6">
-            <Sparkles className="w-4 h-4 text-blue-600" />
-            <span className="text-sm font-semibold text-blue-600">Premium Solutions</span>
-          </div> */}
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-blue-600 to-pink-600 bg-clip-text text-transparent mb-6">
-            Our Services
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Our <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Services</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Comprehensive technology solutions to help your business thrive in the digital age.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Comprehensive IT solutions tailored to your business needs
           </p>
-        </motion.div>
-        
+        </div>
+
+        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => {
-            const IconComponent = service.icon;
-            return (
-              <motion.div
-                key={index}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100"
-                whileHover={{ y: -8, scale: 1.02 }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-              >
-                <Link to={service.link} className="block h-full group">
-                  <div className="relative overflow-hidden">
-                    <img 
-                      src={service.image} 
-                      alt={service.title}
-                      className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = '/images/placeholder-service.jpg';
-                      }}
-                    />
-                    {/* Gradient overlay */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
-                    
-                    {/* Floating icon badge */}
-                    <div className="absolute top-4 right-4">
-                      <div className={`${service.iconBg} p-3 rounded-xl shadow-lg backdrop-blur-sm bg-opacity-90 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
-                        <IconComponent className={`w-6 h-6 ${service.iconColor}`} />
-                      </div>
-                    </div>
-                    
-                    {/* Sparkle effect on hover */}
-                    <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <Sparkles className="w-5 h-5 text-white animate-pulse" />
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <Link to={service.link} className="block h-full group">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = '/images/placeholder-service.jpg';
+                    }}
+                  />
+                  {/* Gradient overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
+                  
+                  {/* Floating icon badge */}
+                  <div className="absolute top-4 right-4">
+                    <div className={`${service.iconBg} p-3 rounded-xl shadow-lg backdrop-blur-sm bg-opacity-90 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
+                      <service.icon className={`w-6 h-6 ${service.iconColor}`} />
                     </div>
                   </div>
                   
-                  <div className="p-6">
-                    <div className="flex items-start justify-between mb-3">
-                      <h3 className="text-xl font-bold text-gray-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:${service.gradient} transition-all duration-300">
-                        {service.title}
-                      </h3>
-                    </div>
-                    
-                    <p className="text-gray-600 mb-6 leading-relaxed line-clamp-3">
-                      {service.description}
-                    </p>
-                    
-                    {/* Enhanced CTA button */}
-                    <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r ${service.gradient} bg-opacity-10 text-transparent bg-clip-text bg-gradient-to-r ${service.gradient} font-semibold group-hover:shadow-md transition-all duration-300`}>
-                      <span>Explore Service</span>
-                      <ArrowRight className={`w-4 h-4 ${service.iconColor} transform group-hover:translate-x-2 transition-transform duration-300`} />
-                    </div>
+                  {/* Sparkle effect on hover */}
+                  <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <Sparkles className="w-5 h-5 text-white animate-pulse" />
                   </div>
-                </Link>
-              </motion.div>
-            );
-          })}
+                </div>
+                
+                <div className="p-6">
+                  <div className="flex items-start justify-between mb-3">
+                    <h3 className="text-xl font-bold text-gray-800 group-hover:text-gray-800 transition-colors duration-300">
+                      {service.title}
+                    </h3>
+                  </div>
+                  
+                  <p className="text-gray-600 group-hover:text-gray-700 mt-2 line-clamp-2 transition-colors duration-300">
+                    {service.description}
+                  </p>
+                  
+                  {/* Enhanced CTA button */}
+                  <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r ${service.gradient} bg-opacity-10 text-transparent bg-clip-text bg-gradient-to-r ${service.gradient} font-semibold group-hover:shadow-md transition-all duration-300`}>
+                    <span>Explore Service</span>
+                    <ArrowRight className={`w-4 h-4 text-blue-500 transform group-hover:translate-x-2 transition-transform duration-300`} />
+                  </div>
+                </div>
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </div>
