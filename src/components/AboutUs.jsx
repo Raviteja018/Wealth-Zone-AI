@@ -10,70 +10,70 @@ import cyber from "../assets/Projects/cyber.png";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export default function AboutUs() {
-  const team = [
-    {
-      name: "B.Sri Lakkshhmi",
-      designation: "Founder",
-      color: "bg-green-500",
-      Qualification: "MBA (Finance & IT)",
-    },
-    {
-      name: "B.Chakravarthy",
-      designation: "Operation Manager",
-      color: "bg-pink-500",
-      Qualification: "MBA (Finance & IT)",
-    },
-    { name: "G.Giri Ram", designation: "Tech Lead", color: "bg-yellow-500" },
-    {
-      name: "K.Ram Prasad",
-      designation: "Network Engineer",
-      color: "bg-red-500",
-    },
-    { name: "G.Revanth", designation: "Senior Developer", color: "bg-sky-500" },
-    {
-      name: "G.Rama Mohan",
-      designation: "Senior Developer",
-      color: "bg-sky-500",
-    },
-    {
-      name: "Ch.Nikhil",
-      designation: "UI/UX Designer",
-      color: "bg-sky-500",
-    },
-    { name: "Y.Sravani", designation: "Senior Developer", color: "bg-sky-500" },
-    {
-      name: "Srikanth",
-      designation: "Senior React Native Developer",
-      color: "bg-red-500",
-    },
-    { name: "Sk.Pervez", designation: "Senior Developer", color: "bg-red-500" },
-    {
-      name: "B.Raviteja",
-      designation: "Senior Developer",
-      color: "bg-red-500",
-    },
-    { name: "M.Pradeep", designation: "System Engineer", color: "bg-sky-500" },
-    {
-      name: "K.Sai Preethi",
-      designation: "Devops Engineer",
-      color: "bg-sky-500",
-    },
-    {
-      name: "S.Venkatesh",
-      designation: "Senior Java Developer",
-      color: "bg-sky-500",
-    },
-    {
-      name: "M.Uma Maheshwari",
-      designation: "Accountant",
-      color: "bg-sky-500",
-    },
-     {
-      name: "Ch.Sri Ram",
-      designation: "Tester",
-      color: "bg-sky-500",
-    },
-  ];
+  // const team = [
+  //   {
+  //     name: "B.Sri Lakkshhmi",
+  //     designation: "Founder",
+  //     color: "bg-green-500",
+  //     Qualification: "MBA (Finance & IT)",
+  //   },
+  //   {
+  //     name: "B.Chakravarthy",
+  //     designation: "Operation Manager",
+  //     color: "bg-pink-500",
+  //     Qualification: "MBA (Finance & IT)",
+  //   },
+  //   { name: "G.Giri Ram", designation: "Tech Lead", color: "bg-yellow-500" },
+  //   {
+  //     name: "K.Ram Prasad",
+  //     designation: "Network Engineer",
+  //     color: "bg-red-500",
+  //   },
+  //   { name: "G.Revanth", designation: "Senior Developer", color: "bg-sky-500" },
+  //   {
+  //     name: "G.Rama Mohan",
+  //     designation: "Senior Developer",
+  //     color: "bg-sky-500",
+  //   },
+  //   {
+  //     name: "Ch.Nikhil",
+  //     designation: "UI/UX Designer",
+  //     color: "bg-sky-500",
+  //   },
+  //   { name: "Y.Sravani", designation: "Senior Developer", color: "bg-sky-500" },
+  //   {
+  //     name: "Srikanth",
+  //     designation: "Senior React Native Developer",
+  //     color: "bg-red-500",
+  //   },
+  //   { name: "Sk.Pervez", designation: "Senior Developer", color: "bg-red-500" },
+  //   {
+  //     name: "B.Raviteja",
+  //     designation: "Senior Developer",
+  //     color: "bg-red-500",
+  //   },
+  //   { name: "M.Pradeep", designation: "System Engineer", color: "bg-sky-500" },
+  //   {
+  //     name: "K.Sai Preethi",
+  //     designation: "Devops Engineer",
+  //     color: "bg-sky-500",
+  //   },
+  //   {
+  //     name: "S.Venkatesh",
+  //     designation: "Senior Java Developer",
+  //     color: "bg-sky-500",
+  //   },
+  //   {
+  //     name: "M.Uma Maheshwari",
+  //     designation: "Accountant",
+  //     color: "bg-sky-500",
+  //   },
+  //    {
+  //     name: "Ch.Sri Ram",
+  //     designation: "Tester",
+  //     color: "bg-sky-500",
+  //   },
+  // ];
 
   const [expandedProject, setExpandedProject] = useState(null);
 
@@ -164,12 +164,12 @@ export default function AboutUs() {
   const [projectIndex, setProjectIndex] = useState(0);
 
   // Auto-slide every 3 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % team.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [team.length]);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setIndex((prev) => (prev + 1) % team.length);
+  //   }, 3000);
+  //   return () => clearInterval(interval);
+  // }, [team.length]);
 
   // Auto-slide for projects
   useEffect(() => {
