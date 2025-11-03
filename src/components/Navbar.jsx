@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import logo_white from "../assets/white_logo.png";
 import logoText from "../assets/logo_text-white.png";
 import { FiMenu } from "react-icons/fi";
+import { Phone } from "lucide-react";
 
 export default function AIWebxNavbar() {
   const [open, setOpen] = useState(false);
@@ -27,7 +28,7 @@ export default function AIWebxNavbar() {
   };
 
   return (
-    <nav className="bg-[#0e468d] backdrop-blur-lg shadow-md sticky top-0 z-60">
+    <nav className="bg-gradient-to-br from-blue-600 to-blue-800 backdrop-blur-lg shadow-md sticky top-0 z-60">
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -124,7 +125,7 @@ export default function AIWebxNavbar() {
 
             <button
               onClick={() => handleNavigate("/contact")}
-              className="bg-sky-600 text-white px-4 py-2 rounded-lg shadow hover:bg-sky-700 transition cursor-pointer"
+              className="bg-white flex text-blue-500 font-semibold px-4 py-2 rounded-lg shadow hover:bg-sky-700 transition cursor-pointer"
             >
               Contact
             </button>

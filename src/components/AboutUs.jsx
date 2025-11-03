@@ -19,71 +19,7 @@ import aboutImg from "../assets/aboutus.jpg";
 import { useNavigate } from "react-router-dom";
 import { projects } from "../data/projects";
 
-export default function AboutUs() {
-
-  //   {
-  //     name: "B.Sri Lakkshhmi",
-  //     designation: "Founder",
-  //     color: "bg-green-500",
-  //     Qualification: "MBA (Finance & IT)",
-  //   },
-  //   {
-  //     name: "B.Chakravarthy",
-  //     designation: "Operation Manager",
-  //     color: "bg-pink-500",
-  //     Qualification: "MBA (Finance & IT)",
-  //   },
-  //   { name: "G.Giri Ram", designation: "Tech Lead", color: "bg-yellow-500" },
-  //   {
-  //     name: "K.Ram Prasad",
-  //     designation: "Network Engineer",
-  //     color: "bg-red-500",
-  //   },
-  //   { name: "G.Revanth", designation: "Senior Developer", color: "bg-sky-500" },
-  //   {
-  //     name: "G.Rama Mohan",
-  //     designation: "Senior Developer",
-  //     color: "bg-sky-500",
-  //   },
-  //   {
-  //     name: "Ch.Nikhil",
-  //     designation: "UI/UX Designer",
-  //     color: "bg-sky-500",
-  //   },
-  //   { name: "Y.Sravani", designation: "Senior Developer", color: "bg-sky-500" },
-  //   {
-  //     name: "Srikanth",
-  //     designation: "Senior React Native Developer",
-  //     color: "bg-red-500",
-  //   },
-  //   { name: "Sk.Pervez", designation: "Senior Developer", color: "bg-red-500" },
-  //   {
-  //     name: "B.Raviteja",
-  //     designation: "Senior Developer",
-  //     color: "bg-red-500",
-  //   },
-  //   { name: "M.Pradeep", designation: "System Engineer", color: "bg-sky-500" },
-  //   {
-  //     name: "K.Sai Preethi",
-  //     designation: "Devops Engineer",
-  //     color: "bg-sky-500",
-  //   },
-  //   {
-  //     name: "S.Venkatesh",
-  //     designation: "Senior Java Developer",
-  //     color: "bg-sky-500",
-  //   },
-  //   {
-  //     name: "M.Uma Maheshwari",
-  //     designation: "Accountant",
-  //     color: "bg-sky-500",
-  //   },
-  //    {
-  //     name: "Ch.Sri Ram",
-  //     designation: "Tester",
-  //     color: "bg-sky-500",
-  //   },
-  // ];
+export default function AboutUs() { 
 
   const navigate = useNavigate();
 
@@ -311,6 +247,18 @@ export default function AboutUs() {
             <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-sky-700 to-blue-700 bg-clip-text text-transparent">
               Our Story
             </h2>
+          </div>
+          
+          <div className="prose-lg text-gray-700 space-y-6 mb-12">
+            <p>
+              Founded in <strong>2006</strong> as <strong>Oyster Technologies</strong> and later rebranded to <strong>WealthZone Group AI</strong>, our company has grown into a leading <strong>product and service-based IT organization</strong> specializing in <strong>Artificial Intelligence (AI), Advanced Digital Solutions, Software Development, and Digital Marketing Services</strong>.
+            </p>
+            <p>
+              At <strong>WealthZone Group AI</strong>, we combine <strong>Innovation, Intelligence, and Technology</strong> to empower Businesses with Transformative Digital Solutions. From <strong>custom Software and Web Applications</strong> to <strong>AI-Driven Automation, Data Analytics, and Enterprise Systems</strong>, we help Organizations Enhance Efficiency, Scalability, and Customer Engagement.
+            </p>
+            <p>
+              Over the years, we've built a Strong Reputation for Delivering <strong>Cutting-edge Products, Strategic Consulting, and Full-Cycle IT Services</strong> that Drive Measurable Business Growth. Our Diverse Team of Experts works relentlessly to create <strong>Smarter, Faster, and Future-Ready Solutions</strong> — Enabling Businesses to stay ahead in today's Competitive Digital Landscape.
+            </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8 items-center">
@@ -639,61 +587,7 @@ export default function AboutUs() {
           </div>
         </motion.div>
 
-        {/* Team Carousel Section */}
-        {/* <section className="py-16 lg:py-20 bg-gradient-to-b from-sky-50 to-white">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-sky-700 mb-12">Our Senior Team</h2>
-            <div className="relative h-80 flex items-center justify-center overflow-hidden">
-              <AnimatePresence>
-                {team.map((member, i) => {
-                  let position = (i - index + team.length) % team.length;
-                  return (
-                    <motion.div
-                      key={member.name}
-                      className="absolute w-60 sm:w-72 h-64 bg-sky-100 rounded-2xl shadow-xl flex flex-col items-center justify-center p-6 cursor-pointer"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{
-                        opacity:
-                          position === 0
-                            ? 1
-                            : position === 1 || position === team.length - 1
-                            ? 0.4
-                            : 0,
-                        x:
-                          position === 0
-                            ? 0
-                            : position === 1
-                            ? 200
-                            : position === team.length - 1
-                            ? -200
-                            : 0,
-                        zIndex: position === 0 ? 10 : 0,
-                        scale: position === 0 ? 1 : 0.85,
-                      }}
-                      transition={{ duration: 0.8, ease: "easeInOut" }}
-                      exit={{ opacity: 0 }}
-                    >
-                      <div
-                        className={`w-16 h-16 flex items-center justify-center rounded-full ${member.color} text-white text-3xl mb-4`}
-                      >
-                        <FaUser />
-                      </div>
-                      <h3 className="text-lg font-semibold">{member.name}</h3>
-                      <p className="text-sm text-gray-600">
-                        {member.designation}
-                      </p>
-                      {member.Qualification && (
-                        <p className="text-sm text-gray-800">
-                          {member.Qualification}
-                        </p>
-                      )}
-                    </motion.div>
-                  );
-                })}
-              </AnimatePresence>
-            </div>
-          </div>
-        </section> */}
+       
       </div>
     </section>
   );

@@ -14,10 +14,10 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-sky-100 text-blue-950 relative overflow-hidden">
+    <footer className="bg-sky-100 text-blue-950 relative overflow-hidden py-8">
       {/* Footer Links Section */}
       <motion.div
-        className="py-12 px-6 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"
+        className="py-8 px-6 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -116,7 +116,7 @@ export default function Footer() {
       </motion.div>
 
       {/* Copyright */}
-      <div className="border-t border-gray-300 text-center py-6 text-gray-500 text-xs">
+      <div className="border-t border-gray-300 text-center py-4 text-gray-500 text-xs">
         © 2006 Wealth Zone Group AI. All rights reserved.
       </div>
     </footer>

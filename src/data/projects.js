@@ -41,7 +41,7 @@ export const projects = [
       "Secure browser lockdown",
       "Automated result processing",
     ],
-    technologies: ["Angular", "Spring Boot", "PostgreSQL", "Docker"],
+    technologies: ["React","Java", "Spring Boot", "PostgreSQL", "Docker"],
     image: Examination,
   },
   {
