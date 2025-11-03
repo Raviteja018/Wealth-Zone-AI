@@ -26,7 +26,7 @@ const Team = () => {
     },
     {
       name: 'B.Chakravarthy',
-      designation: 'Chief Operating Officer',
+      designation: 'Operation Manager',
       qualification: 'MBA (Finance & IT)',
       description: 'Strategic operations expert driving organizational excellence and growth.',
     },
