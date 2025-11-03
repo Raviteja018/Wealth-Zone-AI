@@ -82,44 +82,70 @@ const Collaborations = () => {
   }, [items.length]);
 
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white py-16 text-center overflow-hidden">
-      {/* Heading */}
-      <h2 className="text-4xl font-semibold text-gray-900 mb-4">
-        Trusted <span className="text-[#167ae6] font-bold">Collaborations</span>
-      </h2>
+    <section className="relative py-20 sm:py-24 lg:py-32 bg-gradient-to-b from-white via-slate-50 to-white overflow-hidden">
+      {/* Decorative Elements */}
+      <div className="absolute top-1/2 left-0 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+      <div className="absolute top-1/2 right-0 w-72 h-72 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
 
-      {/* Subtext */}
-      <p className="text-gray-600 max-w-xl mx-auto mb-12">
-        Partnering with industry leaders to drive innovation forward
-      </p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+        {/* Section Heading */}
+        <div className="text-center mb-16">
+          <div className="inline-block px-4 py-2 bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-600 rounded-full text-sm font-semibold tracking-wide uppercase mb-4">
+            Our Partners
+          </div>
+          
+          <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+            <span className="bg-gradient-to-r from-blue-600 via-blue-600 to-blue-800 bg-clip-text text-transparent">
+              Trusted
+            </span>{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">
+              Collaborations
+            </span>
+          </h2>
 
-      {/* Horizontal Scroll Container */}
-      <div ref={containerRef} className="relative w-full overflow-hidden py-6">
-        <div
-          ref={scrollerRef}
-          className="flex items-center will-change-transform"
-          style={{
-            width: "max-content",
-            animation: "scroll 30s linear infinite",
-          }}
-        >
-          {items.map((item, index) => (
-            <div
-              key={`${item.id}-${index}`}
-              className="flex-shrink-0 mx-6 w-48 h-24 flex items-center justify-center bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
-            >
-              <img
-                src={item.image}
-                alt={item.name}
-                className="max-h-[70%] max-w-[80%] object-contain cursor-pointer"
-                loading="lazy"
-              />
-            </div>
-          ))}
+          <p className="mt-6 text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto">
+            Partnering with industry leaders to drive innovation and deliver excellence
+          </p>
         </div>
+
+        {/* Logos Container */}
+        <div className="relative">
+          {/* Gradient Overlays for fade effect */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10"></div>
+
+          {/* Scrolling Container */}
+          <div ref={containerRef} className="relative w-full overflow-hidden py-8">
+            <div
+              ref={scrollerRef}
+              className="flex items-center will-change-transform gap-8"
+              style={{
+                width: "max-content",
+                animation: "scroll 40s linear infinite",
+              }}
+            >
+              {items.map((item, index) => (
+                <div
+                  key={`${item.id}-${index}`}
+                  className="flex-shrink-0 w-56 h-32 flex items-center justify-center bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100 group cursor-pointer"
+                >
+                  <div className="relative overflow-hidden rounded-xl p-4">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="max-h-20 max-w-full object-contain transition-all duration-300"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      {/* Add CSS for smooth scrolling */}
+      {/* CSS Animation */}
       <style jsx>{`
         @keyframes scroll {
           0% {

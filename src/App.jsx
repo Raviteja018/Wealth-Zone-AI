@@ -32,6 +32,13 @@ import AIAgents from "./pages/services/AIAgents";
 import BPOServices from "./pages/services/BPOServices";
 import CustomerSupport from "./pages/services/CustomerSupport";
 import MarketingServices from "./pages/services/MarketingServices";
+import WebDevelopment from "./pages/services/WebDevelopment";
+import MobileApps from "./pages/services/MobileApps";
+import Ecommerce from "./pages/services/Ecommerce";
+import GraphicDesign from "./pages/services/GraphicDesign";
+import WebsiteMaintenance from "./pages/services/WebsiteMaintenance";
+import CMS from "./pages/services/CMS";
+import PerformanceOptimization from "./pages/services/PerformanceOptimization";
 import Leadership from "./components/Leadership";
 import Team from "./components/Team";
 import ProjectDetails from "./pages/ProjectDetails";
@@ -69,6 +76,13 @@ function App() {
         <Route path="/services/bpo-services" element={<BPOServices />} />
         <Route path="/services/customer-support" element={<CustomerSupport />} />
         <Route path="/services/marketing-services" element={<MarketingServices />} />
+        <Route path="/services/web-development" element={<WebDevelopment />} />
+        <Route path="/services/mobile-apps" element={<MobileApps />} />
+        <Route path="/services/ecommerce" element={<Ecommerce />} />
+        <Route path="/services/graphic-design" element={<GraphicDesign />} />
+        <Route path="/services/website-maintenance" element={<WebsiteMaintenance />} />
+        <Route path="/services/cms" element={<CMS />} />
+        <Route path="/services/performance-optimization" element={<PerformanceOptimization />} />
         <Route path="/request-employee" element={<RequestEmployee />} />
         <Route path="/direct-staffing" element={<DirectStaffing />} />
         <Route path="/contractual-staffing" element={<ContractualStaffing />} />
