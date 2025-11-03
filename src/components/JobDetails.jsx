@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { 
+  ArrowLeft, 
+  MapPin, 
+  Briefcase, 
+  Clock, 
+  CheckCircle2, 
+  Target, 
+  GraduationCap, 
+  Gift, 
+  Mail, 
+  User, 
+  Upload,
+  Send
+} from "lucide-react";
 
 const jobDetails = {
   "UI/UX Designer – Fresher": {
@@ -149,111 +163,239 @@ export default function JobDetails() {
   const location = useLocation();
   const navigate = useNavigate();
   const jobTitle = location.state?.jobTitle || "UI/UX Designer – Fresher";
-  const job = jobDetails[jobTitle] || jobDetails["UI/UX Designer – Fresher"]; // Fallback to default job if not found
+  const job = jobDetails[jobTitle] || jobDetails["UI/UX Designer – Fresher"];
+  const [formData, setFormData] = useState({ name: '', email: '', resume: null });
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16 px-6 sm:px-12 flex justify-center">
-      <motion.div
-        className="max-w-3xl w-full bg-white/80 backdrop-blur-md shadow-lg rounded-2xl p-8 relative"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <button 
-          onClick={() => navigate(-1)}
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
-          aria-label="Go back"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">{job.title}</h1>
-        <p className="text-gray-600 mb-4">
-          {job.company} • {job.location} • {job.type}
-        </p>
-        <p className="text-gray-700 mb-6">{job.description}</p>
-
-        <h2 className="text-xl font-semibold text-gray-800 mb-2">
-          Responsibilities
-        </h2>
-        <ul className="list-disc list-inside mb-4 text-gray-700">
-          {job.responsibilities.map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
-        </ul>
-
-        <h2 className="text-xl font-semibold text-gray-800 mb-2">
-          Qualifications
-        </h2>
-        <ul className="list-disc list-inside mb-4 text-gray-700">
-          {job.qualifications.map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
-        </ul>
-
-        <h2 className="text-xl font-semibold text-gray-800 mb-2">
-          What We Offer
-        </h2>
-        <ul className="list-disc list-inside mb-6 text-gray-700">
-          {job.offers.map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
-        </ul>
-
-        {/* Application Form */}
-        <form
-          action={`mailto:hr@wealthzone.com?subject=Job Application - ${encodeURIComponent(job.title)}&body=Position: ${encodeURIComponent(job.title)}%0D%0A%0D%0APlease attach your CV and details here.`}
-          method="POST"
-          encType="multipart/form-data"
-          className="space-y-4"
-        >
-          <div>
-            <label className="block text-gray-700 font-medium mb-1">
-              Full Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              required
-              className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-sky-500"
-            />
-          </div>
-
-          <div>
-            <label className="block text-gray-700 font-medium mb-1">
-              Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              required
-              className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-sky-500"
-            />
-          </div>
-
-          <div>
-            <label className="block text-gray-700 font-medium mb-1">
-              Upload Resume
-            </label>
-            <input
-              type="file"
-              name="resume"
-              accept=".pdf,.doc,.docx"
-              required
-              className="w-full border rounded-lg px-3 py-2"
-            />
-          </div>
-
-          <motion.button
-            type="submit"
-            className="w-full bg-sky-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-500 transition-colors"
-            whileTap={{ scale: 0.97 }}
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
+      {/* Header Section */}
+      <div className="bg-white border-b">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-6">
+          <button
+            onClick={() => navigate(-1)}
+            className="inline-flex items-center gap-2 text-gray-600 hover:text-blue-600 font-medium transition-colors mb-6"
           >
-            Submit Application
-          </motion.button>
-        </form>
-      </motion.div>
+            <ArrowLeft className="w-5 h-5" />
+            Back to Careers
+          </button>
+          
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
+                <Briefcase className="w-4 h-4" />
+                {job.type}
+              </div>
+              <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                {job.title}
+              </h1>
+              <div className="flex flex-wrap gap-4 text-gray-600">
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-blue-600" />
+                  <span>{job.location}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="w-5 h-5 text-blue-600" />
+                  <span>Posted Today</span>
+                </div>
+              </div>
+            </div>
+            
+            <motion.button
+              onClick={() => document.getElementById('apply-form').scrollIntoView({ behavior: 'smooth' })}
+              whileHover={{ scale: 1.02 }}
+              className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+            >
+              Apply Now
+            </motion.button>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-12">
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Left Column - Job Details */}
+          <div className="lg:col-span-2 space-y-8">
+            {/* About the Role */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="bg-white rounded-2xl p-8 shadow-md"
+            >
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">About the Role</h2>
+              <p className="text-gray-600 leading-relaxed">{job.description}</p>
+            </motion.div>
+
+            {/* Responsibilities */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="bg-white rounded-2xl p-8 shadow-md"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <Target className="w-5 h-5 text-blue-600" />
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900">Responsibilities</h2>
+              </div>
+              <ul className="space-y-3">
+                {job.responsibilities.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-600">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Qualifications */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="bg-white rounded-2xl p-8 shadow-md"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                  <GraduationCap className="w-5 h-5 text-purple-600" />
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900">Qualifications</h2>
+              </div>
+              <ul className="space-y-3">
+                {job.qualifications.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-600">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* What We Offer */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="bg-white rounded-2xl p-8 shadow-md"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                  <Gift className="w-5 h-5 text-green-600" />
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900">What We Offer</h2>
+              </div>
+              <ul className="space-y-3">
+                {job.offers.map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-600">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+
+          {/* Right Column - Application Form */}
+          <div className="lg:col-span-1">
+            <motion.div
+              id="apply-form"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="bg-white rounded-2xl p-8 shadow-md sticky top-6"
+            >
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Apply for this Position</h3>
+
+              <form
+                action={`mailto:hr@wealthzone.com?subject=Job Application - ${encodeURIComponent(job.title)}&body=Position: ${encodeURIComponent(job.title)}%0D%0A%0D%0APlease attach your CV and details here.`}
+                method="POST"
+                encType="multipart/form-data"
+                className="space-y-5"
+              >
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Full Name
+                  </label>
+                  <div className="relative">
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      required
+                      placeholder="John Doe"
+                      className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-colors"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Email Address
+                  </label>
+                  <div className="relative">
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      required
+                      placeholder="john@example.com"
+                      className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-colors"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Upload Resume
+                  </label>
+                  <div className="relative">
+                    <input
+                      type="file"
+                      name="resume"
+                      accept=".pdf,.doc,.docx"
+                      onChange={(e) => setFormData({...formData, resume: e.target.files[0]})}
+                      required
+                      className="hidden"
+                      id="resume-upload"
+                    />
+                    <label
+                      htmlFor="resume-upload"
+                      className="flex items-center justify-center gap-2 w-full py-3 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-all"
+                    >
+                      <Upload className="w-5 h-5 text-gray-400" />
+                      <span className="text-gray-600">
+                        {formData.resume ? formData.resume.name : 'Choose file or drag here'}
+                      </span>
+                    </label>
+                    <p className="text-xs text-gray-500 mt-2">PDF, DOC, DOCX (Max 5MB)</p>
+                  </div>
+                </div>
+
+                <motion.button
+                  type="submit"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                >
+                  Submit Application
+                  <Send className="w-5 h-5" />
+                </motion.button>
+              </form>
+              
+              <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+                <p className="text-sm text-gray-600">
+                  <strong className="text-gray-900">Note:</strong> We'll review your application and get back to you within 3-5 business days.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

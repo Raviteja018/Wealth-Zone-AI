@@ -197,7 +197,8 @@ export default function Hero() {
           >
             Harness the full potential of{" "}
             <span className="font-semibold text-gray-800">Artificial Intelligence</span>,{" "}
-            <span className="font-semibold text-gray-800">Blockchain</span>, and{" "}
+            <span className="font-semibold text-gray-800">Cyber Security</span>,{" "}
+            <span className="font-semibold text-gray-800">Digital Marketing</span>{" and "}
             <span className="font-semibold text-gray-800">Cloud Computing</span>{" "}
             to revolutionize your business processes.
             <span className="block mt-2">

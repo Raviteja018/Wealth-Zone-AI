@@ -34,6 +34,7 @@ import CustomerSupport from "./pages/services/CustomerSupport";
 import MarketingServices from "./pages/services/MarketingServices";
 import Leadership from "./components/Leadership";
 import Team from "./components/Team";
+import ProjectDetails from "./pages/ProjectDetails";
 
  
 function App() {
@@ -80,6 +81,7 @@ function App() {
         <Route path="/job-details" element={<JobDetails />} />
         <Route path="/leadership" element={<Leadership />} />
         <Route path="/team" element={<Team />} />
+        <Route path="/projects/:slug" element={<ProjectDetails />} />
       </Routes>
       {shouldShowFooter && <Footer />}
     </>
