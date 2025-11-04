@@ -13,7 +13,7 @@ export const slugify = (str) =>
 
 export const projects = [
   {
-    name: "Bonjour – Food Delivery App",
+    name: "Bonjour – Food Delivery App (Paris & London)",
     shortDescription:
       "A sleek and modern food delivery platform inspired by the charm of Paris.",
     description:
@@ -29,23 +29,24 @@ export const projects = [
     image: Delivery,
   },
   {
-    name: "OTRAS – Online Examination Platform",
+    name: "OTRAS – One Time Registration Application System",
     shortDescription:
-      "A government-grade online exam system built for scale and security.",
+      "A unified applicant registration platform for government exams and recruitment.",
     description:
-      "OTRAS is a robust examination platform designed for educational institutions and government agencies. It supports various question types, automated grading, and advanced anti-cheating mechanisms. The system ensures data integrity and provides detailed analytics for performance evaluation. OTRAS can handle thousands of concurrent users with minimal latency, making it ideal for large-scale examinations.",
+      "OTRAS is a centralized registration and application management system developed for government recruitment boards and examination authorities. It allows candidates to register once and reuse their verified profile for multiple applications, eliminating repetitive data entry. The system supports dynamic multi-step forms, document uploads, and automated verification workflows. With role-based dashboards, secure authentication, and real-time status tracking, OTRAS streamlines end-to-end applicant management and ensures transparency, scalability, and efficiency across large-scale recruitment processes.",
     features: [
-      "AI-powered proctoring",
-      "Multi-format question support",
-      "Real-time analytics dashboard",
-      "Secure browser lockdown",
-      "Automated result processing",
+      "Single-time registration for multiple applications",
+      "Dynamic multi-step applicant forms",
+      "Document upload and verification system",
+      "Real-time application tracking and notifications",
+      "Role-based admin and reviewer dashboards",
     ],
-    technologies: ["React","Java", "Spring Boot", "PostgreSQL", "Docker"],
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
     image: Examination,
   },
+
   {
-    name: "HRM Portal",
+    name: "HRM Portal & Service Provider",
     shortDescription:
       "Comprehensive HR management system for modern organizations.",
     description:
@@ -60,36 +61,60 @@ export const projects = [
     technologies: ["React", "Python", "Django", "MySQL", "Redis"],
     image: HRM,
   },
+{
+  name: "STEP IT – STEM & Robotics Education",
+  shortDescription:
+    "Turning students into creators: hands-on STEM, Robotics and AI aligned with NEP 2020.",
+  description:
+    "STEP IT transforms traditional schooling by integrating STEM, Robotics and AI into everyday learning. Our curriculum — co-developed by educators and engineers — gives students hands-on experience through real projects, coding, and engineering activities that spark curiosity, build critical thinking, and develop future-ready skills. Aligned to NEP 2020, STEP IT supports classroom adoption, teacher upskilling, and measurable student outcomes through project portfolios and certification.",
+  features: [
+    "NEP 2020 aligned curriculum designed by educators & engineers",
+    "Hands-on robotics kits and engineering projects",
+    "Project-based coding and AI exercises",
+    "Teacher training & deployment playbooks",
+    "Progress tracking, portfolios, and certification",
+    "Parent & educator dashboards for visibility",
+  ],
+  technologies: ["React", "Python", "TensorFlow", "Firebase", "Arduino/Raspberry Pi"],
+  image: ai,
+  implementationStages: [
+    {
+      stage: "Stage 1 — Planning & Customization",
+      summary:
+        "Assess school needs, map curriculum to local standards, customize modules and select hardware kits. Deliver a tailored rollout plan and teacher training schedule."
+    },
+    {
+      stage: "Stage 2 — Deployment",
+      summary:
+        "Install software, distribute kits, run teacher onboarding workshops, and configure dashboards and assessment tools for the school."
+    },
+    {
+      stage: "Stage 3 — Execution",
+      summary:
+        "Deliver classroom lessons and hands-on labs, guide project work, monitor progress, and provide ongoing mentor and tech support."
+    },
+    {
+      stage: "Stage 4 — Showcase & Certification",
+      summary:
+        "Students present projects in showcases, receive competency certificates, and schools receive outcome reports to demonstrate impact."
+    }
+  ]
+},
+
   {
-    name: "STEM – AI Education Initiative",
+    name: "Cyber-Security Operations",
     shortDescription:
-      "Empowering young minds with AI and technology education.",
+      "Advanced SOC platform for real-time threat detection and incident response.",
     description:
-      "The STEM initiative is a comprehensive educational platform that introduces students to artificial intelligence, robotics, and programming through interactive lessons and hands-on projects. Our curriculum is designed by industry experts and educators to make complex concepts accessible and engaging for students of all ages. The platform includes virtual labs, coding exercises, and project-based learning modules.",
+      "Our Cyber-Security Operations Platform is designed to empower Security Operations Centers (SOCs) with real-time visibility, proactive threat detection, and efficient incident response. The system integrates threat intelligence, log analysis, and automated alerting to help security teams identify, investigate, and mitigate cyber threats effectively. It supports SIEM capabilities, behavioral analytics, and continuous monitoring to strengthen organizational defense against evolving cyberattacks.",
     features: [
-      "Interactive coding environment",
-      "Project-based learning modules",
-      "Virtual robotics simulation",
-      "Progress tracking and assessments",
-      "Educator dashboard",
+      "Real-time threat monitoring and alerting",
+      "Centralized log management and SIEM integration",
+      "Automated incident response workflows",
+      "Threat intelligence and behavioral analytics",
+      "Customizable dashboards for SOC analysts",
     ],
-    technologies: ["React", "Python", "TensorFlow", "Firebase"],
-    image: ai,
-  },
-  {
-    name: "Cyber-Security Training Platform",
-    shortDescription:
-      "Hands-on cybersecurity training with real-world scenarios.",
-    description:
-      "Our Cybersecurity Training Platform provides immersive, hands-on learning experiences for security professionals and enthusiasts. The platform offers virtual labs, capture-the-flag challenges, and real-world attack simulations. Participants can practice penetration testing, network defense, and incident response in a safe, controlled environment. The curriculum is regularly updated to address emerging threats and security trends.",
-    features: [
-      "Virtual cybersecurity labs",
-      "Real-world attack simulations",
-      "Progress tracking and certification",
-      "Interactive learning modules",
-      "Community challenges and competitions",
-    ],
-    technologies: ["React", "Python", "Docker", "Kubernetes"],
+    technologies: ["React", "Node.js", "Elasticsearch", "Kibana", "Docker"],
     image: cyber,
   },
 ].map((p) => ({ ...p, slug: slugify(p.name) }));

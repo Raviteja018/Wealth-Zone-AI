@@ -165,18 +165,7 @@ export default function Careers() {
               </div>
 
               {/* Mini Stats */}
-              <div className="flex gap-6">
-                {[
-                  { number: '10+', label: 'Open Roles' },
-                  { number: '50+', label: 'Team Size' },
-                  { number: '5+', label: 'Years' }
-                ].map((stat, idx) => (
-                  <div key={idx} className="text-center">
-                    <p className="text-2xl font-bold text-blue-600">{stat.number}</p>
-                    <p className="text-sm text-gray-600">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
+
             </motion.div>
 
             {/* Right Side - Stacked Position Cards Preview */}
@@ -250,9 +239,9 @@ export default function Careers() {
       {/* Stats Section */}
       <section className="bg-gray-50 py-12">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
             {[
-              { icon: Users, number: '50+', label: 'Team Members' },
+              // { icon: Users, number: '50+', label: 'Team Members' },
               { icon: Award, number: '100+', label: 'Projects Delivered' },
               { icon: TrendingUp, number: '5+', label: 'Years of Growth' },
               { icon: GraduationCap, number: '10+', label: 'Open Positions' }
