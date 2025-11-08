@@ -125,7 +125,7 @@ export default function AIWebxNavbar() {
 
             <button
               onClick={() => handleNavigate("/contact")}
-              className="bg-white flex text-blue-500 font-semibold px-4 py-2 rounded-lg shadow hover:bg-sky-700 transition cursor-pointer"
+              className="bg-white flex text-blue-500 font-semibold px-4 py-2 rounded-lg shadow transition cursor-pointer"
             >
               Contact
             </button>

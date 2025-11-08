@@ -95,10 +95,10 @@ const Collaborations = () => {
           </div>
           
           <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
-            <span className="bg-gradient-to-r from-blue-600 via-blue-600 to-blue-800 bg-clip-text text-transparent">
+            <span className="bg-blue-600 bg-clip-text text-transparent">
               Trusted
             </span>{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-blue-600 bg-clip-text text-transparent">
               Collaborations
             </span>
           </h2>

@@ -100,7 +100,6 @@ export const projects = [
     }
   ]
 },
-
   {
     name: "Cyber-Security Operations",
     shortDescription:

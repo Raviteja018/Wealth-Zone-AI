@@ -13,7 +13,6 @@ import {
   FaGlobe,
   FaHandshake,
   FaCheckCircle,
-  FaStar
 } from "react-icons/fa";
 import aboutImg from "../assets/aboutus.jpg";
 import { useNavigate } from "react-router-dom";
@@ -26,12 +25,12 @@ export default function AboutUs() {
   const [index, setIndex] = useState(0);
   const [projectIndex, setProjectIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setProjectIndex((prev) => (prev + 1) % projects.length);
-    }, 3500);
-    return () => clearInterval(interval);
-  }, [projects.length]);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setProjectIndex((prev) => (prev + 1) % projects.length);
+  //   }, 3500);
+  //   return () => clearInterval(interval);
+  // }, [projects.length]);
 
   return (
     <section className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 text-gray-800 overflow-hidden">

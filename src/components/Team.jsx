@@ -23,17 +23,24 @@ const Team = () => {
       designation: 'Founder & CEO',
       qualification: 'MBA (Finance & IT)',
       description: 'Visionary leader with 19+ years of experience in technology and business innovation.',
+      linkedin: '',
+      email:"bsrilakkshhmi@wealthzonegroupai.com",
     },
     {
       name: 'B.Chakravarthy',
       designation: 'Operation Manager',
       qualification: 'MBA (Finance & IT)',
       description: 'Strategic operations expert driving organizational excellence and growth.',
+      linkedin:'https://www.linkedin.com/in/bictra-chakravarthy-847717367/',
+      email:"chakravarthy@wealthzonegroupai.com",
     },
   ];
 
   const teamMembers = [
     { name: 'G.Giri Ram', designation: 'Tech Lead', department: 'Engineering', color: 'bg-blue-600' },
+    { name: 'Henry Paul', designation: 'Legal Advisor [High Court]', department: 'Engineering', color: 'bg-blue-600' },
+    { name: 'Sunil', designation: 'Cyber Securtiy Manager', department: 'Engineering', color: 'bg-blue-600' },
+    { name: 'Venkata Jagadish', designation: 'Project Manager [Testing]', department: 'Engineering', color: 'bg-blue-600' },
     { name: 'K.Ram Prasad', designation: 'Network Engineer', department: 'Engineering', color: 'bg-blue-600' },
     { name: 'G.Revanth', designation: 'Senior Developer', department: 'Engineering', color: 'bg-blue-600' },
     { name: 'G.Rama Mohan', designation: 'Senior Developer', department: 'Engineering', color: 'bg-blue-600' },
@@ -215,10 +222,10 @@ const Team = () => {
                   <p className="text-sm text-gray-600 mb-3">{leader.qualification}</p>
                   <p className="text-gray-700 leading-relaxed">{leader.description}</p>
                   <div className="flex gap-3 mt-4">
-                    <a href="#" className="w-9 h-9 bg-blue-100 hover:bg-blue-600 text-blue-600 hover:text-white rounded-lg flex items-center justify-center transition-colors">
+                    {leader.name == "B.Chakravarthy"?<a href={leader.linkedin} className="w-9 h-9 bg-blue-100 hover:bg-blue-600 text-blue-600 hover:text-white rounded-lg flex items-center justify-center transition-colors">
                       <FaLinkedinIn />
-                    </a>
-                    <a href="#" className="w-9 h-9 bg-blue-100 hover:bg-blue-600 text-blue-600 hover:text-white rounded-lg flex items-center justify-center transition-colors">
+                    </a>:<></>}
+                    <a href={`mailto:${leader.email}`} className="w-9 h-9 bg-blue-100 hover:bg-blue-600 text-blue-600 hover:text-white rounded-lg flex items-center justify-center transition-colors">
                       <FaEnvelope />
                     </a>
                   </div>
