@@ -3,6 +3,7 @@ import Examination from "../assets/Projects/examination.jpg";
 import HRM from "../assets/Projects/HRM.jpg";
 import ai from "../assets/Projects/ai.jpg";
 import cyber from "../assets/Projects/cyber.png";
+import DigitalMarketing from "../assets/Projects/DigitalMarketing.jpg";
 
 export const slugify = (str) =>
   String(str)
@@ -116,4 +117,29 @@ export const projects = [
     technologies: ["React", "Node.js", "Elasticsearch", "Kibana", "Docker"],
     image: cyber,
   },
+  {
+  name: "Digital Marketing & Growth Services",
+  shortDescription: "End-to-end digital marketing solutions tailored for high-growth sectors.",
+  description:
+    "We provide targeted digital marketing solutions designed to increase visibility, generate leads, and convert audiences into loyal customers. Our team crafts data-driven strategies across multiple platforms — ensuring every campaign delivers measurable business growth. Whether it's hospitals seeking patient engagement, real estate firms selling properties, or jewelry brands building trust and desire, we tailor campaigns to the psychology and purchase journey of each industry.",
+  features: [
+    "Industry-specific marketing strategies",
+    "Social media branding & management",
+    "Google & Meta Ads campaign execution",
+    "SEO & content-driven lead generation",
+    "Reputation and review management",
+    "Landing page & funnel optimization"
+  ],
+  industriesServed: [
+    "Hospitals & Healthcare",
+    "Real Estate & Construction",
+    "Jewellery & Luxury Retail",
+    "Educational Institutions",
+    "Restaurants & Food Chains",
+    "Fitness & Wellness Centers"
+  ],
+  technologies: ["React", "Next.js", "Node.js", "Google Ads", "Meta Suite", "Analytics Tools"],
+  image: DigitalMarketing,
+}
+
 ].map((p) => ({ ...p, slug: slugify(p.name) }));

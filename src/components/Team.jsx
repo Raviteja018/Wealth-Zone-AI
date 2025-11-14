@@ -37,7 +37,6 @@ const Team = () => {
   ];
 
   const teamMembers = [
-    { name: 'G.Giri Ram', designation: 'Tech Lead', department: 'Engineering', color: 'bg-blue-600' },
     { name: 'Henry Paul', designation: 'Legal Advisor [High Court]', department: 'Engineering', color: 'bg-blue-600' },
     { name: 'Sunil', designation: 'Cyber Securtiy Manager', department: 'Engineering', color: 'bg-blue-600' },
     { name: 'Venkata Jagadish', designation: 'Project Manager [Testing]', department: 'Engineering', color: 'bg-blue-600' },
