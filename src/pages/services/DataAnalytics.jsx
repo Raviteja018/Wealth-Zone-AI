@@ -1,33 +1,39 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { BarChart3, TrendingUp, PieChart, Database, Sparkles, ArrowRight, CheckCircle2, Zap } from 'lucide-react';
 
 const DataAnalytics = () => {
+  const navigate = useNavigate();
+
   const features = [
     {
       title: 'Business Intelligence',
       description: 'Transform raw data into actionable business insights with our advanced analytics tools.',
       icon: TrendingUp,
-      gradient: 'from-blue-500 to-cyan-500'
+      gradient: 'from-blue-500 to-cyan-500',
+      slug: 'business-intelligence'
     },
     {
       title: 'Predictive Analytics',
       description: 'Leverage historical data to forecast trends and make data-driven decisions.',
       icon: BarChart3,
-      gradient: 'from-purple-500 to-pink-500'
+      gradient: 'from-purple-500 to-pink-500',
+      slug: 'predictive-analytics'
     },
     {
       title: 'Data Visualization',
       description: 'Interactive dashboards and reports that make complex data easy to understand.',
       icon: PieChart,
-      gradient: 'from-emerald-500 to-teal-500'
+      gradient: 'from-emerald-500 to-teal-500',
+      slug: 'data-visualization'
     },
     {
       title: 'Big Data Solutions',
       description: 'Handle large volumes of data efficiently with our scalable big data solutions.',
       icon: Database,
-      gradient: 'from-orange-500 to-red-500'
+      gradient: 'from-orange-500 to-red-500',
+      slug: 'big-data-solutions'
     }
   ];
 
@@ -40,6 +46,10 @@ const DataAnalytics = () => {
     'Scalable cloud-based solutions'
   ];
 
+  const handleCardClick = (slug) => {
+    navigate(`/services/data-analytics/${slug}`);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -49,7 +59,7 @@ const DataAnalytics = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6 shadow-sm">
             <BarChart3 className="w-5 h-5 text-blue-600" />
             <span className="text-sm font-semibold text-blue-600">Data-Driven Solutions</span>
           </div>
@@ -67,18 +77,23 @@ const DataAnalytics = () => {
             return (
               <motion.div
                 key={index}
-                className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden"
+                className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 * index }}
                 whileHover={{ y: -5 }}
+                onClick={() => handleCardClick(feature.slug)}
               >
-                <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500 to-blue-600 opacity-10 rounded-bl-full transition-all duration-300 group-hover:scale-150`}></div>
-                <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 mb-4`}>
+                <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${feature.gradient} opacity-10 rounded-bl-full transition-all duration-300 group-hover:scale-150`}></div>
+                <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${feature.gradient} mb-4`}>
                   <IconComponent className="w-8 h-8 text-white" strokeWidth={2} />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">{feature.title}</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">{feature.description}</p>
+                <div className="flex items-center gap-2 text-blue-600 font-semibold group-hover:gap-3 transition-all">
+                  <span>Learn More</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
               </motion.div>
             );
           })}
@@ -110,7 +125,7 @@ const DataAnalytics = () => {
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-12 text-center relative overflow-hidden"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}

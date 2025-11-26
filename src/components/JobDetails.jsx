@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { 
-  ArrowLeft, 
-  MapPin, 
-  Briefcase, 
-  Clock, 
-  CheckCircle2, 
-  Target, 
-  GraduationCap, 
-  Gift, 
-  Mail, 
-  User, 
+import {
+  ArrowLeft,
+  MapPin,
+  Briefcase,
+  Clock,
+  CheckCircle2,
+  Target,
+  GraduationCap,
+  Gift,
+  Mail,
+  User,
   Upload,
   Send
 } from "lucide-react";
@@ -86,6 +86,131 @@ const jobDetails = {
       "Comprehensive training program",
       "Work on enterprise-level applications",
       "Career growth opportunities",
+    ],
+  },
+  "Cyber Security – Fresher": {
+    title: "Cyber Security – Fresher",
+    company: "Wealth Zone Technologies",
+    type: "Full-Time",
+    location: "Hyderabad",
+    description:
+      "Join our cybersecurity team to protect our systems and data from evolving threats. Learn from industry experts and gain hands-on experience in security operations...",
+    responsibilities: [
+      "Monitor security systems and respond to security incidents.",
+      "Assist in vulnerability assessments and penetration testing.",
+      "Help implement security policies and best practices.",
+      "Participate in security awareness training programs.",
+    ],
+    qualifications: [
+      "Bachelor's degree in Computer Science, Cybersecurity, or related field.",
+      "Basic understanding of network security, cryptography, and security protocols.",
+      "Familiarity with security tools like Wireshark, Nmap, or Metasploit.",
+      "Knowledge of operating systems (Windows, Linux) and networking concepts.",
+    ],
+    offers: [
+      "Comprehensive cybersecurity training",
+      "Hands-on experience with security tools",
+      "Career growth in a high-demand field",
+    ],
+  },
+  "React JS Developer – Fresher": {
+    title: "React JS Developer – Fresher",
+    company: "Wealth Zone Technologies",
+    type: "Full-Time",
+    location: "Hyderabad",
+    description:
+      "We're looking for passionate React JS developers to build modern, responsive web applications. Work with cutting-edge technologies and create amazing user experiences...",
+    responsibilities: [
+      "Develop new user-facing features using React.js.",
+      "Build reusable components and front-end libraries.",
+      "Translate designs and wireframes into high-quality code.",
+      "Optimize components for maximum performance across devices.",
+    ],
+    qualifications: [
+      "Bachelor's degree in Computer Science or related field.",
+      "Strong proficiency in JavaScript, including ES6+ syntax.",
+      "Experience with React.js and its core principles.",
+      "Familiarity with RESTful APIs and modern front-end build tools.",
+    ],
+    offers: [
+      "Work on modern web applications",
+      "Collaborative development environment",
+      "Continuous learning opportunities",
+    ],
+  },
+  "Digital Marketing – Fresher": {
+    title: "Digital Marketing – Fresher",
+    company: "Wealth Zone Technologies",
+    type: "Full-Time",
+    location: "Hyderabad",
+    description:
+      "Launch your digital marketing career with us! Learn SEO, social media marketing, content strategy, and analytics while working on real campaigns...",
+    responsibilities: [
+      "Assist in planning and executing digital marketing campaigns.",
+      "Manage social media accounts and create engaging content.",
+      "Conduct keyword research and optimize content for SEO.",
+      "Analyze campaign performance and prepare reports.",
+    ],
+    qualifications: [
+      "Bachelor's degree in Marketing, Communications, or related field.",
+      "Basic understanding of digital marketing concepts and tools.",
+      "Familiarity with social media platforms and Google Analytics.",
+      "Strong written and verbal communication skills.",
+    ],
+    offers: [
+      "Hands-on experience with digital marketing tools",
+      "Exposure to diverse marketing campaigns",
+      "Professional development opportunities",
+    ],
+  },
+  "MERN Stack Developer – Fresher": {
+    title: "MERN Stack Developer – Fresher",
+    company: "Wealth Zone Technologies",
+    type: "Full-Time",
+    location: "Hyderabad",
+    description:
+      "Join our team as a MERN Stack Developer and build full-stack web applications using MongoDB, Express.js, React, and Node.js. Work on exciting projects and grow your skills...",
+    responsibilities: [
+      "Develop and maintain web applications using the MERN stack.",
+      "Design and implement RESTful APIs with Node.js and Express.",
+      "Build responsive user interfaces with React.js.",
+      "Work with MongoDB for database design and management.",
+    ],
+    qualifications: [
+      "Bachelor's degree in Computer Science or related field.",
+      "Proficiency in JavaScript and understanding of the MERN stack.",
+      "Experience with MongoDB, Express.js, React, and Node.js.",
+      "Knowledge of version control systems like Git.",
+    ],
+    offers: [
+      "Work on full-stack projects",
+      "Mentorship from experienced developers",
+      "Competitive compensation and benefits",
+    ],
+  },
+  "AWS Cloud Engineer – Fresher": {
+    title: "AWS Cloud Engineer – Fresher",
+    company: "Wealth Zone Technologies",
+    type: "Full-Time",
+    location: "Hyderabad",
+    description:
+      "Start your cloud computing career with AWS! Learn to design, deploy, and manage scalable cloud infrastructure while working with industry-leading technologies...",
+    responsibilities: [
+      "Assist in deploying and managing applications on AWS cloud.",
+      "Help configure and maintain AWS services (EC2, S3, RDS, Lambda).",
+      "Support cloud infrastructure monitoring and optimization.",
+      "Participate in implementing DevOps practices and CI/CD pipelines.",
+    ],
+    qualifications: [
+      "Bachelor's degree in Computer Science or related field.",
+      "Basic understanding of cloud computing concepts and AWS services.",
+      "Familiarity with Linux/Unix systems and scripting (Python, Bash).",
+      "Knowledge of networking, security, and database fundamentals.",
+    ],
+    offers: [
+      "AWS certification support and training",
+      "Hands-on experience with cloud technologies",
+      "Career growth in cloud computing",
     ],
   },
   "UI/UX Designer – Intern": {
@@ -178,7 +303,7 @@ export default function JobDetails() {
             <ArrowLeft className="w-5 h-5" />
             Back to Careers
           </button>
-          
+
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
             <div className="flex-1">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
@@ -199,7 +324,7 @@ export default function JobDetails() {
                 </div>
               </div>
             </div>
-            
+
             <motion.button
               onClick={() => document.getElementById('apply-form').scrollIntoView({ behavior: 'smooth' })}
               whileHover={{ scale: 1.02 }}
@@ -323,7 +448,7 @@ export default function JobDetails() {
                       type="text"
                       name="name"
                       value={formData.name}
-                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
                       placeholder="John Doe"
                       className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-colors"
@@ -341,7 +466,7 @@ export default function JobDetails() {
                       type="email"
                       name="email"
                       value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       required
                       placeholder="john@example.com"
                       className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-colors"
@@ -358,7 +483,7 @@ export default function JobDetails() {
                       type="file"
                       name="resume"
                       accept=".pdf,.doc,.docx"
-                      onChange={(e) => setFormData({...formData, resume: e.target.files[0]})}
+                      onChange={(e) => setFormData({ ...formData, resume: e.target.files[0] })}
                       required
                       className="hidden"
                       id="resume-upload"
@@ -386,7 +511,7 @@ export default function JobDetails() {
                   <Send className="w-5 h-5" />
                 </motion.button>
               </form>
-              
+
               <div className="mt-6 p-4 bg-blue-50 rounded-lg">
                 <p className="text-sm text-gray-600">
                   <strong className="text-gray-900">Note:</strong> We'll review your application and get back to you within 3-5 business days.

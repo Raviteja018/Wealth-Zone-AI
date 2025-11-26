@@ -11,7 +11,8 @@ import {
   FaCheckCircle,
   FaLinkedin,
   FaTwitter,
-  FaFacebook
+  FaFacebook,
+  FaInstagram
 } from "react-icons/fa";
 
 export default function ContactUs() {
@@ -130,13 +131,13 @@ export default function ContactUs() {
             <div className="pt-6">
               <h4 className="font-semibold text-blue-900 mb-4">Follow Us</h4>
               <div className="flex gap-3">
-                <a href="#" className="w-10 h-10 bg-blue-100 hover:bg-blue-600 text-blue-600 hover:text-white rounded-lg flex items-center justify-center transition-colors">
+                <a href="https://www.linkedin.com/company/wealth-zone-group-ai/" className="w-10 h-10 bg-blue-100 hover:bg-blue-600 text-blue-600 hover:text-white rounded-lg flex items-center justify-center transition-colors">
                   <FaLinkedin />
                 </a>
-                <a href="#" className="w-10 h-10 bg-blue-100 hover:bg-blue-600 text-blue-600 hover:text-white rounded-lg flex items-center justify-center transition-colors">
-                  <FaTwitter />
+                <a href="https://www.instagram.com/wealth_zone_group_ai?igsh=MTZjeHplMDVtdWtndA==" className="w-10 h-10 bg-blue-100 hover:bg-blue-600 text-blue-600 hover:text-white rounded-lg flex items-center justify-center transition-colors">
+                  <FaInstagram />
                 </a>
-                <a href="#" className="w-10 h-10 bg-blue-100 hover:bg-blue-600 text-blue-600 hover:text-white rounded-lg flex items-center justify-center transition-colors">
+                <a href="https://www.facebook.com/share/17giu3QTEn/" className="w-10 h-10 bg-blue-100 hover:bg-blue-600 text-blue-600 hover:text-white rounded-lg flex items-center justify-center transition-colors">
                   <FaFacebook />
                 </a>
               </div>

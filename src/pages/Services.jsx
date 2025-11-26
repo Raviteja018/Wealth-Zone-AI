@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { BarChart3, Code, Cloud, TestTube, Bot, Headphones, Phone, TrendingUp, Megaphone, ArrowRight, Sparkles, CheckCircle2, Target, Rocket, Users, Award, Zap } from 'lucide-react';
+import { BarChart3, Code, Cloud, TestTube, Bot, Headphones, Phone, TrendingUp, Megaphone, ArrowRight, Sparkles, CheckCircle2, Target, Rocket, Users, Award, Zap, FileText, Shield, MapPin } from 'lucide-react';
 import SoftwareDevelopment from '../assets/services/software-dev.jpg';
 import ITConsulting from '../assets/services/it-consulting.jpg';
 import CloudServices from '../assets/services/cloud-services.jpg';
@@ -111,6 +111,39 @@ const services = [
     iconBg: 'bg-pink-100',
     iconColor: 'text-pink-600',
     category: 'consulting'
+  },
+  {
+    title: 'Medical Coding',
+    description: 'Accurate and efficient medical coding services to streamline healthcare documentation, billing, and compliance with industry standards.',
+    link: '/services/medical-coding',
+    image: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+    icon: FileText,
+    gradient: 'from-blue-500 to-cyan-500',
+    iconBg: 'bg-blue-100',
+    iconColor: 'text-blue-600',
+    category: 'support'
+  },
+  {
+    title: 'Content Moderation',
+    description: 'Professional content moderation services to maintain online community standards, filter inappropriate content, and ensure a safe digital environment.',
+    link: '/services/content-moderation',
+    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+    icon: Shield,
+    gradient: 'from-blue-500 to-cyan-500',
+    iconBg: 'bg-blue-100',
+    iconColor: 'text-blue-600',
+    category: 'support'
+  },
+  {
+    title: 'Google Mapping',
+    description: 'Custom Google Maps integration and location-based services to enhance your business visibility and provide better user experiences.',
+    link: '/services/google-mapping',
+    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+    icon: MapPin,
+    gradient: 'from-blue-500 to-cyan-500',
+    iconBg: 'bg-blue-100',
+    iconColor: 'text-blue-600',
+    category: 'development'
   }
 ];
 
@@ -125,8 +158,8 @@ const Services = () => {
   ];
 
   // Filter services based on active category
-  const filteredServices = activeCategory === 'all' 
-    ? services 
+  const filteredServices = activeCategory === 'all'
+    ? services
     : services.filter(service => service.category === activeCategory);
 
   return (
@@ -152,14 +185,14 @@ const Services = () => {
                 <div className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></div>
                 <span className="text-sm font-semibold text-blue-600">Services Overview</span>
               </div>
-              
+
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
                 Comprehensive
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
                   IT Solutions
                 </span>
               </h1>
-              
+
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 End-to-end technology services designed to accelerate your business growth and digital transformation journey.
               </p>
@@ -189,7 +222,7 @@ const Services = () => {
                   </motion.div>
                 ))}
               </div>
-              
+
               <div className="flex flex-wrap gap-4">
                 <Link
                   to="/contact"
@@ -214,8 +247,8 @@ const Services = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="hidden lg:block"
             >
-              <div className="grid grid-cols-3 gap-4">
-                {services.slice(0, 9).map((service, idx) => (
+              <div className="grid grid-cols-4 gap-4">
+                {services.slice(0, 12).map((service, idx) => (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -327,18 +360,17 @@ const Services = () => {
             <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
               Comprehensive IT solutions to power your digital transformation
             </p>
-            
+
             {/* Category Filter */}
             <div className="flex flex-wrap gap-3 justify-center">
               {categories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
-                    activeCategory === category.id
-                      ? 'bg-blue-600 text-white shadow-md'
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                  }`}
+                  className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${activeCategory === category.id
+                    ? 'bg-blue-600 text-white shadow-md'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    }`}
                 >
                   {category.label}
                 </button>
@@ -347,7 +379,7 @@ const Services = () => {
           </div>
 
           {/* Services Grid */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -364,8 +396,8 @@ const Services = () => {
               >
                 <Link to={service.link} className="block h-full">
                   <div className="relative overflow-hidden h-56">
-                    <img 
-                      src={service.image} 
+                    <img
+                      src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       onError={(e) => {
@@ -375,7 +407,7 @@ const Services = () => {
                     />
                     {/* Gradient overlay */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-30 transition-opacity duration-300`}></div>
-                    
+
                     {/* Floating icon badge */}
                     <div className="absolute top-4 right-4">
                       <div className={`${service.iconBg} p-3 rounded-xl shadow-lg backdrop-blur-sm bg-opacity-95 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300`}>
@@ -383,16 +415,16 @@ const Services = () => {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                       {service.title}
                     </h3>
-                    
+
                     <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">
                       {service.description}
                     </p>
-                    
+
                     {/* CTA */}
                     <div className="flex items-center gap-2 text-blue-600 font-semibold group-hover:gap-3 transition-all">
                       <span>Learn More</span>

@@ -1,19 +1,16 @@
-// <-- 1. Merged useEffect and useState into one import
 import React, { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import Robo from "../assets/robo.png";
+import { motion } from "framer-motion";
 import Pattern from "../assets/pattern.jpg";
 
-// Confetti component (no changes)
+// Confetti component
 const Confetti = () => {
   const [confetti, setConfetti] = useState([]);
   const colors = ['#3b82f6', '#60a5fa', '#93c5fd', '#dbeafe', '#ffffff', '#3b82f6cc', '#60a5facc'];
   const shapes = ['🎊', '✨', '🎉', '🎈', '🎁'];
 
   useEffect(() => {
-    // Create confetti elements
     const newConfetti = Array(15).fill().map((_, i) => ({
       id: i,
       x: Math.random() * 100,
@@ -73,44 +70,20 @@ export default function Hero() {
     navigate("/products");
   };
 
-  // <-- 2. Variants for staggered entry animation
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2, // Time between each child animating in
-      },
-    },
-  };
-
-  const itemFadeInLeft = {
-    hidden: { opacity: 0, x: -50 },
-    show: {
-      opacity: 1,
-      x: 0,
-      transition: { type: "spring", stiffness: 100 }
-    },
-  };
-
   return (
     <section
-      className="relative overflow-hidden"
+      className="relative overflow-hidden min-h-screen flex flex-col"
       style={{
         backgroundImage: `url(${Pattern})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        minHeight: "100vh",
-        width: "100%",
       }}
     >
-      {/* 19 Years Celebration Banner with Confetti */}
-      {/* <-- MODIFICATION: More vibrant gradient, taller, and shadow-xl */}
+      {/* 19 Years Celebration Banner */}
       <div className="w-full bg-gradient-to-r from-indigo-500 via-blue-500 to-cyan-400 py-3 sm:py-4 text-center relative z-50 overflow-visible shadow-xl">
         {showConfetti && <Confetti />}
         <motion.div
-          // <-- MODIFICATION: Larger text, bold font, more gap
           className="text-white text-base sm:text-lg font-bold flex items-center justify-center gap-2 sm:gap-3 relative z-10"
           initial={{ opacity: 0, y: -20 }}
           animate={{
@@ -135,8 +108,7 @@ export default function Hero() {
           >
             ✨
           </motion.span>
-          
-          {/* <-- MODIFICATION: Added shining text animation */}
+
           <motion.span
             className="inline-block bg-gradient-to-r from-white via-yellow-200 to-white bg-clip-text text-transparent"
             style={{ backgroundSize: '200% auto' }}
@@ -147,16 +119,15 @@ export default function Hero() {
               duration: 3,
               repeat: Infinity,
               ease: "linear",
-              repeatDelay: 2, // Wait 2 seconds between shines
+              repeatDelay: 2,
             }}
           >
-            Celebrating 19 Years of Innovation & Excellence
+            Celebrating 20th Year of Innovation & Excellence
           </motion.span>
 
-          {/* <-- MODIFICATION: De-emphasized secondary text */}
           <span className="hidden sm:inline text-white/80 mx-1">•</span>
           <span className="hidden sm:inline font-normal text-white/80">2006 - Present</span>
-          
+
           <motion.span
             animate={{ rotate: [0, -10, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse', delay: 0.5 }}
@@ -166,119 +137,196 @@ export default function Hero() {
           </motion.span>
         </motion.div>
       </div>
-      {/* Overlay gradient for better text contrast */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/100 via-white/95 to-white/0 z-20"></div>
 
-      {/* Decorative blur circle */}
-      <div className="absolute -bottom-24 -right-24 w-72 sm:w-96 h-72 sm:h-96 bg-sky-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
-
-      {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between relative z-30">
-        
-        {/* <-- 3. Left Content - Wrapped in motion.div for staggering */}
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Gradient Orbs */}
         <motion.div
-          className="max-w-2xl text-center lg:text-left"
-          variants={containerVariants}
-          initial="hidden"
-          animate="show" // Animate when component mounts
+          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-sky-400/30 via-blue-500/20 to-indigo-600/30 blur-3xl"
+          animate={{
+            scale: [1, 1.3, 1],
+            x: [0, 50, 0],
+            y: [0, -50, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-gradient-to-br from-purple-400/25 via-pink-500/20 to-rose-500/25 blur-3xl"
+          animate={{
+            scale: [1.2, 1, 1.2],
+            x: [0, -40, 0],
+            y: [0, 40, 0],
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute top-1/2 right-1/3 w-72 h-72 rounded-full bg-gradient-to-br from-cyan-400/20 via-teal-500/15 to-emerald-500/20 blur-3xl"
+          animate={{
+            scale: [1, 1.4, 1],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+      </div>
+
+      {/* Main Content - Centered */}
+      <div className="flex-1 flex items-center justify-center relative z-30 px-4 sm:px-6 lg:px-12 py-16 bg-white/80">
+        <motion.div
+          className="max-w-5xl mx-auto text-center"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          {/* <-- 4. Added variants to children */}
+          {/* Main Heading with Gradient */}
           <motion.h1
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mt-4 bg-gradient-to-r from-sky-600 to-blue-800 bg-clip-text text-transparent"
-            variants={itemFadeInLeft}
+            className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight mb-8"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Wealth Zone Group AI – <br className="hidden sm:block" />
-            Powering the Future with Intelligent Solutions
+            <span className="block bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-700 bg-clip-text text-transparent">
+              Wealth Zone Group AI
+            </span>
+            <span className="block mt-4 text-3xl sm:text-4xl lg:text-5xl bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text text-transparent">
+              Powering the Future with Intelligent Solutions
+            </span>
           </motion.h1>
 
+          {/* Description */}
           <motion.p
-            className="mt-6 text-base sm:text-lg text-gray-600 leading-relaxed"
-            variants={itemFadeInLeft}
+            className="mt-8 text-lg sm:text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
           >
             Harness the full potential of{" "}
-            <span className="font-semibold text-gray-800">Artificial Intelligence</span>,{" "}
-            <span className="font-semibold text-gray-800">Cyber Security</span>,{" "}
-            <span className="font-semibold text-gray-800">Digital Marketing</span>{" and "}
-            <span className="font-semibold text-gray-800">Cloud Computing</span>{" "}
+            <span className="font-bold text-sky-600">Artificial Intelligence</span>,{" "}
+            <span className="font-bold text-indigo-600">Cyber Security</span>,{" "}
+            <span className="font-bold text-blue-600">Digital Marketing</span>{" and "}
+            <span className="font-bold text-purple-600">Cloud Computing</span>{" "}
             to revolutionize your business processes.
-            <span className="block mt-2">
-              Wealth Zone AI delivers tailored, next-gen technology solutions
-              that optimize efficiency, drive innovation, and unlock new growth
-              opportunities.
-            </span>
           </motion.p>
 
-          {/* <-- 5. Added variants to button container */}
-          <motion.div
-            className="mt-8 flex flex-col sm:flex-row sm:space-x-4 gap-4 justify-center lg:justify-start"
-            variants={itemFadeInLeft}
+          {/* Service Icons Grid */}
+          {/* <motion.div
+            className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
           >
-            {/* <-- 6. Converted button to motion.button for better hover/tap */}
+            {[
+              { icon: "🤖", label: "AI Solutions", color: "from-sky-400 to-blue-600" },
+              { icon: "🔒", label: "Cyber Security", color: "from-purple-400 to-pink-600" },
+              { icon: "☁️", label: "Cloud Computing", color: "from-cyan-400 to-teal-600" },
+              { icon: "📊", label: "Digital Marketing", color: "from-orange-400 to-red-600" }
+            ].map((service, idx) => (
+              <motion.div
+                key={idx}
+                className={`relative group cursor-pointer`}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.7 + idx * 0.1 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
+                <div className={`bg-gradient-to-br ${service.color} rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300`}>
+                  <motion.div
+                    className="text-5xl mb-3"
+                    animate={{ y: [0, -8, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: idx * 0.2 }}
+                  >
+                    {service.icon}
+                  </motion.div>
+                  <p className="text-white font-semibold text-sm sm:text-base">{service.label}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div> */}
+
+          {/* CTA Buttons */}
+          <motion.div
+            className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
             <motion.button
               onClick={handleService}
-              className="px-6 sm:px-8 py-3 rounded-full bg-gradient-to-r from-sky-600 to-sky-700 text-white font-semibold shadow-lg cursor-pointer"
+              className="px-10 py-4 rounded-full bg-gradient-to-r from-sky-600 to-blue-700 text-white font-bold text-lg shadow-2xl cursor-pointer"
               whileHover={{
                 scale: 1.05,
-                boxShadow: "0px 10px 20px rgba(0, 100, 200, 0.2)" // Lift effect
+                boxShadow: "0px 20px 40px rgba(14, 165, 233, 0.4)"
               }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              Our Services
+              Explore Our Services
             </motion.button>
             <motion.button
               onClick={handleProducts}
-              className="px-6 sm:px-8 py-3 rounded-full border border-sky-600 text-sky-700 font-semibold hover:bg-sky-50 cursor-pointer"
+              className="px-10 py-4 rounded-full border-2 border-sky-600 text-sky-700 font-bold text-lg hover:bg-sky-50 cursor-pointer shadow-lg"
               whileHover={{
                 scale: 1.05,
-                backgroundColor: "rgb(240 249 255)" // Tailwind sky-50
+                backgroundColor: "rgb(240 249 255)",
+                boxShadow: "0px 20px 40px rgba(14, 165, 233, 0.2)"
               }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              Our Products
+              View Our Products
             </motion.button>
           </motion.div>
-        </motion.div>
 
-        {/* Right Side - Robo Illustration */}
-        <motion.div
-          className="mt-10 sm:mt-12 lg:mt-0 lg:ml-12"
-          // <-- 7. Added initial state for entry animation
-          initial={{ opacity: 0, scale: 0.7 }}
-          animate={{
-            // <-- 8. Added opacity and scale to the animate prop
-            opacity: 1,
-            scale: 1,
-            y: [0, -20, 0, 20, 0],
-            x: [0, 10, -10, 10, 0],
-            rotate: [0, 5, -5, 5, 0],
-          }}
-          transition={{
-            // <-- 9. Defined separate transitions for entry vs. loop
-            duration: 6, // Default duration for loops
-            repeat: Infinity,
-            ease: "easeInOut",
-            opacity: { duration: 0.8, ease: "easeOut", repeat: 0 }, // Entry only
-            scale: { duration: 0.8, ease: "easeOut", repeat: 0 },   // Entry only
-          }}
-        >
-          <img
-            src={Robo}
-            alt="AI Robot"
-            className="w-56 sm:w-72 lg:w-[460px] drop-shadow-2xl hover:scale-105 transition-transform duration-500"
-          />
+          {/* Floating Stats */}
+          <motion.div
+            className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1 }}
+          >
+            {[
+              { number: "19+", label: "Years Experience" },
+              { number: "500+", label: "Projects Delivered" },
+              { number: "100%", label: "Client Satisfaction" }
+            ].map((stat, idx) => (
+              <motion.div
+                key={idx}
+                className="text-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 1.1 + idx * 0.1 }}
+              >
+                <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-sky-600 to-blue-700 bg-clip-text text-transparent">
+                  {stat.number}
+                </div>
+                <div className="text-sm sm:text-base text-gray-600 mt-2 font-medium">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
       </div>
 
-      {/* <-- 10. WhatsApp Floating Button - Converted to motion.a */}
+      {/* WhatsApp Floating Button */}
       <motion.a
         href="https://wa.me/7842770089"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 bg-green-500 rounded-full p-4 shadow-lg z-20"
+        className="fixed bottom-6 right-6 bg-green-500 rounded-full p-4 shadow-2xl z-50 hover:bg-green-600"
         animate={{
-          scale: [1, 1.1, 1], // Pulsing animation
+          scale: [1, 1.1, 1],
         }}
         transition={{
           duration: 1.5,
@@ -287,7 +335,7 @@ export default function Hero() {
         }}
         whileHover={{
           scale: 1.2,
-          rotate: 15, // Fun rotate on hover
+          rotate: 15,
         }}
         whileTap={{ scale: 0.9 }}
       >

@@ -63,11 +63,11 @@ export const projects = [
     image: HRM,
   },
 {
-  name: "STEP IT – STEM & Robotics Education",
+  name: "WZG AI – STEM & Robotics Education",
   shortDescription:
     "Turning students into creators: hands-on STEM, Robotics and AI aligned with NEP 2020.",
   description:
-    "STEP IT transforms traditional schooling by integrating STEM, Robotics and AI into everyday learning. Our curriculum — co-developed by educators and engineers — gives students hands-on experience through real projects, coding, and engineering activities that spark curiosity, build critical thinking, and develop future-ready skills. Aligned to NEP 2020, STEP IT supports classroom adoption, teacher upskilling, and measurable student outcomes through project portfolios and certification.",
+    "WZG AI transforms traditional schooling by integrating STEM, Robotics and AI into everyday learning. Our curriculum — co-developed by educators and engineers — gives students hands-on experience through real projects, coding, and engineering activities that spark curiosity, build critical thinking, and develop future-ready skills. Aligned to NEP 2020, WZG AI supports classroom adoption, teacher upskilling, and measurable student outcomes through project portfolios and certification.",
   features: [
     "NEP 2020 aligned curriculum designed by educators & engineers",
     "Hands-on robotics kits and engineering projects",
@@ -106,7 +106,7 @@ export const projects = [
     shortDescription:
       "Advanced SOC platform for real-time threat detection and incident response.",
     description:
-      "Our Cyber-Security Operations Platform is designed to empower Security Operations Centers (SOCs) with real-time visibility, proactive threat detection, and efficient incident response. The system integrates threat intelligence, log analysis, and automated alerting to help security teams identify, investigate, and mitigate cyber threats effectively. It supports SIEM capabilities, behavioral analytics, and continuous monitoring to strengthen organizational defense against evolving cyberattacks.",
+      "Our Cyber-Security Operations Platform is designed to empower Security Operations Centers (SOC) with real-time visibility, proactive threat detection, and efficient incident response. The system integrates threat intelligence, log analysis, and automated alerting to help security teams identify, investigate, and mitigate cyber threats effectively. It supports SIEM capabilities, behavioral analytics, and continuous monitoring to strengthen organizational defense against evolving cyberattacks.",
     features: [
       "Real-time threat monitoring and alerting",
       "Centralized log management and SIEM integration",
