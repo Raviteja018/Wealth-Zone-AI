@@ -1,59 +1,59 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { TrendingUp, BarChart3, Target, Users, Zap, CheckCircle2, ArrowRight, Sparkles, Brain, LineChart, Shield } from 'lucide-react';
+import { TrendingUp, Target, Compass, BarChart3, Zap, CheckCircle2, ArrowRight, Sparkles, Lightbulb, Map, Layers, Puzzle } from 'lucide-react';
 
-const BusinessIntelligence = () => {
+const TechnologyStrategy = () => {
     const features = [
         {
-            icon: Brain,
-            title: 'Advanced Analytics',
-            description: 'Leverage AI and machine learning to uncover hidden patterns and insights in your business data.'
-        },
-        {
-            icon: LineChart,
-            title: 'Real-Time Dashboards',
-            description: 'Monitor your KPIs and metrics in real-time with interactive, customizable dashboards.'
+            icon: Compass,
+            title: 'Strategic Roadmap',
+            description: 'Develop a clear, actionable technology roadmap aligned with your long-term business goals.'
         },
         {
             icon: Target,
-            title: 'Strategic Planning',
-            description: 'Make data-driven strategic decisions with comprehensive business intelligence reports.'
+            title: 'Tech Stack Assessment',
+            description: 'Evaluate your current technology stack and recommend modern, scalable alternatives.'
         },
         {
-            icon: Shield,
-            title: 'Data Security',
-            description: 'Enterprise-grade security ensures your sensitive business data remains protected.'
+            icon: BarChart3,
+            title: 'ROI Analysis',
+            description: 'Analyze the return on investment for proposed technology initiatives to ensure value.'
+        },
+        {
+            icon: Puzzle,
+            title: 'Gap Analysis',
+            description: 'Identify gaps between your current capabilities and future needs to prioritize investments.'
         }
     ];
 
     const capabilities = [
-        'Custom BI dashboard development',
-        'Data warehousing and ETL processes',
-        'Self-service analytics tools',
-        'Mobile BI applications',
-        'Automated report generation',
-        'Integration with existing systems',
-        'Performance metrics tracking',
-        'Competitive analysis tools'
+        'Digital Strategy Formulation',
+        'Enterprise Architecture Planning',
+        'Technology Risk Assessment',
+        'Vendor Selection & Management',
+        'IT Budgeting & Cost Optimization',
+        'Innovation Workshops',
+        'Governance Frameworks',
+        'Mergers & Acquisitions IT Due Diligence'
     ];
 
     const useCases = [
         {
-            title: 'Sales Performance',
-            description: 'Track sales metrics, identify trends, and optimize your sales strategy with comprehensive analytics.'
+            title: 'Digital Modernization',
+            description: 'Guiding legacy enterprises through comprehensive technology modernization journeys.'
         },
         {
-            title: 'Financial Analysis',
-            description: 'Monitor financial health, forecast revenue, and make informed budgeting decisions.'
+            title: 'Startup Scaling',
+            description: 'Helping high-growth startups build scalable technology foundations for rapid expansion.'
         },
         {
-            title: 'Customer Insights',
-            description: 'Understand customer behavior, preferences, and lifetime value to improve retention.'
+            title: 'Cost Reduction',
+            description: 'Optimizing IT spend by rationalizing application portfolios and infrastructure.'
         },
         {
-            title: 'Operational Efficiency',
-            description: 'Identify bottlenecks, optimize processes, and improve overall operational performance.'
+            title: 'New Market Entry',
+            description: 'Designing technology capabilities required to successfully enter new geographic or product markets.'
         }
     ];
 
@@ -75,15 +75,15 @@ const BusinessIntelligence = () => {
                     >
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-blue-200 rounded-full mb-6 shadow-sm">
                             <TrendingUp className="w-5 h-5 text-blue-600" />
-                            <span className="text-sm font-semibold text-blue-600">Data Analytics</span>
+                            <span className="text-sm font-semibold text-blue-600">Strategic Planning</span>
                         </div>
 
                         <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                            Business <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-600">Intelligence</span>
+                            Technology <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-600">Strategy</span>
                         </h1>
 
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-                            Transform your raw data into actionable business insights with our comprehensive Business Intelligence solutions. Make smarter decisions faster with real-time analytics and intuitive dashboards.
+                            Align your technology investments with business objectives. We help you build a future-proof IT foundation that drives growth and innovation.
                         </p>
 
                         <div className="flex flex-wrap gap-4 justify-center">
@@ -91,14 +91,14 @@ const BusinessIntelligence = () => {
                                 to="/contact"
                                 className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all duration-300"
                             >
-                                Get Started
+                                Develop Your Strategy
                                 <ArrowRight className="w-5 h-5" />
                             </Link>
                             <Link
-                                to="/services/data-analytics"
+                                to="/services/it-consulting"
                                 className="px-8 py-4 bg-white text-gray-700 font-semibold rounded-xl border-2 border-gray-200 hover:border-blue-600 hover:text-blue-600 transition-all duration-300"
                             >
-                                Back to Data Analytics
+                                Back to Consulting
                             </Link>
                         </div>
                     </motion.div>
@@ -114,9 +114,9 @@ const BusinessIntelligence = () => {
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Powerful Features</h2>
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Strategic Framework</h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Our Business Intelligence platform provides everything you need to make data-driven decisions
+                            A comprehensive approach to planning your technology future
                         </p>
                     </motion.div>
 
@@ -155,7 +155,7 @@ const BusinessIntelligence = () => {
                             <h2 className="text-4xl font-bold text-gray-900">Our Capabilities</h2>
                         </div>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Comprehensive BI solutions tailored to your business needs
+                            Expert guidance across the entire technology planning lifecycle
                         </p>
                     </motion.div>
 
@@ -186,9 +186,9 @@ const BusinessIntelligence = () => {
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Common Use Cases</h2>
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Success Stories</h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            See how businesses leverage our BI solutions across different domains
+                            How we help organizations achieve their strategic goals
                         </p>
                     </motion.div>
 
@@ -220,10 +220,10 @@ const BusinessIntelligence = () => {
                     >
                         <Sparkles className="w-16 h-16 text-white mx-auto mb-6" />
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                            Ready to Unlock Your Data's Potential?
+                            Ready to Plan Your Future?
                         </h2>
                         <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-                            Let our experts help you build a comprehensive Business Intelligence solution tailored to your needs.
+                            Let's define a technology strategy that propels your business forward.
                         </p>
                         <Link
                             to="/contact"
@@ -239,4 +239,4 @@ const BusinessIntelligence = () => {
     );
 };
 
-export default BusinessIntelligence;
+export default TechnologyStrategy;

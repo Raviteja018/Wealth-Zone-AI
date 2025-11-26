@@ -1,59 +1,59 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { TrendingUp, BarChart3, Target, Users, Zap, CheckCircle2, ArrowRight, Sparkles, Brain, LineChart, Shield } from 'lucide-react';
+import { Building2, Server, Shield, Database, Zap, CheckCircle2, ArrowRight, Sparkles, Globe, Lock, Users, Workflow } from 'lucide-react';
 
-const BusinessIntelligence = () => {
+const EnterpriseSolutions = () => {
     const features = [
         {
-            icon: Brain,
-            title: 'Advanced Analytics',
-            description: 'Leverage AI and machine learning to uncover hidden patterns and insights in your business data.'
-        },
-        {
-            icon: LineChart,
-            title: 'Real-Time Dashboards',
-            description: 'Monitor your KPIs and metrics in real-time with interactive, customizable dashboards.'
-        },
-        {
-            icon: Target,
-            title: 'Strategic Planning',
-            description: 'Make data-driven strategic decisions with comprehensive business intelligence reports.'
+            icon: Server,
+            title: 'Scalable Architecture',
+            description: 'Build systems that grow with your business, handling millions of transactions and users effortlessly.'
         },
         {
             icon: Shield,
-            title: 'Data Security',
-            description: 'Enterprise-grade security ensures your sensitive business data remains protected.'
+            title: 'Enterprise Security',
+            description: 'Bank-grade security protocols, end-to-end encryption, and compliance with industry standards.'
+        },
+        {
+            icon: Database,
+            title: 'Legacy Integration',
+            description: 'Seamlessly integrate modern applications with your existing legacy systems and databases.'
+        },
+        {
+            icon: Workflow,
+            title: 'Workflow Automation',
+            description: 'Digitize and automate complex business processes to improve efficiency and reduce errors.'
         }
     ];
 
     const capabilities = [
-        'Custom BI dashboard development',
-        'Data warehousing and ETL processes',
-        'Self-service analytics tools',
-        'Mobile BI applications',
-        'Automated report generation',
-        'Integration with existing systems',
-        'Performance metrics tracking',
-        'Competitive analysis tools'
+        'Microservices Architecture',
+        'Cloud Migration & Strategy',
+        'Custom ERP & CRM Solutions',
+        'API Management & Integration',
+        'Enterprise Data Warehousing',
+        'Business Process Management',
+        'DevOps & CI/CD Pipelines',
+        'High-Performance Computing'
     ];
 
     const useCases = [
         {
-            title: 'Sales Performance',
-            description: 'Track sales metrics, identify trends, and optimize your sales strategy with comprehensive analytics.'
+            title: 'Banking & Finance',
+            description: 'Secure transaction processing, fraud detection systems, and core banking platforms.'
         },
         {
-            title: 'Financial Analysis',
-            description: 'Monitor financial health, forecast revenue, and make informed budgeting decisions.'
+            title: 'Healthcare Systems',
+            description: 'HIPAA-compliant patient management, telemedicine platforms, and electronic health records.'
         },
         {
-            title: 'Customer Insights',
-            description: 'Understand customer behavior, preferences, and lifetime value to improve retention.'
+            title: 'Supply Chain',
+            description: 'Real-time inventory tracking, logistics management, and supplier coordination portals.'
         },
         {
-            title: 'Operational Efficiency',
-            description: 'Identify bottlenecks, optimize processes, and improve overall operational performance.'
+            title: 'Manufacturing',
+            description: 'IoT-enabled production monitoring, quality control systems, and predictive maintenance.'
         }
     ];
 
@@ -74,16 +74,16 @@ const BusinessIntelligence = () => {
                         className="text-center"
                     >
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-blue-200 rounded-full mb-6 shadow-sm">
-                            <TrendingUp className="w-5 h-5 text-blue-600" />
-                            <span className="text-sm font-semibold text-blue-600">Data Analytics</span>
+                            <Building2 className="w-5 h-5 text-blue-600" />
+                            <span className="text-sm font-semibold text-blue-600">Software Development</span>
                         </div>
 
                         <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                            Business <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-600">Intelligence</span>
+                            Enterprise <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-600">Solutions</span>
                         </h1>
 
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-                            Transform your raw data into actionable business insights with our comprehensive Business Intelligence solutions. Make smarter decisions faster with real-time analytics and intuitive dashboards.
+                            Empower your organization with robust, scalable, and secure software solutions designed to meet complex business challenges and drive digital transformation.
                         </p>
 
                         <div className="flex flex-wrap gap-4 justify-center">
@@ -95,10 +95,10 @@ const BusinessIntelligence = () => {
                                 <ArrowRight className="w-5 h-5" />
                             </Link>
                             <Link
-                                to="/services/data-analytics"
+                                to="/services/software-development"
                                 className="px-8 py-4 bg-white text-gray-700 font-semibold rounded-xl border-2 border-gray-200 hover:border-blue-600 hover:text-blue-600 transition-all duration-300"
                             >
-                                Back to Data Analytics
+                                Back to Development
                             </Link>
                         </div>
                     </motion.div>
@@ -114,9 +114,9 @@ const BusinessIntelligence = () => {
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Powerful Features</h2>
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Enterprise-Grade Features</h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Our Business Intelligence platform provides everything you need to make data-driven decisions
+                            Built for scale, security, and performance to support your mission-critical operations
                         </p>
                     </motion.div>
 
@@ -155,7 +155,7 @@ const BusinessIntelligence = () => {
                             <h2 className="text-4xl font-bold text-gray-900">Our Capabilities</h2>
                         </div>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Comprehensive BI solutions tailored to your business needs
+                            End-to-end enterprise development services tailored to your specific requirements
                         </p>
                     </motion.div>
 
@@ -186,9 +186,9 @@ const BusinessIntelligence = () => {
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Common Use Cases</h2>
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Industry Solutions</h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            See how businesses leverage our BI solutions across different domains
+                            Transforming businesses across various sectors with custom enterprise software
                         </p>
                     </motion.div>
 
@@ -220,10 +220,10 @@ const BusinessIntelligence = () => {
                     >
                         <Sparkles className="w-16 h-16 text-white mx-auto mb-6" />
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                            Ready to Unlock Your Data's Potential?
+                            Ready to Scale Your Business?
                         </h2>
                         <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-                            Let our experts help you build a comprehensive Business Intelligence solution tailored to your needs.
+                            Let's build the robust enterprise infrastructure your organization needs to thrive in the digital age.
                         </p>
                         <Link
                             to="/contact"
@@ -239,4 +239,4 @@ const BusinessIntelligence = () => {
     );
 };
 
-export default BusinessIntelligence;
+export default EnterpriseSolutions;

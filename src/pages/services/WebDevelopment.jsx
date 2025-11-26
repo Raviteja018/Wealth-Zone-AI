@@ -1,115 +1,240 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Monitor, Code, Palette, Zap, CheckCircle2, Globe, Smartphone, ArrowRight } from 'lucide-react';
+import { Globe, Code, Database, Zap, CheckCircle2, ArrowRight, Sparkles, Layout, Server, Smartphone, ShoppingCart } from 'lucide-react';
 
 const WebDevelopment = () => {
-  const services = [
+  const features = [
     {
-      title: 'Responsive Design',
-      description: 'Websites that look perfect on all devices, from mobile to desktop.',
-      icon: Smartphone,
-      gradient: 'from-blue-500 to-blue-600'
+      icon: Layout,
+      title: 'Frontend Development',
+      description: 'Responsive, interactive user interfaces built with modern frameworks like React and Next.js.'
     },
     {
-      title: 'Custom Solutions',
-      description: 'Tailored web applications built to meet your unique business needs.',
-      icon: Code,
-      gradient: 'from-blue-500 to-blue-600'
+      icon: Server,
+      title: 'Backend Development',
+      description: 'Robust, scalable server-side solutions using Node.js, Python, and cloud technologies.'
     },
     {
-      title: 'UI/UX Excellence',
-      description: 'Beautiful interfaces designed for optimal user experience and engagement.',
-      icon: Palette,
-      gradient: 'from-blue-500 to-blue-600'
+      icon: Database,
+      title: 'Database Design',
+      description: 'Efficient data modeling and management with SQL and NoSQL databases.'
     },
     {
-      title: 'Fast Performance',
-      description: 'Optimized websites that load quickly and deliver seamless experiences.',
       icon: Zap,
-      gradient: 'from-blue-500 to-blue-600'
+      title: 'Performance Optimization',
+      description: 'Blazing fast load times and optimized core web vitals for better SEO and user experience.'
     }
   ];
 
-  const benefits = [
-    'Modern, responsive design',
-    'SEO-friendly architecture',
-    'Cross-browser compatibility',
-    'Secure & reliable',
-    'Easy content management',
-    'Ongoing support & updates'
+  const capabilities = [
+    'Custom Web Application Development',
+    'Progressive Web Apps (PWA)',
+    'E-commerce Solutions',
+    'Content Management Systems (CMS)',
+    'API Development & Integration',
+    'Cloud Infrastructure & DevOps',
+    'SaaS Product Development',
+    'Website Maintenance & Support'
+  ];
+
+  const useCases = [
+    {
+      title: 'E-commerce Platforms',
+      description: 'Scalable online stores with secure payment gateways and inventory management.'
+    },
+    {
+      title: 'Enterprise Portals',
+      description: 'Internal tools and dashboards for managing business operations and data.'
+    },
+    {
+      title: 'Social Networks',
+      description: 'Community platforms with real-time messaging, feeds, and user profiles.'
+    },
+    {
+      title: 'SaaS Applications',
+      description: 'Subscription-based software products with multi-tenancy and subscription management.'
+    }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4">
-            <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-              Web Design & Development
-            </span>
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Create stunning, responsive websites that drive results and engage your audience
-          </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
-            >
-              <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${service.gradient} mb-4`}>
-                <service.icon className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">{service.title}</h3>
-              <p className="text-gray-600 text-sm">{service.description}</p>
-            </motion.div>
-          ))}
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-blue-50 via-white to-sky-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-sky-400 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Why Choose Our Web Development Services?</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="flex items-center space-x-3"
+        <div className="relative max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-blue-200 rounded-full mb-6 shadow-sm">
+              <Globe className="w-5 h-5 text-blue-600" />
+              <span className="text-sm font-semibold text-blue-600">Web Solutions</span>
+            </div>
+
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+              Web <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-600">Development</span>
+            </h1>
+
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+              Build your digital presence with high-performance, scalable, and secure web applications tailored to your business goals.
+            </p>
+
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700">{benefit}</span>
+                Start Your Project
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+              <Link
+                to="/services/software-development"
+                className="px-8 py-4 bg-white text-gray-700 font-semibold rounded-xl border-2 border-gray-200 hover:border-blue-600 hover:text-blue-600 transition-all duration-300"
+              >
+                Back to Development
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Key Features */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Full-Stack Expertise</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Comprehensive web development services covering every layer of your application
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {features.map((feature, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-gradient-to-br from-blue-50 to-sky-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300"
+              >
+                <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-sky-500 rounded-xl flex items-center justify-center mb-4">
+                  <feature.icon className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
+      </section>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="text-center"
-        >
-          <Link
-            to="/contact"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white font-semibold rounded-xl hover:shadow-lg transition-all"
+      {/* Capabilities */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
           >
-            Get Started Today
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Link>
-        </motion.div>
-      </div>
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <Zap className="w-8 h-8 text-blue-600" />
+              <h2 className="text-4xl font-bold text-gray-900">Our Capabilities</h2>
+            </div>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              From simple websites to complex web applications, we have the skills to deliver
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {capabilities.map((capability, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+                className="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all"
+              >
+                <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-700">{capability}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">What We Build</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Tailored web solutions for diverse business needs
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {useCases.map((useCase, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-white border-2 border-gray-100 p-8 rounded-2xl hover:border-blue-200 hover:shadow-lg transition-all duration-300"
+              >
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{useCase.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{useCase.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-sky-600">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+          >
+            <Sparkles className="w-16 h-16 text-white mx-auto mb-6" />
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Ready to Launch Your Website?
+            </h2>
+            <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+              Let's build a web presence that drives growth and engages your audience.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-gray-50 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+            >
+              Schedule a Consultation
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 };

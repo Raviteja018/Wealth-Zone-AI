@@ -1,33 +1,38 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Bot, MessageSquare, Workflow, Brain, Sparkles, ArrowRight, CheckCircle2, Zap } from 'lucide-react';
 
 const AIAgents = () => {
+  const navigate = useNavigate();
   const agents = [
     {
       title: 'Chatbots & Virtual Assistants',
       description: 'Deploy intelligent AI agents for 24/7 customer engagement and support.',
       icon: MessageSquare,
-      gradient: 'from-violet-500 to-purple-500'
+      gradient: 'from-violet-500 to-purple-500',
+      link: '/services/ai-agents/chatbots-and-virtual-assistants'
     },
     {
       title: 'Process Automation Agents',
       description: 'Automate repetitive tasks with smart AI agents that learn and adapt.',
       icon: Workflow,
-      gradient: 'from-blue-500 to-cyan-500'
+      gradient: 'from-blue-500 to-cyan-500',
+      link: '/services/ai-agents/process-automation-agents'
     },
     {
       title: 'Data Analysis Agents',
       description: 'AI agents that monitor, analyze, and generate insights from your data.',
       icon: Brain,
-      gradient: 'from-pink-500 to-rose-500'
+      gradient: 'from-pink-500 to-rose-500',
+      link: '/services/ai-agents/data-analysis-agents'
     },
     {
       title: 'Custom AI Agent Development',
       description: 'Tailored AI agents built to solve your unique business challenges.',
       icon: Bot,
-      gradient: 'from-emerald-500 to-teal-500'
+      gradient: 'from-emerald-500 to-teal-500',
+      link: '/services/ai-agents/custom-ai-agent-development'
     }
   ];
 
@@ -67,18 +72,23 @@ const AIAgents = () => {
             return (
               <motion.div
                 key={index}
-                className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden"
+                className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden cursor-pointer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 * index }}
                 whileHover={{ y: -5 }}
+                onClick={() => navigate(agent.link)}
               >
-                <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500 to-blue-600 opacity-10 rounded-bl-full transition-all duration-300 group-hover:scale-150`}></div>
-                <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 mb-4`}>
+                <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${agent.gradient} opacity-10 rounded-bl-full transition-all duration-300 group-hover:scale-150`}></div>
+                <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${agent.gradient} mb-4`}>
                   <IconComponent className="w-8 h-8 text-white" strokeWidth={2} />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">{agent.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{agent.description}</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">{agent.title}</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">{agent.description}</p>
+                <div className="flex items-center gap-2 text-blue-600 font-semibold group-hover:gap-3 transition-all">
+                  <span>Learn More</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
               </motion.div>
             );
           })}
@@ -110,7 +120,7 @@ const AIAgents = () => {
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600 rounded-2xl p-12 text-center relative overflow-hidden"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -130,7 +140,7 @@ const AIAgents = () => {
             </Link>
           </div>
         </motion.div>
-        
+
       </div>
     </div>
   );

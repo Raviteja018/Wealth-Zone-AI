@@ -1,59 +1,59 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { TrendingUp, BarChart3, Target, Users, Zap, CheckCircle2, ArrowRight, Sparkles, Brain, LineChart, Shield } from 'lucide-react';
+import { Cloud, Server, Database, Layout, Zap, CheckCircle2, ArrowRight, Sparkles, Network, Lock, Globe, Cpu } from 'lucide-react';
 
-const BusinessIntelligence = () => {
+const CloudArchitecture = () => {
     const features = [
         {
-            icon: Brain,
-            title: 'Advanced Analytics',
-            description: 'Leverage AI and machine learning to uncover hidden patterns and insights in your business data.'
+            icon: Layout,
+            title: 'Scalable Design',
+            description: 'Architectures that grow with your business, handling increased loads effortlessly.'
         },
         {
-            icon: LineChart,
-            title: 'Real-Time Dashboards',
-            description: 'Monitor your KPIs and metrics in real-time with interactive, customizable dashboards.'
+            icon: Lock,
+            title: 'Security First',
+            description: 'Embedded security controls and compliance frameworks within the architecture.'
         },
         {
-            icon: Target,
-            title: 'Strategic Planning',
-            description: 'Make data-driven strategic decisions with comprehensive business intelligence reports.'
+            icon: Zap,
+            title: 'High Availability',
+            description: 'Fault-tolerant systems designed for maximum uptime and reliability.'
         },
         {
-            icon: Shield,
-            title: 'Data Security',
-            description: 'Enterprise-grade security ensures your sensitive business data remains protected.'
+            icon: Database,
+            title: 'Data Optimization',
+            description: 'Efficient data storage and retrieval strategies for performance and cost.'
         }
     ];
 
     const capabilities = [
-        'Custom BI dashboard development',
-        'Data warehousing and ETL processes',
-        'Self-service analytics tools',
-        'Mobile BI applications',
-        'Automated report generation',
-        'Integration with existing systems',
-        'Performance metrics tracking',
-        'Competitive analysis tools'
+        'Microservices Architecture',
+        'Serverless Computing',
+        'Container Orchestration (Kubernetes)',
+        'Multi-Region Deployment',
+        'Cloud-Native Development',
+        'DevOps Integration',
+        'Cost Optimization Strategies',
+        'Performance Tuning'
     ];
 
     const useCases = [
         {
-            title: 'Sales Performance',
-            description: 'Track sales metrics, identify trends, and optimize your sales strategy with comprehensive analytics.'
+            title: 'Global SaaS Platforms',
+            description: 'Designing distributed systems for low-latency access worldwide.'
         },
         {
-            title: 'Financial Analysis',
-            description: 'Monitor financial health, forecast revenue, and make informed budgeting decisions.'
+            title: 'Big Data Processing',
+            description: 'Architecting pipelines for real-time analytics and machine learning.'
         },
         {
-            title: 'Customer Insights',
-            description: 'Understand customer behavior, preferences, and lifetime value to improve retention.'
+            title: 'E-commerce Scaling',
+            description: 'Building infrastructure to handle peak shopping seasons without crashing.'
         },
         {
-            title: 'Operational Efficiency',
-            description: 'Identify bottlenecks, optimize processes, and improve overall operational performance.'
+            title: 'IoT Ecosystems',
+            description: 'Managing massive device connectivity and data ingestion streams.'
         }
     ];
 
@@ -74,16 +74,16 @@ const BusinessIntelligence = () => {
                         className="text-center"
                     >
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-blue-200 rounded-full mb-6 shadow-sm">
-                            <TrendingUp className="w-5 h-5 text-blue-600" />
-                            <span className="text-sm font-semibold text-blue-600">Data Analytics</span>
+                            <Cloud className="w-5 h-5 text-blue-600" />
+                            <span className="text-sm font-semibold text-blue-600">Cloud Foundation</span>
                         </div>
 
                         <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                            Business <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-600">Intelligence</span>
+                            Cloud <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-600">Architecture</span>
                         </h1>
 
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-                            Transform your raw data into actionable business insights with our comprehensive Business Intelligence solutions. Make smarter decisions faster with real-time analytics and intuitive dashboards.
+                            Build a robust, future-proof cloud foundation. We design architectures that drive innovation, efficiency, and business agility.
                         </p>
 
                         <div className="flex flex-wrap gap-4 justify-center">
@@ -91,14 +91,14 @@ const BusinessIntelligence = () => {
                                 to="/contact"
                                 className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all duration-300"
                             >
-                                Get Started
+                                Design Your Cloud
                                 <ArrowRight className="w-5 h-5" />
                             </Link>
                             <Link
-                                to="/services/data-analytics"
+                                to="/services/cloud-services"
                                 className="px-8 py-4 bg-white text-gray-700 font-semibold rounded-xl border-2 border-gray-200 hover:border-blue-600 hover:text-blue-600 transition-all duration-300"
                             >
-                                Back to Data Analytics
+                                Back to Cloud Services
                             </Link>
                         </div>
                     </motion.div>
@@ -114,9 +114,9 @@ const BusinessIntelligence = () => {
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Powerful Features</h2>
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Architectural Principles</h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Our Business Intelligence platform provides everything you need to make data-driven decisions
+                            Designing for excellence, reliability, and scale
                         </p>
                     </motion.div>
 
@@ -155,7 +155,7 @@ const BusinessIntelligence = () => {
                             <h2 className="text-4xl font-bold text-gray-900">Our Capabilities</h2>
                         </div>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Comprehensive BI solutions tailored to your business needs
+                            Expertise in modern cloud technologies and patterns
                         </p>
                     </motion.div>
 
@@ -186,9 +186,9 @@ const BusinessIntelligence = () => {
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Common Use Cases</h2>
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Architecture in Action</h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            See how businesses leverage our BI solutions across different domains
+                            Solving complex business challenges with smart design
                         </p>
                     </motion.div>
 
@@ -220,10 +220,10 @@ const BusinessIntelligence = () => {
                     >
                         <Sparkles className="w-16 h-16 text-white mx-auto mb-6" />
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                            Ready to Unlock Your Data's Potential?
+                            Ready to Architect Your Future?
                         </h2>
                         <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-                            Let our experts help you build a comprehensive Business Intelligence solution tailored to your needs.
+                            Let's design a cloud environment that empowers your business to reach new heights.
                         </p>
                         <Link
                             to="/contact"
@@ -239,4 +239,4 @@ const BusinessIntelligence = () => {
     );
 };
 
-export default BusinessIntelligence;
+export default CloudArchitecture;

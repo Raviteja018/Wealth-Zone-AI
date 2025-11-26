@@ -1,59 +1,59 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { TrendingUp, BarChart3, Target, Users, Zap, CheckCircle2, ArrowRight, Sparkles, Brain, LineChart, Shield } from 'lucide-react';
+import { Workflow, Zap, ArrowRight, Sparkles, Repeat, Settings, FileText, Database, CheckCircle2, Clock, Layers, Bot } from 'lucide-react';
 
-const BusinessIntelligence = () => {
+const ProcessAutomationAgents = () => {
     const features = [
         {
-            icon: Brain,
-            title: 'Advanced Analytics',
-            description: 'Leverage AI and machine learning to uncover hidden patterns and insights in your business data.'
+            icon: Repeat,
+            title: 'Repetitive Task Automation',
+            description: 'Automate mundane, repetitive tasks to free up your team for high-value work.'
         },
         {
-            icon: LineChart,
-            title: 'Real-Time Dashboards',
-            description: 'Monitor your KPIs and metrics in real-time with interactive, customizable dashboards.'
+            icon: Clock,
+            title: 'Increased Speed',
+            description: 'Execute processes at machine speed, significantly reducing turnaround times.'
         },
         {
-            icon: Target,
-            title: 'Strategic Planning',
-            description: 'Make data-driven strategic decisions with comprehensive business intelligence reports.'
+            icon: CheckCircle2,
+            title: 'Error Reduction',
+            description: 'Eliminate human error in data entry, processing, and calculations.'
         },
         {
-            icon: Shield,
-            title: 'Data Security',
-            description: 'Enterprise-grade security ensures your sensitive business data remains protected.'
+            icon: Layers,
+            title: 'Seamless Integration',
+            description: 'Connect disparate systems and applications to create unified workflows.'
         }
     ];
 
     const capabilities = [
-        'Custom BI dashboard development',
-        'Data warehousing and ETL processes',
-        'Self-service analytics tools',
-        'Mobile BI applications',
-        'Automated report generation',
-        'Integration with existing systems',
-        'Performance metrics tracking',
-        'Competitive analysis tools'
+        'Robotic Process Automation (RPA)',
+        'Intelligent Document Processing',
+        'Workflow Orchestration',
+        'Data Extraction & Migration',
+        'Invoice Processing Automation',
+        'HR Onboarding Automation',
+        'Supply Chain Automation',
+        'Email Classification & Routing'
     ];
 
     const useCases = [
         {
-            title: 'Sales Performance',
-            description: 'Track sales metrics, identify trends, and optimize your sales strategy with comprehensive analytics.'
+            title: 'Finance & Accounting',
+            description: 'Automating accounts payable, receivable, and reconciliation processes.'
         },
         {
-            title: 'Financial Analysis',
-            description: 'Monitor financial health, forecast revenue, and make informed budgeting decisions.'
+            title: 'Human Resources',
+            description: 'Streamlining employee onboarding, payroll processing, and benefits administration.'
         },
         {
-            title: 'Customer Insights',
-            description: 'Understand customer behavior, preferences, and lifetime value to improve retention.'
+            title: 'Customer Service',
+            description: 'Automating ticket routing, status updates, and refund processing.'
         },
         {
-            title: 'Operational Efficiency',
-            description: 'Identify bottlenecks, optimize processes, and improve overall operational performance.'
+            title: 'Logistics',
+            description: 'Tracking shipments, managing inventory, and optimizing routes automatically.'
         }
     ];
 
@@ -74,16 +74,16 @@ const BusinessIntelligence = () => {
                         className="text-center"
                     >
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-blue-200 rounded-full mb-6 shadow-sm">
-                            <TrendingUp className="w-5 h-5 text-blue-600" />
-                            <span className="text-sm font-semibold text-blue-600">Data Analytics</span>
+                            <Workflow className="w-5 h-5 text-blue-600" />
+                            <span className="text-sm font-semibold text-blue-600">Streamlined Operations</span>
                         </div>
 
                         <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                            Business <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-600">Intelligence</span>
+                            Process Automation <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-600">Agents</span>
                         </h1>
 
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-                            Transform your raw data into actionable business insights with our comprehensive Business Intelligence solutions. Make smarter decisions faster with real-time analytics and intuitive dashboards.
+                            Drive efficiency and productivity by automating complex business processes with intelligent agents.
                         </p>
 
                         <div className="flex flex-wrap gap-4 justify-center">
@@ -91,14 +91,14 @@ const BusinessIntelligence = () => {
                                 to="/contact"
                                 className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all duration-300"
                             >
-                                Get Started
+                                Automate Processes
                                 <ArrowRight className="w-5 h-5" />
                             </Link>
                             <Link
-                                to="/services/data-analytics"
+                                to="/services/ai-agents"
                                 className="px-8 py-4 bg-white text-gray-700 font-semibold rounded-xl border-2 border-gray-200 hover:border-blue-600 hover:text-blue-600 transition-all duration-300"
                             >
-                                Back to Data Analytics
+                                Back to AI Agents
                             </Link>
                         </div>
                     </motion.div>
@@ -114,9 +114,9 @@ const BusinessIntelligence = () => {
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Powerful Features</h2>
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Efficiency Redefined</h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Our Business Intelligence platform provides everything you need to make data-driven decisions
+                            Transform manual workflows into seamless, automated operations.
                         </p>
                     </motion.div>
 
@@ -155,7 +155,7 @@ const BusinessIntelligence = () => {
                             <h2 className="text-4xl font-bold text-gray-900">Our Capabilities</h2>
                         </div>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Comprehensive BI solutions tailored to your business needs
+                            End-to-end automation solutions for every department
                         </p>
                     </motion.div>
 
@@ -169,7 +169,7 @@ const BusinessIntelligence = () => {
                                 transition={{ delay: idx * 0.05 }}
                                 className="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all"
                             >
-                                <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                                <Bot className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
                                 <span className="text-gray-700">{capability}</span>
                             </motion.div>
                         ))}
@@ -186,9 +186,9 @@ const BusinessIntelligence = () => {
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Common Use Cases</h2>
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Automation in Action</h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            See how businesses leverage our BI solutions across different domains
+                            Streamlining operations across industries
                         </p>
                     </motion.div>
 
@@ -220,10 +220,10 @@ const BusinessIntelligence = () => {
                     >
                         <Sparkles className="w-16 h-16 text-white mx-auto mb-6" />
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                            Ready to Unlock Your Data's Potential?
+                            Ready to Streamline?
                         </h2>
                         <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-                            Let our experts help you build a comprehensive Business Intelligence solution tailored to your needs.
+                            Discover how process automation can revolutionize your business operations.
                         </p>
                         <Link
                             to="/contact"
@@ -239,4 +239,4 @@ const BusinessIntelligence = () => {
     );
 };
 
-export default BusinessIntelligence;
+export default ProcessAutomationAgents;

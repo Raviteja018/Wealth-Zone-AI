@@ -1,59 +1,59 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { TrendingUp, BarChart3, Target, Users, Zap, CheckCircle2, ArrowRight, Sparkles, Brain, LineChart, Shield } from 'lucide-react';
+import { Database, Server, Cloud, HardDrive, Zap, CheckCircle2, ArrowRight, Sparkles, Shield, Network, Cpu, FileJson } from 'lucide-react';
 
-const BusinessIntelligence = () => {
+const BigDataSolutions = () => {
     const features = [
         {
-            icon: Brain,
-            title: 'Advanced Analytics',
-            description: 'Leverage AI and machine learning to uncover hidden patterns and insights in your business data.'
+            icon: Database,
+            title: 'Data Warehousing',
+            description: 'Centralized repositories designed to store and manage large volumes of structured and unstructured data.'
         },
         {
-            icon: LineChart,
-            title: 'Real-Time Dashboards',
-            description: 'Monitor your KPIs and metrics in real-time with interactive, customizable dashboards.'
+            icon: Server,
+            title: 'Data Processing',
+            description: 'High-speed processing frameworks to handle massive datasets efficiently and reliably.'
         },
         {
-            icon: Target,
-            title: 'Strategic Planning',
-            description: 'Make data-driven strategic decisions with comprehensive business intelligence reports.'
+            icon: Cloud,
+            title: 'Cloud Integration',
+            description: 'Seamless integration with major cloud providers for scalable and flexible storage solutions.'
         },
         {
             icon: Shield,
-            title: 'Data Security',
-            description: 'Enterprise-grade security ensures your sensitive business data remains protected.'
+            title: 'Data Governance',
+            description: 'Robust frameworks to ensure data quality, security, and compliance across your organization.'
         }
     ];
 
     const capabilities = [
-        'Custom BI dashboard development',
-        'Data warehousing and ETL processes',
-        'Self-service analytics tools',
-        'Mobile BI applications',
-        'Automated report generation',
-        'Integration with existing systems',
-        'Performance metrics tracking',
-        'Competitive analysis tools'
+        'Hadoop & Spark implementation',
+        'Real-time data pipelines',
+        'NoSQL database management',
+        'Data lake architecture',
+        'ETL/ELT process optimization',
+        'Cloud migration services',
+        'Big data security',
+        'Scalable infrastructure design'
     ];
 
     const useCases = [
         {
-            title: 'Sales Performance',
-            description: 'Track sales metrics, identify trends, and optimize your sales strategy with comprehensive analytics.'
+            title: 'Customer 360',
+            description: 'Aggregate data from all touchpoints to create a unified view of your customers.'
         },
         {
-            title: 'Financial Analysis',
-            description: 'Monitor financial health, forecast revenue, and make informed budgeting decisions.'
+            title: 'IoT Analytics',
+            description: 'Process and analyze massive streams of data from connected devices in real-time.'
         },
         {
-            title: 'Customer Insights',
-            description: 'Understand customer behavior, preferences, and lifetime value to improve retention.'
+            title: 'Log Analysis',
+            description: 'Analyze server logs and system data to improve performance and security.'
         },
         {
-            title: 'Operational Efficiency',
-            description: 'Identify bottlenecks, optimize processes, and improve overall operational performance.'
+            title: 'Recommendation Engines',
+            description: 'Build powerful recommendation systems based on user behavior and preferences.'
         }
     ];
 
@@ -74,16 +74,16 @@ const BusinessIntelligence = () => {
                         className="text-center"
                     >
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-blue-200 rounded-full mb-6 shadow-sm">
-                            <TrendingUp className="w-5 h-5 text-blue-600" />
+                            <Database className="w-5 h-5 text-blue-600" />
                             <span className="text-sm font-semibold text-blue-600">Data Analytics</span>
                         </div>
 
                         <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                            Business <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-600">Intelligence</span>
+                            Big Data <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-600">Solutions</span>
                         </h1>
 
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-                            Transform your raw data into actionable business insights with our comprehensive Business Intelligence solutions. Make smarter decisions faster with real-time analytics and intuitive dashboards.
+                            Unlock the potential of your massive datasets. We build scalable infrastructure and processing pipelines to handle volume, velocity, and variety.
                         </p>
 
                         <div className="flex flex-wrap gap-4 justify-center">
@@ -114,9 +114,9 @@ const BusinessIntelligence = () => {
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Powerful Features</h2>
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Scalable Infrastructure</h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Our Business Intelligence platform provides everything you need to make data-driven decisions
+                            Robust solutions built to handle data at any scale
                         </p>
                     </motion.div>
 
@@ -155,7 +155,7 @@ const BusinessIntelligence = () => {
                             <h2 className="text-4xl font-bold text-gray-900">Our Capabilities</h2>
                         </div>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Comprehensive BI solutions tailored to your business needs
+                            End-to-end big data services from ingestion to analysis
                         </p>
                     </motion.div>
 
@@ -188,7 +188,7 @@ const BusinessIntelligence = () => {
                     >
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">Common Use Cases</h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            See how businesses leverage our BI solutions across different domains
+                            See how big data solutions drive value across different sectors
                         </p>
                     </motion.div>
 
@@ -220,10 +220,10 @@ const BusinessIntelligence = () => {
                     >
                         <Sparkles className="w-16 h-16 text-white mx-auto mb-6" />
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                            Ready to Unlock Your Data's Potential?
+                            Ready to Harness Your Data?
                         </h2>
                         <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-                            Let our experts help you build a comprehensive Business Intelligence solution tailored to your needs.
+                            Let's build the infrastructure you need to turn big data into big opportunities.
                         </p>
                         <Link
                             to="/contact"
@@ -239,4 +239,4 @@ const BusinessIntelligence = () => {
     );
 };
 
-export default BusinessIntelligence;
+export default BigDataSolutions;

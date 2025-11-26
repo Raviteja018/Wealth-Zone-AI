@@ -11,28 +11,28 @@ const DataAnalytics = () => {
       title: 'Business Intelligence',
       description: 'Transform raw data into actionable business insights with our advanced analytics tools.',
       icon: TrendingUp,
-      gradient: 'from-blue-500 to-cyan-500',
+      gradient: 'from-blue-500 to-sky-500',
       slug: 'business-intelligence'
     },
     {
       title: 'Predictive Analytics',
       description: 'Leverage historical data to forecast trends and make data-driven decisions.',
       icon: BarChart3,
-      gradient: 'from-purple-500 to-pink-500',
+      gradient: 'from-blue-600 to-indigo-600',
       slug: 'predictive-analytics'
     },
     {
       title: 'Data Visualization',
       description: 'Interactive dashboards and reports that make complex data easy to understand.',
       icon: PieChart,
-      gradient: 'from-emerald-500 to-teal-500',
+      gradient: 'from-sky-500 to-blue-600',
       slug: 'data-visualization'
     },
     {
       title: 'Big Data Solutions',
       description: 'Handle large volumes of data efficiently with our scalable big data solutions.',
       icon: Database,
-      gradient: 'from-orange-500 to-red-500',
+      gradient: 'from-indigo-500 to-blue-500',
       slug: 'big-data-solutions'
     }
   ];
@@ -100,7 +100,7 @@ const DataAnalytics = () => {
         </div>
 
         <motion.div
-          className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 mb-16"
+          className="bg-gradient-to-br from-blue-50 to-sky-50 rounded-2xl p-8 mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}

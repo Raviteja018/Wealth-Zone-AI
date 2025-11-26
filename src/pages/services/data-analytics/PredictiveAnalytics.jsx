@@ -1,59 +1,60 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { TrendingUp, BarChart3, Target, Users, Zap, CheckCircle2, ArrowRight, Sparkles, Brain, LineChart, Shield } from 'lucide-react';
+import { BarChart3, TrendingUp, Target, Brain, Zap, CheckCircle2, ArrowRight, Sparkles, LineChart, Shield, Activity, Search } from 'lucide-react';
 
-const BusinessIntelligence = () => {
+const PredictiveAnalytics = () => {
     const features = [
         {
             icon: Brain,
-            title: 'Advanced Analytics',
-            description: 'Leverage AI and machine learning to uncover hidden patterns and insights in your business data.'
+            title: 'Machine Learning Models',
+            description: 'Custom ML models trained on your data to forecast future trends and behaviors.'
         },
         {
-            icon: LineChart,
-            title: 'Real-Time Dashboards',
-            description: 'Monitor your KPIs and metrics in real-time with interactive, customizable dashboards.'
+            icon: Activity,
+            title: 'Risk Assessment',
+            description: 'Identify potential risks and opportunities before they happen with predictive modeling.'
         },
         {
             icon: Target,
-            title: 'Strategic Planning',
-            description: 'Make data-driven strategic decisions with comprehensive business intelligence reports.'
+            title: 'Demand Forecasting',
+            description: 'Optimize inventory and resource allocation by accurately predicting future demand.'
         },
         {
-            icon: Shield,
-            title: 'Data Security',
-            description: 'Enterprise-grade security ensures your sensitive business data remains protected.'
+            icon: Search,
+            title: 'Pattern Recognition',
+            description: 'Detect complex patterns and anomalies in large datasets automatically.'
         }
     ];
 
     const capabilities = [
-        'Custom BI dashboard development',
-        'Data warehousing and ETL processes',
-        'Self-service analytics tools',
-        'Mobile BI applications',
-        'Automated report generation',
-        'Integration with existing systems',
-        'Performance metrics tracking',
-        'Competitive analysis tools'
+        'Time series forecasting',
+        'Customer churn prediction',
+        'Sales forecasting',
+        'Risk modeling & scoring',
+        'Predictive maintenance',
+        'Fraud detection',
+        'Market trend analysis',
+        'Dynamic pricing optimization'
     ];
 
     const useCases = [
         {
-            title: 'Sales Performance',
-            description: 'Track sales metrics, identify trends, and optimize your sales strategy with comprehensive analytics.'
+            title: 'Retail & E-commerce',
+            description: 'Forecast inventory needs and personalize product recommendations for customers.'
         },
         {
-            title: 'Financial Analysis',
-            description: 'Monitor financial health, forecast revenue, and make informed budgeting decisions.'
+            title: 'Financial Services',
+            description: 'Detect fraudulent transactions and assess credit risk with high accuracy.'
         },
         {
-            title: 'Customer Insights',
-            description: 'Understand customer behavior, preferences, and lifetime value to improve retention.'
+            title: 'Manufacturing',
+            description: 'Predict equipment failures before they occur to minimize downtime.'
         },
         {
-            title: 'Operational Efficiency',
-            description: 'Identify bottlenecks, optimize processes, and improve overall operational performance.'
+            title: 'Healthcare',
+            description: 'Predict patient outcomes and optimize hospital resource utilization.'
         }
     ];
 
@@ -74,16 +75,16 @@ const BusinessIntelligence = () => {
                         className="text-center"
                     >
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-blue-200 rounded-full mb-6 shadow-sm">
-                            <TrendingUp className="w-5 h-5 text-blue-600" />
+                            <BarChart3 className="w-5 h-5 text-blue-600" />
                             <span className="text-sm font-semibold text-blue-600">Data Analytics</span>
                         </div>
 
                         <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                            Business <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-600">Intelligence</span>
+                            Predictive <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-600">Analytics</span>
                         </h1>
 
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-                            Transform your raw data into actionable business insights with our comprehensive Business Intelligence solutions. Make smarter decisions faster with real-time analytics and intuitive dashboards.
+                            Stop guessing and start knowing. Leverage the power of historical data and machine learning to forecast trends, identify risks, and make proactive decisions.
                         </p>
 
                         <div className="flex flex-wrap gap-4 justify-center">
@@ -114,9 +115,9 @@ const BusinessIntelligence = () => {
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Powerful Features</h2>
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Future-Ready Features</h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Our Business Intelligence platform provides everything you need to make data-driven decisions
+                            Advanced predictive capabilities to keep your business ahead of the curve
                         </p>
                     </motion.div>
 
@@ -155,7 +156,7 @@ const BusinessIntelligence = () => {
                             <h2 className="text-4xl font-bold text-gray-900">Our Capabilities</h2>
                         </div>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Comprehensive BI solutions tailored to your business needs
+                            Comprehensive predictive modeling solutions tailored to your industry
                         </p>
                     </motion.div>
 
@@ -188,7 +189,7 @@ const BusinessIntelligence = () => {
                     >
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">Common Use Cases</h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            See how businesses leverage our BI solutions across different domains
+                            See how predictive analytics drives value across different sectors
                         </p>
                     </motion.div>
 
@@ -220,10 +221,10 @@ const BusinessIntelligence = () => {
                     >
                         <Sparkles className="w-16 h-16 text-white mx-auto mb-6" />
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                            Ready to Unlock Your Data's Potential?
+                            Ready to Predict the Future?
                         </h2>
                         <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-                            Let our experts help you build a comprehensive Business Intelligence solution tailored to your needs.
+                            Start making proactive decisions today with our advanced predictive analytics solutions.
                         </p>
                         <Link
                             to="/contact"
@@ -239,4 +240,4 @@ const BusinessIntelligence = () => {
     );
 };
 
-export default BusinessIntelligence;
+export default PredictiveAnalytics;

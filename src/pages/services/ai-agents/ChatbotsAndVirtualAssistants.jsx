@@ -1,59 +1,59 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { TrendingUp, BarChart3, Target, Users, Zap, CheckCircle2, ArrowRight, Sparkles, Brain, LineChart, Shield } from 'lucide-react';
+import { MessageSquare, Bot, ArrowRight, Sparkles, User, Clock, Globe, Smile, MessageCircle, Mic, Smartphone, Zap } from 'lucide-react';
 
-const BusinessIntelligence = () => {
+const ChatbotsAndVirtualAssistants = () => {
     const features = [
         {
-            icon: Brain,
-            title: 'Advanced Analytics',
-            description: 'Leverage AI and machine learning to uncover hidden patterns and insights in your business data.'
+            icon: Clock,
+            title: '24/7 Availability',
+            description: 'Provide instant support to your customers around the clock, without human intervention.'
         },
         {
-            icon: LineChart,
-            title: 'Real-Time Dashboards',
-            description: 'Monitor your KPIs and metrics in real-time with interactive, customizable dashboards.'
+            icon: Globe,
+            title: 'Multilingual Support',
+            description: 'Communicate with customers in their preferred language with real-time translation capabilities.'
         },
         {
-            icon: Target,
-            title: 'Strategic Planning',
-            description: 'Make data-driven strategic decisions with comprehensive business intelligence reports.'
+            icon: Smile,
+            title: 'Personalized Interactions',
+            description: 'Deliver tailored responses based on user history and preferences.'
         },
         {
-            icon: Shield,
-            title: 'Data Security',
-            description: 'Enterprise-grade security ensures your sensitive business data remains protected.'
+            icon: Zap,
+            title: 'Instant Resolution',
+            description: 'Resolve common queries immediately, freeing up your human agents for complex issues.'
         }
     ];
 
     const capabilities = [
-        'Custom BI dashboard development',
-        'Data warehousing and ETL processes',
-        'Self-service analytics tools',
-        'Mobile BI applications',
-        'Automated report generation',
-        'Integration with existing systems',
-        'Performance metrics tracking',
-        'Competitive analysis tools'
+        'Natural Language Processing (NLP)',
+        'Sentiment Analysis',
+        'Omnichannel Deployment',
+        'Voice-Enabled Assistants',
+        'Contextual Awareness',
+        'CRM Integration',
+        'Custom Personality Design',
+        'Analytics & Insights'
     ];
 
     const useCases = [
         {
-            title: 'Sales Performance',
-            description: 'Track sales metrics, identify trends, and optimize your sales strategy with comprehensive analytics.'
+            title: 'Customer Support',
+            description: 'Handling FAQs, order tracking, and troubleshooting requests automatically.'
         },
         {
-            title: 'Financial Analysis',
-            description: 'Monitor financial health, forecast revenue, and make informed budgeting decisions.'
+            title: 'Lead Generation',
+            description: 'Qualifying leads through interactive conversations and scheduling appointments.'
         },
         {
-            title: 'Customer Insights',
-            description: 'Understand customer behavior, preferences, and lifetime value to improve retention.'
+            title: 'E-commerce Assistant',
+            description: 'Guiding users through product selection and checkout processes.'
         },
         {
-            title: 'Operational Efficiency',
-            description: 'Identify bottlenecks, optimize processes, and improve overall operational performance.'
+            title: 'Internal Helpdesk',
+            description: 'Assisting employees with IT requests, HR queries, and onboarding.'
         }
     ];
 
@@ -74,16 +74,16 @@ const BusinessIntelligence = () => {
                         className="text-center"
                     >
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-blue-200 rounded-full mb-6 shadow-sm">
-                            <TrendingUp className="w-5 h-5 text-blue-600" />
-                            <span className="text-sm font-semibold text-blue-600">Data Analytics</span>
+                            <MessageSquare className="w-5 h-5 text-blue-600" />
+                            <span className="text-sm font-semibold text-blue-600">Always On Support</span>
                         </div>
 
                         <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                            Business <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-600">Intelligence</span>
+                            Chatbots & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-600">Virtual Assistants</span>
                         </h1>
 
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-                            Transform your raw data into actionable business insights with our comprehensive Business Intelligence solutions. Make smarter decisions faster with real-time analytics and intuitive dashboards.
+                            Transform your customer experience with intelligent, conversational AI agents that are always ready to help.
                         </p>
 
                         <div className="flex flex-wrap gap-4 justify-center">
@@ -91,14 +91,14 @@ const BusinessIntelligence = () => {
                                 to="/contact"
                                 className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all duration-300"
                             >
-                                Get Started
+                                Build Your Bot
                                 <ArrowRight className="w-5 h-5" />
                             </Link>
                             <Link
-                                to="/services/data-analytics"
+                                to="/services/ai-agents"
                                 className="px-8 py-4 bg-white text-gray-700 font-semibold rounded-xl border-2 border-gray-200 hover:border-blue-600 hover:text-blue-600 transition-all duration-300"
                             >
-                                Back to Data Analytics
+                                Back to AI Agents
                             </Link>
                         </div>
                     </motion.div>
@@ -114,9 +114,9 @@ const BusinessIntelligence = () => {
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Powerful Features</h2>
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Intelligent Conversations</h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Our Business Intelligence platform provides everything you need to make data-driven decisions
+                            More than just scripted responses—our agents understand context and intent.
                         </p>
                     </motion.div>
 
@@ -151,11 +151,11 @@ const BusinessIntelligence = () => {
                         className="text-center mb-12"
                     >
                         <div className="flex items-center justify-center gap-3 mb-6">
-                            <Zap className="w-8 h-8 text-blue-600" />
+                            <Bot className="w-8 h-8 text-blue-600" />
                             <h2 className="text-4xl font-bold text-gray-900">Our Capabilities</h2>
                         </div>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Comprehensive BI solutions tailored to your business needs
+                            Advanced technologies powering seamless interactions
                         </p>
                     </motion.div>
 
@@ -169,7 +169,7 @@ const BusinessIntelligence = () => {
                                 transition={{ delay: idx * 0.05 }}
                                 className="flex items-start gap-3 bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all"
                             >
-                                <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                                <MessageCircle className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
                                 <span className="text-gray-700">{capability}</span>
                             </motion.div>
                         ))}
@@ -186,9 +186,9 @@ const BusinessIntelligence = () => {
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Common Use Cases</h2>
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">AI in Action</h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            See how businesses leverage our BI solutions across different domains
+                            Real-world applications driving engagement and efficiency
                         </p>
                     </motion.div>
 
@@ -220,10 +220,10 @@ const BusinessIntelligence = () => {
                     >
                         <Sparkles className="w-16 h-16 text-white mx-auto mb-6" />
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                            Ready to Unlock Your Data's Potential?
+                            Ready to Automate Support?
                         </h2>
                         <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-                            Let our experts help you build a comprehensive Business Intelligence solution tailored to your needs.
+                            Enhance your customer service with intelligent virtual assistants.
                         </p>
                         <Link
                             to="/contact"
@@ -239,4 +239,4 @@ const BusinessIntelligence = () => {
     );
 };
 
-export default BusinessIntelligence;
+export default ChatbotsAndVirtualAssistants;

@@ -1,59 +1,59 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { TrendingUp, BarChart3, Target, Users, Zap, CheckCircle2, ArrowRight, Sparkles, Brain, LineChart, Shield } from 'lucide-react';
+import { PieChart, BarChart3, Layout, Eye, Zap, CheckCircle2, ArrowRight, Sparkles, Presentation, Share2, Smartphone, Layers } from 'lucide-react';
 
-const BusinessIntelligence = () => {
+const DataVisualization = () => {
     const features = [
         {
-            icon: Brain,
-            title: 'Advanced Analytics',
-            description: 'Leverage AI and machine learning to uncover hidden patterns and insights in your business data.'
+            icon: Layout,
+            title: 'Interactive Dashboards',
+            description: 'Dynamic, real-time dashboards that allow you to drill down into data and explore insights.'
         },
         {
-            icon: LineChart,
-            title: 'Real-Time Dashboards',
-            description: 'Monitor your KPIs and metrics in real-time with interactive, customizable dashboards.'
+            icon: Presentation,
+            title: 'Custom Reporting',
+            description: 'Automated, pixel-perfect reports tailored to your specific business requirements.'
         },
         {
-            icon: Target,
-            title: 'Strategic Planning',
-            description: 'Make data-driven strategic decisions with comprehensive business intelligence reports.'
+            icon: Share2,
+            title: 'Collaborative Tools',
+            description: 'Share insights easily across your organization with secure, role-based access.'
         },
         {
-            icon: Shield,
-            title: 'Data Security',
-            description: 'Enterprise-grade security ensures your sensitive business data remains protected.'
+            icon: Smartphone,
+            title: 'Mobile Responsive',
+            description: 'Access your critical data and insights from any device, anywhere, at any time.'
         }
     ];
 
     const capabilities = [
-        'Custom BI dashboard development',
-        'Data warehousing and ETL processes',
-        'Self-service analytics tools',
-        'Mobile BI applications',
-        'Automated report generation',
-        'Integration with existing systems',
-        'Performance metrics tracking',
-        'Competitive analysis tools'
+        'Custom dashboard design',
+        'Real-time data streaming',
+        'Geospatial mapping',
+        'Interactive charts & graphs',
+        'Automated PDF reporting',
+        'White-label solutions',
+        'Data storytelling',
+        'Cross-platform compatibility'
     ];
 
     const useCases = [
         {
-            title: 'Sales Performance',
-            description: 'Track sales metrics, identify trends, and optimize your sales strategy with comprehensive analytics.'
+            title: 'Executive Reporting',
+            description: 'High-level overviews of company performance for C-suite executives and stakeholders.'
         },
         {
-            title: 'Financial Analysis',
-            description: 'Monitor financial health, forecast revenue, and make informed budgeting decisions.'
+            title: 'Marketing Analytics',
+            description: 'Visualizing campaign performance, customer journeys, and ROI metrics.'
         },
         {
-            title: 'Customer Insights',
-            description: 'Understand customer behavior, preferences, and lifetime value to improve retention.'
+            title: 'Operational Monitoring',
+            description: 'Real-time tracking of production lines, logistics, and supply chain operations.'
         },
         {
-            title: 'Operational Efficiency',
-            description: 'Identify bottlenecks, optimize processes, and improve overall operational performance.'
+            title: 'Financial Dashboards',
+            description: 'Visual representation of revenue, expenses, and cash flow for financial planning.'
         }
     ];
 
@@ -74,16 +74,16 @@ const BusinessIntelligence = () => {
                         className="text-center"
                     >
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-blue-200 rounded-full mb-6 shadow-sm">
-                            <TrendingUp className="w-5 h-5 text-blue-600" />
+                            <PieChart className="w-5 h-5 text-blue-600" />
                             <span className="text-sm font-semibold text-blue-600">Data Analytics</span>
                         </div>
 
                         <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                            Business <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-600">Intelligence</span>
+                            Data <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-600">Visualization</span>
                         </h1>
 
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-                            Transform your raw data into actionable business insights with our comprehensive Business Intelligence solutions. Make smarter decisions faster with real-time analytics and intuitive dashboards.
+                            Turn complex data into clear, compelling visual stories. Empower your team to spot trends, outliers, and opportunities at a glance with our interactive visualization solutions.
                         </p>
 
                         <div className="flex flex-wrap gap-4 justify-center">
@@ -114,9 +114,9 @@ const BusinessIntelligence = () => {
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Powerful Features</h2>
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Visual Excellence</h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Our Business Intelligence platform provides everything you need to make data-driven decisions
+                            Tools designed to make your data beautiful, accessible, and actionable
                         </p>
                     </motion.div>
 
@@ -155,7 +155,7 @@ const BusinessIntelligence = () => {
                             <h2 className="text-4xl font-bold text-gray-900">Our Capabilities</h2>
                         </div>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Comprehensive BI solutions tailored to your business needs
+                            Comprehensive visualization services for every data need
                         </p>
                     </motion.div>
 
@@ -188,7 +188,7 @@ const BusinessIntelligence = () => {
                     >
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">Common Use Cases</h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            See how businesses leverage our BI solutions across different domains
+                            See how clear visualization transforms business understanding
                         </p>
                     </motion.div>
 
@@ -220,10 +220,10 @@ const BusinessIntelligence = () => {
                     >
                         <Sparkles className="w-16 h-16 text-white mx-auto mb-6" />
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                            Ready to Unlock Your Data's Potential?
+                            Ready to Visualize Your Success?
                         </h2>
                         <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-                            Let our experts help you build a comprehensive Business Intelligence solution tailored to your needs.
+                            Let us help you turn your data into a powerful visual asset for your business.
                         </p>
                         <Link
                             to="/contact"
@@ -239,4 +239,4 @@ const BusinessIntelligence = () => {
     );
 };
 
-export default BusinessIntelligence;
+export default DataVisualization;

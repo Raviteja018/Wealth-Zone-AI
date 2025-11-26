@@ -54,11 +54,6 @@ const Team = () => {
       color: 'bg-sky-500',
     },
     {
-      name: 'S.Venkatesh',
-      designation: 'Senior Java Developer',
-      color: 'bg-sky-500',
-    },
-    {
       name: 'M.Uma Maheshwari',
       designation: 'Accountant',
       color: 'bg-sky-500',
