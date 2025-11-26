@@ -27,7 +27,11 @@ import ExpandingBranches from "./components/ExpandingBranches";
 // Import service components
 import DataAnalytics from "./pages/services/DataAnalytics";
 import SoftwareDevelopment from "./pages/services/SoftwareDevelopment";
+import WebDevelopment from "./pages/services/WebDevelopment";
+import MobileApps from "./pages/services/MobileApps";
 import ITConsulting from "./pages/services/ITConsulting";
+import CloudServices from "./pages/services/CloudServices";
+import SoftwareTesting from "./pages/services/SoftwareTesting";
 import PerformanceOptimization from "./pages/services/PerformanceOptimization";
 import GraphicDesign from "./pages/services/GraphicDesign";
 import WebsiteMaintenance from "./pages/services/WebsiteMaintenance";
@@ -146,6 +150,8 @@ function App() {
         <Route path="/services/data-analytics/big-data-solutions" element={<BigDataSolutions />} />
 
         <Route path="/services/software-development" element={<SoftwareDevelopment />} />
+        <Route path="/services/web-development" element={<WebDevelopment />} />
+        <Route path="/services/mobile-apps" element={<MobileApps />} />
         <Route path="/services/software-development/enterprise-solutions" element={<EnterpriseSolutions />} />
         <Route path="/services/software-development/ui-ux-design" element={<UIUXDesign />} />
 
@@ -155,6 +161,13 @@ function App() {
         <Route path="/services/it-consulting/it-infrastructure" element={<ITInfrastructure />} />
         <Route path="/services/it-consulting/security-compliance" element={<SecurityCompliance />} />
 
+        <Route path="/services/cloud-services" element={<CloudServices />} />
+        <Route path="/services/cloud-services/cloud-migration" element={<CloudMigration />} />
+        <Route path="/services/cloud-services/cloud-architecture" element={<CloudArchitecture />} />
+        <Route path="/services/cloud-services/cloud-security" element={<CloudSecurity />} />
+        <Route path="/services/cloud-services/cloud-management" element={<CloudManagement />} />
+
+        <Route path="/services/software-testing" element={<SoftwareTesting />} />
         <Route path="/services/software-testing/manual-testing" element={<ManualTesting />} />
         <Route path="/services/software-testing/automated-testing" element={<AutomatedTesting />} />
         <Route path="/services/software-testing/performance-testing" element={<PerformanceTesting />} />
