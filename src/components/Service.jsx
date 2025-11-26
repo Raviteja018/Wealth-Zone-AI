@@ -10,6 +10,7 @@ import {
   Wrench,
   Layers,
   Gauge,
+  Headphones,
 } from "lucide-react";
 
 // Card component
@@ -93,6 +94,14 @@ const services = [
     color: "from-green-500/10 to-emerald-500/10",
     link: "/services/performance-optimization",
   },
+  {
+    title: "BPO Services",
+    icon: <Headphones className="w-8 h-8 text-white" />,
+    bg: "bg-gradient-to-br from-indigo-500 to-violet-500",
+    description: "Efficient business outsourcing",
+    color: "from-indigo-500/10 to-violet-500/10",
+    link: "/services/bpo-services",
+  },
 ];
 
 export default function Services() {
@@ -152,7 +161,7 @@ export default function Services() {
               >
                 {/* Gradient Background Overlay */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-                
+
                 {/* Number Badge */}
                 <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 group-hover:bg-white flex items-center justify-center text-xs font-bold text-gray-400 group-hover:text-gray-600 transition-all duration-300">
                   {String(index + 1).padStart(2, '0')}

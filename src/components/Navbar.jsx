@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate, useLocation } from "react-router-dom";
 import logo_white from "../assets/white_logo.png";
-import logoText from "../assets/logo_text-white.png";
+import logoText from "../assets/text-scroll.png";
 import { FiMenu } from "react-icons/fi";
 import { Phone } from "lucide-react";
 
@@ -62,7 +62,7 @@ export default function AIWebxNavbar() {
                 }}
               >
                 <span>
-                  <img src={logoText} className="h-42" alt="logo text" />
+                  <img src={logoText} className="h-12" alt="logo text" />
                 </span>
               </motion.div>
             </div>

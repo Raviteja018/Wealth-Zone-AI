@@ -161,7 +161,7 @@ export default function BranchAnnouncement() {
                         </div>
 
                         {/* Bottom Info */}
-                        <motion.div
+                        {/* <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.8 }}
@@ -176,7 +176,7 @@ export default function BranchAnnouncement() {
                             <p className="text-sm text-blue-200 max-w-xl mx-auto">
                                 Join us as we bring cutting-edge technology solutions closer to you. Stay tuned for updates!
                             </p>
-                        </motion.div>
+                        </motion.div> */}
 
                         {/* CTA Button */}
                         <motion.div

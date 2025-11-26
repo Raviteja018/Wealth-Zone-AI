@@ -115,7 +115,7 @@ const services = [
   {
     title: 'Medical Coding',
     description: 'Accurate and efficient medical coding services to streamline healthcare documentation, billing, and compliance with industry standards.',
-    link: '/services/medical-coding',
+    link: '/services/bpo-services/medical-coding',
     image: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
     icon: FileText,
     gradient: 'from-blue-500 to-cyan-500',
@@ -126,7 +126,7 @@ const services = [
   {
     title: 'Content Moderation',
     description: 'Professional content moderation services to maintain online community standards, filter inappropriate content, and ensure a safe digital environment.',
-    link: '/services/content-moderation',
+    link: '/services/bpo-services/content-moderation',
     image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
     icon: Shield,
     gradient: 'from-blue-500 to-cyan-500',
@@ -137,7 +137,7 @@ const services = [
   {
     title: 'Google Mapping',
     description: 'Custom Google Maps integration and location-based services to enhance your business visibility and provide better user experiences.',
-    link: '/services/google-mapping',
+    link: '/services/bpo-services/google-mapping',
     image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
     icon: MapPin,
     gradient: 'from-blue-500 to-cyan-500',
