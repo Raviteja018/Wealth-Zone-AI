@@ -94,14 +94,7 @@ const services = [
     color: "from-green-500/10 to-emerald-500/10",
     link: "/services/performance-optimization",
   },
-  {
-    title: "BPO Services",
-    icon: <Headphones className="w-8 h-8 text-white" />,
-    bg: "bg-gradient-to-br from-indigo-500 to-violet-500",
-    description: "Efficient business outsourcing",
-    color: "from-indigo-500/10 to-violet-500/10",
-    link: "/services/bpo-services",
-  },
+
 ];
 
 export default function Services() {

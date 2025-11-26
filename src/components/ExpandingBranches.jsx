@@ -122,7 +122,7 @@ export default function ExpandingBranches() {
                 </div>
 
                 {/* Bottom Info Card */}
-                <motion.div
+                {/* <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -130,17 +130,7 @@ export default function ExpandingBranches() {
                     className="max-w-3xl mx-auto"
                 >
                     <div className="bg-white/60 backdrop-blur-lg border-2 border-blue-100 rounded-2xl p-8 shadow-lg">
-                        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                            <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                                    <Calendar className="w-6 h-6 text-blue-600" />
-                                </div>
-                                <div>
-                                    <h4 className="font-bold text-gray-900 text-lg">Expected Launch</h4>
-                                    <p className="text-gray-600">Q2 2025</p>
-                                </div>
-                            </div>
-
+                        <div className="flex flex-col md:flex-row items-center justify-center gap-6">
                             <div className="flex items-center gap-4">
                                 <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
                                     <Building2 className="w-6 h-6 text-purple-600" />
@@ -158,7 +148,7 @@ export default function ExpandingBranches() {
                             </p>
                         </div>
                     </div>
-                </motion.div>
+                </motion.div> */}
             </div>
         </section>
     );
