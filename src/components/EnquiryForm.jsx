@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 // API Configuration
 const API_ENDPOINTS = {
     CANDIDATE: 'http://localhost:8080/api/candidate/submit',
-    INSTITUTION: 'http://localhost:8080/api/institution/submit'
+    INSTITUTION: 'http://localhost:8080/api/student/submit'
 };
 
 // Constants
@@ -31,9 +31,9 @@ const COURSES = [
 ];
 
 // Reusable Input Component
-const FormInput = ({ icon: Icon, name, type = "text", placeholder, value, onChange, required = false }) => (
+const FormInput = ({ icon: Icon, name, type = "text", placeholder, value, onChange, required = false, error }) => (
     <div className="relative group">
-        <Icon className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-600 transition-colors" />
+        <Icon className={`absolute left-3 top-1/2 -translate-y-1/2 transition-colors ${error ? 'text-red-500' : 'text-gray-400 group-focus-within:text-blue-600'}`} />
         <input
             type={type}
             name={name}
@@ -41,27 +41,35 @@ const FormInput = ({ icon: Icon, name, type = "text", placeholder, value, onChan
             placeholder={placeholder}
             value={value}
             onChange={onChange}
-            className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-800 placeholder-gray-400 focus:border-blue-600 focus:bg-white focus:ring-2 focus:ring-blue-600 outline-none transition-all text-sm"
+            className={`w-full pl-10 pr-4 py-3 bg-gray-50 border rounded-lg text-gray-800 placeholder-gray-400 outline-none transition-all text-sm ${error
+                ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-200'
+                : 'border-gray-200 focus:border-blue-600 focus:bg-white focus:ring-2 focus:ring-blue-600'
+                }`}
         />
+        {error && <span className="text-xs text-red-500 mt-1 absolute -bottom-5 left-0">{error}</span>}
     </div>
 );
 
 // Reusable Select Component
-const FormSelect = ({ icon: Icon, name, placeholder, value, onChange, options, required = false }) => (
+const FormSelect = ({ icon: Icon, name, placeholder, value, onChange, options, required = false, error }) => (
     <div className="relative group">
-        <Icon className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-blue-600 transition-colors" />
+        <Icon className={`absolute left-3 top-1/2 -translate-y-1/2 transition-colors ${error ? 'text-red-500' : 'text-gray-400 group-focus-within:text-blue-600'}`} />
         <select
             name={name}
             required={required}
             value={value}
             onChange={onChange}
-            className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-800 focus:border-blue-600 focus:bg-white focus:ring-2 focus:ring-blue-600 outline-none transition-all text-sm appearance-none cursor-pointer"
+            className={`w-full pl-10 pr-4 py-3 bg-gray-50 border rounded-lg text-gray-800 outline-none transition-all text-sm appearance-none cursor-pointer ${error
+                ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-200'
+                : 'border-gray-200 focus:border-blue-600 focus:bg-white focus:ring-2 focus:ring-blue-600'
+                }`}
         >
             <option value="" disabled>{placeholder}</option>
             {options.map((option, index) => (
                 <option key={index} value={option}>{option}</option>
             ))}
         </select>
+        {error && <span className="text-xs text-red-500 mt-1 absolute -bottom-5 left-0">{error}</span>}
     </div>
 );
 
@@ -71,57 +79,142 @@ const EnquiryForm = ({ type, category, onBack, onSuccess }) => {
         qualification: "", yearOfPassing: "", courseInterest: "", resume: null,
         schoolName: "", address: "", studentCount: "", currentSoftware: ""
     });
+    const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false);
 
+    const validateForm = () => {
+        const newErrors = {};
+
+        // Name validation
+        if (!formData.name.trim()) newErrors.name = "Name is required";
+
+        // Phone validation (10 digits only)
+        const phoneRegex = /^\d{10}$/;
+        if (!formData.phone.trim()) {
+            newErrors.phone = "Phone number is required";
+        } else if (!phoneRegex.test(formData.phone)) {
+            newErrors.phone = "Phone must be exactly 10 digits";
+        }
+
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!formData.email.trim()) {
+            newErrors.email = "Email is required";
+        } else if (!emailRegex.test(formData.email)) {
+            newErrors.email = "Invalid email format";
+        }
+
+        if (category === "internship") {
+            if (!formData.qualification) newErrors.qualification = "Qualification is required";
+            if (!formData.yearOfPassing) newErrors.yearOfPassing = "Year is required";
+            if (!formData.courseInterest) newErrors.courseInterest = "Course is required";
+        } else {
+            if (!formData.schoolName.trim()) newErrors.schoolName = "School name is required";
+            if (!formData.address.trim()) newErrors.address = "Address is required";
+
+            // Student count validation (numbers only)
+            if (formData.studentCount && isNaN(formData.studentCount)) {
+                newErrors.studentCount = "Must be a number";
+            }
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
     const handleChange = (e) => {
-        if (e.target.type === 'file') {
-            const file = e.target.files[0];
+        const { name, value, type, files } = e.target;
+
+        // Clear error when user types
+        if (errors[name]) {
+            setErrors(prev => ({ ...prev, [name]: "" }));
+        }
+
+        if (type === 'file') {
+            const file = files[0];
             if (file && file.size > MAX_FILE_SIZE) {
                 toast.error("File size should be less than 5MB");
                 return;
             }
-            setFormData({ ...formData, [e.target.name]: file });
+            setFormData({ ...formData, [name]: file });
         } else {
-            setFormData({ ...formData, [e.target.name]: e.target.value });
+            // For phone number, only allow digits
+            if (name === 'phone' || name === 'studentCount') {
+                if (value && !/^\d*$/.test(value)) return;
+            }
+            setFormData({ ...formData, [name]: value });
         }
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (!validateForm()) {
+            toast.error("Please fix the errors in the form");
+            return;
+        }
+
         setLoading(true);
 
         try {
-            const submitData = new FormData();
+            let response;
 
-            // Common fields
-            Object.entries({
-                category, name: formData.name, email: formData.email,
-                phone: formData.phone, message: formData.message
-            }).forEach(([key, value]) => submitData.append(key, value));
-
-            // Category-specific fields
             if (category === "internship") {
+                const submitData = new FormData();
+                submitData.append('candidateName', formData.name);
+                submitData.append('email', formData.email);
+                submitData.append('mobileNumber', formData.phone);
+                submitData.append('additionalDetails', formData.message);
                 submitData.append('qualification', formData.qualification);
                 submitData.append('yearOfPassing', formData.yearOfPassing);
-                submitData.append('courseInterest', formData.courseInterest);
+                submitData.append('courseInterested', formData.courseInterest);
+                submitData.append('keySkills', formData.message);
                 if (formData.resume) submitData.append('resume', formData.resume);
+
+                response = await fetch(API_ENDPOINTS.CANDIDATE, {
+                    method: 'POST',
+                    body: submitData
+                });
             } else {
-                submitData.append('schoolName', formData.schoolName);
-                submitData.append('address', formData.address);
-                submitData.append('studentCount', formData.studentCount);
-                submitData.append('currentSoftware', formData.currentSoftware);
+                // School / Institution Submission (JSON)
+                const payload = {
+                    contactPersonName: formData.name,
+                    mobileNumber: formData.phone,
+                    emailAddress: formData.email,
+                    schoolName: formData.schoolName,
+                    schoolAddress: formData.address,
+                    approxNoOfStudents: parseInt(formData.studentCount) || 0,
+                    currentSoftwareUsed: formData.currentSoftware || "None",
+                    trainingNeeds: formData.message || "Not specified"
+                };
+
+                response = await fetch(API_ENDPOINTS.INSTITUTION, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
             }
 
-            const endpoint = category === "internship" ? API_ENDPOINTS.CANDIDATE : API_ENDPOINTS.INSTITUTION;
-            const response = await fetch(endpoint, { method: 'POST', body: submitData });
+            if (!response.ok) {
+                const errorData = await response.text();
+                throw new Error(`API Error: ${response.status} - ${errorData || response.statusText}`);
+            }
 
-            if (!response.ok) throw new Error(`API Error: ${response.status} ${response.statusText}`);
-
-            const result = await response.json();
-            console.log('Submission successful:', result);
 
             toast.success("Application submitted successfully!");
             if (onSuccess) onSuccess();
+
+            // Reset form
+            setFormData({
+                name: "", email: "", phone: "", message: "",
+                qualification: "", yearOfPassing: "", courseInterest: "", resume: null,
+                schoolName: "", address: "", studentCount: "", currentSoftware: ""
+            });
+
+            toast.success("Application submitted successfully!");
+
         } catch (error) {
             console.error("Submission error:", error);
             toast.error(`Failed to submit: ${error.message}`);
@@ -135,7 +228,7 @@ const EnquiryForm = ({ type, category, onBack, onSuccess }) => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
-            className="w-full max-w-3xl mx-auto"
+            className="w-full max-w-3xl  z-10 mx-auto overflow-y-auto max-h-[70vh] p-4 no-scrollbar"
         >
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
@@ -158,6 +251,7 @@ const EnquiryForm = ({ type, category, onBack, onSuccess }) => {
                         value={formData.name}
                         onChange={handleChange}
                         required
+                        error={errors.name}
                     />
                     <FormInput
                         icon={FaPhone}
@@ -167,6 +261,7 @@ const EnquiryForm = ({ type, category, onBack, onSuccess }) => {
                         value={formData.phone}
                         onChange={handleChange}
                         required
+                        error={errors.phone}
                     />
                 </div>
 
@@ -178,6 +273,7 @@ const EnquiryForm = ({ type, category, onBack, onSuccess }) => {
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    error={errors.email}
                 />
 
                 {/* Internship Fields */}
@@ -192,6 +288,7 @@ const EnquiryForm = ({ type, category, onBack, onSuccess }) => {
                                 onChange={handleChange}
                                 options={QUALIFICATIONS}
                                 required
+                                error={errors.qualification}
                             />
                             <FormSelect
                                 icon={FaCalendarAlt}
@@ -201,6 +298,7 @@ const EnquiryForm = ({ type, category, onBack, onSuccess }) => {
                                 onChange={handleChange}
                                 options={YEAR_RANGE}
                                 required
+                                error={errors.yearOfPassing}
                             />
                         </div>
 
@@ -212,6 +310,7 @@ const EnquiryForm = ({ type, category, onBack, onSuccess }) => {
                             onChange={handleChange}
                             options={COURSES}
                             required
+                            error={errors.courseInterest}
                         />
 
                         <div className="relative group">
@@ -238,6 +337,7 @@ const EnquiryForm = ({ type, category, onBack, onSuccess }) => {
                             value={formData.schoolName}
                             onChange={handleChange}
                             required
+                            error={errors.schoolName}
                         />
                         <FormInput
                             icon={FaMapMarkerAlt}
@@ -246,6 +346,7 @@ const EnquiryForm = ({ type, category, onBack, onSuccess }) => {
                             value={formData.address}
                             onChange={handleChange}
                             required
+                            error={errors.address}
                         />
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <FormInput
@@ -254,6 +355,7 @@ const EnquiryForm = ({ type, category, onBack, onSuccess }) => {
                                 placeholder="Approx. No. of Students"
                                 value={formData.studentCount}
                                 onChange={handleChange}
+                                error={errors.studentCount}
                             />
                             <FormInput
                                 icon={FaLaptopCode}
