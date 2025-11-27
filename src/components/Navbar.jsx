@@ -5,6 +5,7 @@ import logo_white from "../assets/white_logo.png";
 import logoText from "../assets/text-scroll.png";
 import { FiMenu } from "react-icons/fi";
 import { Phone } from "lucide-react";
+import { FaLock } from "react-icons/fa";
 
 export default function AIWebxNavbar() {
   const [open, setOpen] = useState(false);
@@ -159,6 +160,15 @@ export default function AIWebxNavbar() {
             >
               Contact
             </button>
+
+            {/* Admin Button */}
+            {/* <button
+              onClick={onAdminClick}
+              className="text-white/70 hover:text-white transition cursor-pointer"
+              title="Admin Access"
+            >
+              <FaLock />
+            </button> */}
           </div>
 
           {/* Mobile Menu Button */}

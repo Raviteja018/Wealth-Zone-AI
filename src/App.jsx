@@ -1,12 +1,21 @@
-import React, { useState } from "react";
-// Force rebuild
+import React, { useState, useEffect } from "react";
 import "./App.css";
+import { Routes, Route, useLocation, Navigate, useNavigate } from "react-router-dom";
+import { FaGraduationCap } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+// Layout Components
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+// Home Page Sections
 import Hero from "./components/Hero";
 import WhyChooseUs from "./components/WhyChooseUs";
 import Services from "./components/Service";
-import Footer from "./components/Footer";
-import { Routes, Route, useLocation } from "react-router-dom";
+import ExpandingBranches from "./components/ExpandingBranches";
+import Collaborations from "./components/Collaborations";
+
+// Global Pages
 import OurServices from "./pages/Services";
 import OurProducts from "./components/OurProducts";
 import CallToAction from "./components/CallToAction";
@@ -15,16 +24,22 @@ import Careers from "./components/Careers";
 import ScrollToTop from "./components/ScrollToTop";
 import AboutUs from "./components/AboutUs";
 import JobDetails from "./components/JobDetails";
-import SplashModal from "./components/SplasModal";
 import OurStaffing from "./components/OurStaffing";
 import RequestEmployee from "./components/RequestEmployee";
 import DirectStaffing from "./components/DirectStaffing";
 import TempToHireStaffing from "./components/TempToHireStaffing";
 import ContractualStaffing from "./components/ContractualStaffing";
-import Collaborations from "./components/Collaborations";
-import ExpandingBranches from "./components/ExpandingBranches";
+import Projects from "./pages/Projects";
+import ProjectDetails from "./pages/ProjectDetails";
+import Leadership from "./components/Leadership";
+import Team from "./components/Team";
 
-// Import service components
+// Splash & Admin
+import SplashScreen from "./components/SplashScreen";
+import AdminLogin from "./components/AdminLogin";
+import AdminDashboard from "./components/AdminDashboard";
+
+// Services Pages
 import DataAnalytics from "./pages/services/DataAnalytics";
 import SoftwareDevelopment from "./pages/services/SoftwareDevelopment";
 import WebDevelopment from "./pages/services/WebDevelopment";
@@ -40,12 +55,9 @@ import AIAgents from "./pages/services/AIAgents";
 import BPOServices from "./pages/services/BPOServices";
 import CustomerSupport from "./pages/services/CustomerSupport";
 import MarketingServices from "./pages/services/MarketingServices";
-import Leadership from "./components/Leadership";
-import Team from "./components/Team";
-import ProjectDetails from "./pages/ProjectDetails";
-import Projects from "./pages/Projects";
+import Ecommerce from "./pages/services/Ecommerce";
 
-// Import Data Analytics sub-services
+// Sub Services (Examples)
 import BusinessIntelligence from "./pages/services/data-analytics/BusinessIntelligence";
 import PredictiveAnalytics from "./pages/services/data-analytics/PredictiveAnalytics";
 import DataVisualization from "./pages/services/data-analytics/DataVisualization";
@@ -121,13 +133,45 @@ import DataVisualizationMapping from "./pages/services/bpo-services/google-mappi
 
 function App() {
   const location = useLocation();
-  const hideFooterPaths = ['/about'];
+  const navigate = useNavigate();
+
+  const hideFooterPaths = ["/about", "/admin"];
   const shouldShowFooter = !hideFooterPaths.includes(location.pathname);
+
+  // Splash Screen Logic
+  const [isSplashOpen, setIsSplashOpen] = useState(false);
+  useEffect(() => {
+    const hasSeenSplash = sessionStorage.getItem("hasSeenSplash");
+    if (!hasSeenSplash) {
+      setTimeout(() => setIsSplashOpen(true), 300);
+      sessionStorage.setItem("hasSeenSplash", "true");
+    }
+  }, []);
+
+  // Admin Auth
+  const [isAdminOpen, setIsAdminOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const handleAdminLogin = () => {
+    setIsAuthenticated(true);
+    navigate("/admin");
+  };
 
   return (
     <>
+      <SplashScreen isOpen={isSplashOpen} onClose={() => setIsSplashOpen(false)} />
+
       <Navbar />
+
+      <AdminLogin
+        isOpen={isAdminOpen}
+        onClose={() => setIsAdminOpen(false)}
+        onLogin={handleAdminLogin}
+      />
+
       <ScrollToTop />
+
+      {/* ALL ROUTES */}
       <Routes>
         <Route
           path="/"
@@ -142,6 +186,8 @@ function App() {
             </>
           }
         />
+
+        {/* Services */}
         <Route path="/services" element={<OurServices />} />
         <Route path="/services/data-analytics" element={<DataAnalytics />} />
         <Route path="/services/data-analytics/business-intelligence" element={<BusinessIntelligence />} />
@@ -227,6 +273,8 @@ function App() {
         <Route path="/contractual-staffing" element={<ContractualStaffing />} />
         <Route path="/temp-to-hire-staffing" element={<TempToHireStaffing />} />
         <Route path="/staffing" element={<OurStaffing />} />
+
+        {/* General Pages */}
         <Route path="/products" element={<OurProducts />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/careers" element={<Careers />} />
@@ -236,9 +284,18 @@ function App() {
         <Route path="/team" element={<Team />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/:slug" element={<ProjectDetails />} />
+
+        {/* Admin */}
+        <Route
+          path="/admin"
+          element={isAuthenticated ? <AdminDashboard /> : <Navigate to="/" replace />}
+        />
       </Routes>
-      {shouldShowFooter && <Footer />}
-    </>
+
+      {shouldShowFooter && <Footer onAdminClick={() => setIsAdminOpen(true)} />}
+
+      {/* Floating Action Button */}
+      <motion.div className="fixed bottom-6 left-6 z-[9998]"> {/* Animated Glow Ring */} <motion.div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" animate={{ scale: [1, 1.4, 1], opacity: [0.5, 0.8, 0.5], rotate: [0, 180, 360] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} style={{ width: '70px', height: '70px', filter: 'blur(8px)' }} /> {/* Main Button */} <motion.button onClick={() => setIsSplashOpen(true)} whileHover={{ scale: 1.2, rotate: 15, boxShadow: "0 0 40px rgba(59, 130, 246, 0.8), 0 0 60px rgba(168, 85, 247, 0.6)" }} whileTap={{ scale: 0.85 }} animate={{ y: [0, -8, 0], boxShadow: ["0 10px 30px rgba(59, 130, 246, 0.4), 0 0 20px rgba(168, 85, 247, 0.3)", "0 20px 50px rgba(59, 130, 246, 0.6), 0 0 40px rgba(168, 85, 247, 0.5)", "0 10px 30px rgba(59, 130, 246, 0.4), 0 0 20px rgba(168, 85, 247, 0.3)"] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }} className="relative w-[70px] h-[70px] bg-gradient-to-br from-blue-500 via-blue-600 to-purple-600 text-white rounded-full flex items-center justify-center cursor-grab active:cursor-grabbing overflow-hidden" title="🎓 Open Programs - Drag Me!" > {/* Shine Effect */} <motion.div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30" animate={{ x: ['-100%', '200%'] }} transition={{ duration: 2, repeat: Infinity, ease: "linear" }} /> {/* Icon with Animation */} <motion.div animate={{ rotate: [0, 10, -10, 0], scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="relative z-10" > <FaGraduationCap className="text-3xl drop-shadow-lg" /> </motion.div> {/* Pulse Badge */} <motion.div animate={{ scale: [1, 1.3, 1], opacity: [1, 0.5, 1] }} transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }} className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white" /> </motion.button> </motion.div> </>
   );
 }
 

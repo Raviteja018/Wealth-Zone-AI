@@ -46,7 +46,7 @@ const Team = () => {
     { name: 'K.Ram Prasad', designation: 'Network Engineer', department: 'Engineering', color: 'bg-blue-600' },
     { name: 'G.Revanth', designation: 'Senior Developer', department: 'Engineering', color: 'bg-blue-600' },
     { name: 'G.Rama Mohan', designation: 'Senior Developer', department: 'Engineering', color: 'bg-blue-600' },
-    { name: 'Srikanth', designation: 'Senior React Native Developer', department: 'Engineering', color: 'bg-blue-600' },
+    { name: 'Srikanth', designation: 'Senior React Developer', department: 'Engineering', color: 'bg-blue-600' },
     { name: 'Sk.Pervez', designation: 'Senior Developer', department: 'Engineering', color: 'bg-blue-600' },
     { name: 'B.Raviteja', designation: 'Senior Developer', department: 'Engineering', color: 'bg-blue-600' },
     { name: 'Y.Sravani', designation: 'Senior Developer', department: 'Engineering', color: 'bg-blue-600' },

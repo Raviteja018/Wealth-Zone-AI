@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import logo from "../assets/blue_logo.png";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-export default function Footer() {
+export default function Footer({ onAdminClick }) {
     const navigate = useNavigate();
+    const [open, setOpen] = useState(false);
     const links = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Careers", href: "/careers" },
     { name: "Contact", href: "/contact" },
   ];
+
 
   return (
     <footer className="bg-sky-100 text-blue-950 relative overflow-hidden py-8">
@@ -66,6 +68,14 @@ export default function Footer() {
             </button>
           </li>
         ))}
+        <li>
+          <button
+             onClick={onAdminClick}
+            className="hover:text-blue-600 transition-colors duration-300 block text-left w-full cursor-pointer"
+          >
+            Admin
+          </button>
+        </li>
       </ul>
     </div>
         {/* Services */}
@@ -82,7 +92,6 @@ export default function Footer() {
               "BPO Services",
               "Customer Support",
               "Marketing Services",
-              "Image Conversion",
             ].map((service, i) => (
               <li key={i}>
                 <a
