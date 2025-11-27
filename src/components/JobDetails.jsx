@@ -15,6 +15,7 @@ import {
   Upload,
   Send
 } from "lucide-react";
+import toast from "react-hot-toast";
 
 const jobDetails = {
   "UI/UX Designer – Fresher": {
@@ -289,7 +290,198 @@ export default function JobDetails() {
   const navigate = useNavigate();
   const jobTitle = location.state?.jobTitle || "UI/UX Designer – Fresher";
   const job = jobDetails[jobTitle] || jobDetails["UI/UX Designer – Fresher"];
-  const [formData, setFormData] = useState({ name: '', email: '', resume: null });
+
+  // Form state
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phoneNumber: '',
+    role: jobTitle,
+    experienceType: '',
+    experienceYears: '',
+    resume: null
+  });
+
+  // Error and loading states
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+
+  // Handle input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+
+    // Clear error for this field
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
+
+    // Clear experience years if switching to fresher
+    if (name === 'experienceType' && value === 'fresher') {
+      setFormData(prev => ({
+        ...prev,
+        experienceYears: ''
+      }));
+    }
+  };
+
+  // Handle file change
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      // Validate file size (5MB max)
+      if (file.size > 5 * 1024 * 1024) {
+        setErrors(prev => ({
+          ...prev,
+          resume: 'File size must be less than 5MB'
+        }));
+        return;
+      }
+
+      // Validate file type
+      const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+      if (!allowedTypes.includes(file.type)) {
+        setErrors(prev => ({
+          ...prev,
+          resume: 'Only PDF, DOC, and DOCX files are allowed'
+        }));
+        return;
+      }
+
+      setFormData(prev => ({
+        ...prev,
+        resume: file
+      }));
+
+      // Clear error
+      if (errors.resume) {
+        setErrors(prev => ({
+          ...prev,
+          resume: ''
+        }));
+      }
+    }
+  };
+
+  // Validate form
+  const validateForm = () => {
+    const newErrors = {};
+
+    // Full name validation
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = 'Full name is required';
+    } else if (formData.fullName.trim().length < 3) {
+      newErrors.fullName = 'Name must be at least 3 characters';
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email';
+    }
+
+    // Phone validation
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!formData.phoneNumber.trim()) {
+      newErrors.phoneNumber = 'Phone number is required';
+    } else if (!phoneRegex.test(formData.phoneNumber)) {
+      newErrors.phoneNumber = 'Please enter a valid 10-digit phone number';
+    }
+
+    // Experience type validation
+    if (!formData.experienceType) {
+      newErrors.experienceType = 'Please select experience type';
+    }
+
+    // Experience years validation (only if experienced)
+    if (formData.experienceType === 'experience') {
+      if (!formData.experienceYears) {
+        newErrors.experienceYears = 'Years of experience is required';
+      } else if (formData.experienceYears < 1 || formData.experienceYears > 50) {
+        newErrors.experienceYears = 'Please enter a valid number of years (1-50)';
+      }
+    }
+
+    // Resume validation
+    if (!formData.resume) {
+      newErrors.resume = 'Please upload your resume';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Validate form
+    if (!validateForm()) {
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      // Prepare form data for API
+      const submitData = new FormData();
+      submitData.append('fullName', formData.fullName);
+      submitData.append('email', formData.email);
+      submitData.append('phoneNumber', formData.phoneNumber);
+      submitData.append('role', formData.role);
+      submitData.append('experienceType', formData.experienceType);
+
+      // Only add experience years if user is experienced
+      if (formData.experienceType === 'experience') {
+        submitData.append('experienceYears', formData.experienceYears);
+      }
+
+      submitData.append('resume', formData.resume);
+
+      // Submit to API
+      const response = await fetch('http://localhost:8080/api/jobs/apply', {
+        method: 'POST',
+        body: submitData
+      });
+
+      if (response.ok) {
+        
+        toast.success('✅ Application submitted successfully! We will review your application and get back to you within 3-5 business days.');
+
+        // Reset form
+        setFormData({
+          fullName: '',
+          email: '',
+          phoneNumber: '',
+          role: jobTitle,
+          experienceType: '',
+          experienceYears: '',
+          resume: null
+        });
+
+        // Reset file input
+        document.getElementById('resume-upload').value = '';
+      } else {
+        const errorData = await response.json();
+        alert('❌ Failed to submit application. Please try again.');
+        console.error('Submission error:', errorData);
+      }
+    } catch (error) {
+      console.error('Error submitting application:', error);
+      alert('❌ An error occurred. Please check your connection and try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
@@ -433,32 +625,34 @@ export default function JobDetails() {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Apply for this Position</h3>
 
               <form
-                action={`mailto:hr@wealthzone.com?subject=Job Application - ${encodeURIComponent(job.title)}&body=Position: ${encodeURIComponent(job.title)}%0D%0A%0D%0APlease attach your CV and details here.`}
-                method="POST"
-                encType="multipart/form-data"
+                onSubmit={handleSubmit}
                 className="space-y-5"
               >
+                {/* Full Name */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Full Name
+                    Full Name <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
                     <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                     <input
                       type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      name="fullName"
+                      value={formData.fullName}
+                      onChange={handleChange}
                       required
                       placeholder="John Doe"
-                      className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-colors"
+                      className={`w-full pl-10 pr-4 py-3 border-2 rounded-xl focus:outline-none transition-colors ${errors.fullName ? 'border-red-500' : 'border-gray-200 focus:border-blue-500'
+                        }`}
                     />
                   </div>
+                  {errors.fullName && <p className="text-xs text-red-500 mt-1">{errors.fullName}</p>}
                 </div>
 
+                {/* Email */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Email Address
+                    Email Address <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
                     <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -466,31 +660,112 @@ export default function JobDetails() {
                       type="email"
                       name="email"
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={handleChange}
                       required
                       placeholder="john@example.com"
-                      className="w-full pl-10 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none transition-colors"
+                      className={`w-full pl-10 pr-4 py-3 border-2 rounded-xl focus:outline-none transition-colors ${errors.email ? 'border-red-500' : 'border-gray-200 focus:border-blue-500'
+                        }`}
                     />
                   </div>
+                  {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email}</p>}
                 </div>
 
+                {/* Phone Number */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Upload Resume
+                    Phone Number <span className="text-red-500">*</span>
+                  </label>
+                  <div className="relative">
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <input
+                      type="tel"
+                      name="phoneNumber"
+                      value={formData.phoneNumber}
+                      onChange={handleChange}
+                      required
+                      placeholder="9876543210"
+                      maxLength="10"
+                      className={`w-full pl-10 pr-4 py-3 border-2 rounded-xl focus:outline-none transition-colors ${errors.phoneNumber ? 'border-red-500' : 'border-gray-200 focus:border-blue-500'
+                        }`}
+                    />
+                  </div>
+                  {errors.phoneNumber && <p className="text-xs text-red-500 mt-1">{errors.phoneNumber}</p>}
+                </div>
+
+                {/* Experience Type */}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Experience Type <span className="text-red-500">*</span>
+                  </label>
+                  <div className="relative">
+                    <Briefcase className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <select
+                      name="experienceType"
+                      value={formData.experienceType}
+                      onChange={handleChange}
+                      required
+                      className={`w-full pl-10 pr-4 py-3 border-2 rounded-xl focus:outline-none transition-colors appearance-none cursor-pointer ${errors.experienceType ? 'border-red-500' : 'border-gray-200 focus:border-blue-500'
+                        }`}
+                    >
+                      <option value="">Select Experience Type</option>
+                      <option value="fresher">Fresher</option>
+                      <option value="experience">Experienced</option>
+                    </select>
+                  </div>
+                  {errors.experienceType && <p className="text-xs text-red-500 mt-1">{errors.experienceType}</p>}
+                </div>
+
+                {/* Experience Years - Conditional */}
+                {formData.experienceType === 'experience' && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Years of Experience <span className="text-red-500">*</span>
+                    </label>
+                    <div className="relative">
+                      <Clock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                      <input
+                        type="number"
+                        name="experienceYears"
+                        value={formData.experienceYears}
+                        onChange={handleChange}
+                        required={formData.experienceType === 'experience'}
+                        placeholder="e.g., 2"
+                        min="1"
+                        max="50"
+                        className={`w-full pl-10 pr-4 py-3 border-2 rounded-xl focus:outline-none transition-colors ${errors.experienceYears ? 'border-red-500' : 'border-gray-200 focus:border-blue-500'
+                          }`}
+                      />
+                    </div>
+                    {errors.experienceYears && <p className="text-xs text-red-500 mt-1">{errors.experienceYears}</p>}
+                  </motion.div>
+                )}
+
+                {/* Upload Resume */}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Upload Resume <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
                     <input
                       type="file"
                       name="resume"
                       accept=".pdf,.doc,.docx"
-                      onChange={(e) => setFormData({ ...formData, resume: e.target.files[0] })}
+                      onChange={handleFileChange}
                       required
                       className="hidden"
                       id="resume-upload"
                     />
                     <label
                       htmlFor="resume-upload"
-                      className="flex items-center justify-center gap-2 w-full py-3 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-all"
+                      className={`flex items-center justify-center gap-2 w-full py-3 border-2 border-dashed rounded-xl cursor-pointer transition-all ${errors.resume
+                        ? 'border-red-500 hover:border-red-600 hover:bg-red-50'
+                        : 'border-gray-300 hover:border-blue-500 hover:bg-blue-50'
+                        }`}
                     >
                       <Upload className="w-5 h-5 text-gray-400" />
                       <span className="text-gray-600">
@@ -498,17 +773,32 @@ export default function JobDetails() {
                       </span>
                     </label>
                     <p className="text-xs text-gray-500 mt-2">PDF, DOC, DOCX (Max 5MB)</p>
+                    {errors.resume && <p className="text-xs text-red-500 mt-1">{errors.resume}</p>}
                   </div>
                 </div>
 
+                {/* Submit Button */}
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                  disabled={loading}
+                  whileHover={{ scale: loading ? 1 : 1.02 }}
+                  whileTap={{ scale: loading ? 1 : 0.98 }}
+                  className={`w-full flex items-center justify-center gap-2 font-bold py-4 rounded-xl shadow-md transition-all duration-300 ${loading
+                    ? 'bg-gray-400 cursor-not-allowed'
+                    : 'bg-blue-600 hover:bg-blue-700 hover:shadow-lg text-white'
+                    }`}
                 >
-                  Submit Application
-                  <Send className="w-5 h-5" />
+                  {loading ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      Submit Application
+                      <Send className="w-5 h-5" />
+                    </>
+                  )}
                 </motion.button>
               </form>
 
