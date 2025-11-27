@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { projects } from "../data/projects";
-import { ArrowRight, Search, Filter } from "lucide-react";
+import { ArrowRight, Search, Filter, Radio } from "lucide-react";
 
 export default function Projects() {
     const navigate = useNavigate();
@@ -86,6 +86,15 @@ export default function Projects() {
                                 >
                                     {/* Image Container */}
                                     <div className="relative h-64 overflow-hidden">
+                                        <div className="absolute top-4 right-4 z-30">
+                                            <div className="flex items-center gap-2 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full shadow-sm border border-white/20">
+                                                <span className="relative flex h-2.5 w-2.5">
+                                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                                                </span>
+                                                <span className="text-xs font-bold text-gray-700 tracking-wide">LIVE</span>
+                                            </div>
+                                        </div>
                                         <div className="absolute inset-0 bg-gray-900/10 group-hover:bg-gray-900/0 transition-colors z-10" />
                                         <img
                                             src={project.image}

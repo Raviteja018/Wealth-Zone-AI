@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { MapPin, Building2, Sparkles, Calendar, TrendingUp } from "lucide-react";
+import HyderabadImg from "../assets/hyderabad-branch.png";
+import VijayawadaImg from "../assets/vijayawada-branch.jpg";
 
 export default function ExpandingBranches() {
     const branches = [
@@ -11,8 +13,9 @@ export default function ExpandingBranches() {
             borderColor: "border-indigo-200",
             iconBg: "bg-indigo-100",
             iconColor: "text-indigo-600",
-            image: "https://images.unsplash.com/photo-1605218427368-35b0f996d916?w=800&q=80",
-            description: "Headquarters & Tech Hub"
+            image: HyderabadImg,
+            description: "Headquarters & Tech Hub",
+            location: "Madhapur, Hyderabad, Telanagana."
         },
         {
             city: "Vizag",
@@ -31,7 +34,7 @@ export default function ExpandingBranches() {
             borderColor: "border-orange-200",
             iconBg: "bg-orange-100",
             iconColor: "text-orange-600",
-            image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&q=80",
+            image: VijayawadaImg,
             description: "Business Capital"
         },
         {
@@ -120,7 +123,7 @@ export default function ExpandingBranches() {
                                     {/* Location Icon */}
                                     <div className="flex items-center gap-2 text-gray-600">
                                         <MapPin className="w-4 h-4" />
-                                        <span className="text-sm">Location scouting in progress</span>
+                                        <span className="text-sm">{branch.location || "Location scouting in progress"}</span>
                                     </div>
                                 </div>
 

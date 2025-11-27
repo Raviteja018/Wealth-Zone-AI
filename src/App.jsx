@@ -3,6 +3,7 @@ import "./App.css";
 import { Routes, Route, useLocation, Navigate, useNavigate } from "react-router-dom";
 import { FaGraduationCap } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { ToastContainer } from "react-toastify";
 
 // Layout Components
 import Navbar from "./components/Navbar";
@@ -159,6 +160,19 @@ function App() {
 
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+
       <SplashScreen isOpen={isSplashOpen} onClose={() => setIsSplashOpen(false)} />
 
       <Navbar />

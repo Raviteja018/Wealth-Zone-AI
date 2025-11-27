@@ -1,7 +1,7 @@
 import Delivery from "../assets/Projects/delivery.jpg";
 import Examination from "../assets/Projects/examination.jpg";
 import HRM from "../assets/Projects/HRM.jpg";
-import ai from "../assets/Projects/ai.jpg";
+import stemRobotics from "../assets/Projects/stem_robotics.png";
 import cyber from "../assets/Projects/cyber.png";
 import DigitalMarketing from "../assets/Projects/DigitalMarketing.jpg";
 
@@ -62,45 +62,45 @@ export const projects = [
     technologies: ["React", "Python", "Django", "MySQL", "Redis"],
     image: HRM,
   },
-{
-  name: "WZG AI – STEM & Robotics Education",
-  shortDescription:
-    "Turning students into creators: hands-on STEM, Robotics and AI aligned with NEP 2020.",
-  description:
-    "WZG AI transforms traditional schooling by integrating STEM, Robotics and AI into everyday learning. Our curriculum — co-developed by educators and engineers — gives students hands-on experience through real projects, coding, and engineering activities that spark curiosity, build critical thinking, and develop future-ready skills. Aligned to NEP 2020, WZG AI supports classroom adoption, teacher upskilling, and measurable student outcomes through project portfolios and certification.",
-  features: [
-    "NEP 2020 aligned curriculum designed by educators & engineers",
-    "Hands-on robotics kits and engineering projects",
-    "Project-based coding and AI exercises",
-    "Teacher training & deployment playbooks",
-    "Progress tracking, portfolios, and certification",
-    "Parent & educator dashboards for visibility",
-  ],
-  technologies: ["React", "Python", "TensorFlow", "Firebase", "Arduino/Raspberry Pi"],
-  image: ai,
-  implementationStages: [
-    {
-      stage: "Stage 1 — Planning & Customization",
-      summary:
-        "Assess school needs, map curriculum to local standards, customize modules and select hardware kits. Deliver a tailored rollout plan and teacher training schedule."
-    },
-    {
-      stage: "Stage 2 — Deployment",
-      summary:
-        "Install software, distribute kits, run teacher onboarding workshops, and configure dashboards and assessment tools for the school."
-    },
-    {
-      stage: "Stage 3 — Execution",
-      summary:
-        "Deliver classroom lessons and hands-on labs, guide project work, monitor progress, and provide ongoing mentor and tech support."
-    },
-    {
-      stage: "Stage 4 — Showcase & Certification",
-      summary:
-        "Students present projects in showcases, receive competency certificates, and schools receive outcome reports to demonstrate impact."
-    }
-  ]
-},
+  {
+    name: "WZG AI – STEM & Robotics Education",
+    shortDescription:
+      "Turning students into creators: hands-on STEM, Robotics and AI aligned with NEP 2020.",
+    description:
+      "WZG AI transforms traditional schooling by integrating STEM, Robotics and AI into everyday learning. Our curriculum — co-developed by educators and engineers — gives students hands-on experience through real projects, coding, and engineering activities that spark curiosity, build critical thinking, and develop future-ready skills. Aligned to NEP 2020, WZG AI supports classroom adoption, teacher upskilling, and measurable student outcomes through project portfolios and certification.",
+    features: [
+      "NEP 2020 aligned curriculum designed by educators & engineers",
+      "Hands-on robotics kits and engineering projects",
+      "Project-based coding and AI exercises",
+      "Teacher training & deployment playbooks",
+      "Progress tracking, portfolios, and certification",
+      "Parent & educator dashboards for visibility",
+    ],
+    technologies: ["React", "Python", "TensorFlow", "Firebase", "Arduino/Raspberry Pi"],
+    image: stemRobotics,
+    implementationStages: [
+      {
+        stage: "Stage 1 — Planning & Customization",
+        summary:
+          "Assess school needs, map curriculum to local standards, customize modules and select hardware kits. Deliver a tailored rollout plan and teacher training schedule."
+      },
+      {
+        stage: "Stage 2 — Deployment",
+        summary:
+          "Install software, distribute kits, run teacher onboarding workshops, and configure dashboards and assessment tools for the school."
+      },
+      {
+        stage: "Stage 3 — Execution",
+        summary:
+          "Deliver classroom lessons and hands-on labs, guide project work, monitor progress, and provide ongoing mentor and tech support."
+      },
+      {
+        stage: "Stage 4 — Showcase & Certification",
+        summary:
+          "Students present projects in showcases, receive competency certificates, and schools receive outcome reports to demonstrate impact."
+      }
+    ]
+  },
   {
     name: "Cyber-Security Operations",
     shortDescription:
@@ -118,28 +118,28 @@ export const projects = [
     image: cyber,
   },
   {
-  name: "Digital Marketing & Growth Services",
-  shortDescription: "End-to-end digital marketing solutions tailored for high-growth sectors.",
-  description:
-    "We provide targeted digital marketing solutions designed to increase visibility, generate leads, and convert audiences into loyal customers. Our team crafts data-driven strategies across multiple platforms — ensuring every campaign delivers measurable business growth. Whether it's hospitals seeking patient engagement, real estate firms selling properties, or jewelry brands building trust and desire, we tailor campaigns to the psychology and purchase journey of each industry.",
-  features: [
-    "Industry-specific marketing strategies",
-    "Social media branding & management",
-    "Google & Meta Ads campaign execution",
-    "SEO & content-driven lead generation",
-    "Reputation and review management",
-    "Landing page & funnel optimization"
-  ],
-  industriesServed: [
-    "Hospitals & Healthcare",
-    "Real Estate & Construction",
-    "Jewellery & Luxury Retail",
-    "Educational Institutions",
-    "Restaurants & Food Chains",
-    "Fitness & Wellness Centers"
-  ],
-  technologies: ["React", "Next.js", "Node.js", "Google Ads", "Meta Suite", "Analytics Tools"],
-  image: DigitalMarketing,
-}
+    name: "Digital Marketing & Growth Services",
+    shortDescription: "End-to-end digital marketing solutions tailored for high-growth sectors.",
+    description:
+      "We provide targeted digital marketing solutions designed to increase visibility, generate leads, and convert audiences into loyal customers. Our team crafts data-driven strategies across multiple platforms — ensuring every campaign delivers measurable business growth. Whether it's hospitals seeking patient engagement, real estate firms selling properties, or jewelry brands building trust and desire, we tailor campaigns to the psychology and purchase journey of each industry.",
+    features: [
+      "Industry-specific marketing strategies",
+      "Social media branding & management",
+      "Google & Meta Ads campaign execution",
+      "SEO & content-driven lead generation",
+      "Reputation and review management",
+      "Landing page & funnel optimization"
+    ],
+    industriesServed: [
+      "Hospitals & Healthcare",
+      "Real Estate & Construction",
+      "Jewellery & Luxury Retail",
+      "Educational Institutions",
+      "Restaurants & Food Chains",
+      "Fitness & Wellness Centers"
+    ],
+    technologies: ["React", "Next.js", "Node.js", "Google Ads", "Meta Suite", "Analytics Tools"],
+    image: DigitalMarketing,
+  }
 
 ].map((p) => ({ ...p, slug: slugify(p.name) }));

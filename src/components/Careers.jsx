@@ -64,53 +64,7 @@ const jobs = [
   },
 ];
 
-const internships = [
-  {
-    id: 1,
-    title: "Cyber Security Internship",
-    duration: "6 Months",
-    description: "Gain hands-on experience in ethical hacking, network security, and vulnerability assessment.",
-    highlights: [
-      "Ethical Hacking",
-      "Network Security",
-      "Vulnerability Assessment",
-      "Security Auditing"
-    ],
-    prerequisites: ["Networking Basics", "Linux Fundamentals", "Basic Scripting"],
-    location: "Hyderabad, Vijayawada",
-    stipend: "Performance-based"
-  },
-  {
-    id: 3,
-    title: "Full Stack Development (MERN)",
-    duration: "6 Months",
-    description: "Master the MERN stack (MongoDB, Express.js, React, Node.js) and build full-fledged web applications from scratch.",
-    highlights: [
-      "React.js",
-      "Node.js & Express",
-      "MongoDB",
-      "RESTful APIs"
-    ],
-    prerequisites: ["JavaScript", "HTML/CSS", "Basic Programming"],
-    location: "Hyderabad, Vijayawada",
-    stipend: "Performance-based"
-  },
-  {
-    id: 4,
-    title: "Data Analytics Internship",
-    duration: "6 Months",
-    description: "Learn data analysis, visualization, and interpretation using industry-standard tools and techniques.",
-    highlights: [
-      "Python for Data Science",
-      "SQL",
-      "Data Visualization",
-      "Statistical Analysis"
-    ],
-    prerequisites: ["Basic Python", "Statistics", "Excel"],
-    location: "Hyderabad, Vijayawada",
-    stipend: "Performance-based"
-  }
-];
+
 
 export default function Careers() {
   const navigate = useNavigate();
@@ -124,7 +78,6 @@ export default function Careers() {
   // Combine all positions (now just jobs)
   const allPositions = [
     ...jobs.map(job => ({ ...job, category: 'job' })),
-    ...internships.map(internship => ({ ...internship, category: 'internship' })),
   ];
 
   // Filter positions

@@ -12,6 +12,9 @@ import {
   FaChevronLeft,
   FaChevronRight
 } from 'react-icons/fa';
+import Birthday from '../assets/Team/Birthday.jpg';
+import festivalCelebration from '../assets/Team/festival celebration.jpg';
+
 
 
 const Team = () => {
@@ -88,10 +91,11 @@ const Team = () => {
   ];
 
   const celebrations = [
-    { id: 1, image: 'https://via.placeholder.com/800x400?text=Celebration+1', title: 'Annual Day' },
-    { id: 2, image: 'https://via.placeholder.com/800x400?text=Celebration+2', title: 'Team Outing' },
-    { id: 3, image: 'https://via.placeholder.com/800x400?text=Celebration+3', title: 'Festival Celebration' },
-    { id: 4, image: 'https://via.placeholder.com/800x400?text=Celebration+4', title: 'Award Ceremony' },
+    // { id: 1, image: 'https://via.placeholder.com/800x400?text=Celebration+1', title: 'Annual Day' },
+    // { id: 2, image: 'https://via.placeholder.com/800x400?text=Celebration+2', title: 'Team Outing' },
+    { id: 3, image: festivalCelebration, title: 'Festival Celebration' },
+    // { id: 4, image: 'https://via.placeholder.com/800x400?text=Celebration+4', title: 'Award Ceremony' },
+    { id: 5, image: Birthday, title: 'Birthday Celebrations' },
   ];
 
   const nextCelebration = () => {

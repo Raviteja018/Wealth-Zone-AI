@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { 
-  FaUser, 
-  FaChevronLeft, 
+import React from "react";
+import { motion } from "framer-motion";
+import {
   FaChevronRight,
   FaRocket,
   FaLightbulb,
@@ -16,21 +14,16 @@ import {
 } from "react-icons/fa";
 import aboutImg from "../assets/aboutus.jpg";
 import { useNavigate } from "react-router-dom";
-import { projects } from "../data/projects";
 
-export default function AboutUs() { 
+
+export default function AboutUs() {
 
   const navigate = useNavigate();
 
-  const [index, setIndex] = useState(0);
-  const [projectIndex, setProjectIndex] = useState(0);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setProjectIndex((prev) => (prev + 1) % projects.length);
-  //   }, 3500);
-  //   return () => clearInterval(interval);
-  // }, [projects.length]);
+
+
+
 
   return (
     <section className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 text-gray-800 overflow-hidden">
@@ -198,7 +191,7 @@ export default function AboutUs() {
 
       {/* Our Story Section */}
       <div id="our-story" className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16">
-        <motion.div 
+        <motion.div
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
@@ -231,7 +224,7 @@ export default function AboutUs() {
         </motion.div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20"  id="our-story">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20" id="our-story">
 
         {/* Who We Are - Enhanced */}
         <motion.div
@@ -247,7 +240,7 @@ export default function AboutUs() {
               Our Story
             </h2>
           </div>
-          
+
           <div className="prose-lg text-gray-700 space-y-6 mb-12">
             <p>
               Founded in <strong>2006</strong> as <strong>Oyster Technologies</strong> and later rebranded to <strong>WealthZone Group AI</strong>, our company has grown into a leading <strong>product and service-based IT organization</strong> specializing in <strong>Artificial Intelligence (AI), Advanced Digital Solutions, Software Development, and Digital Marketing Services</strong>.
@@ -277,17 +270,17 @@ export default function AboutUs() {
             <div className="space-y-6">
               <p className="text-gray-700 leading-relaxed text-lg">
                 Founded in <span className="font-bold text-sky-700">2006</span> as{" "}
-                <span className="font-bold text-sky-700">Oyster Technologies</span>, we embarked on a 
-                journey to revolutionize the digital landscape. In <span className="font-bold text-sky-700">2019</span>, 
-                we evolved into <span className="font-bold text-sky-700">WealthZone Group AI</span>, 
+                <span className="font-bold text-sky-700">Oyster Technologies</span>, we embarked on a
+                journey to revolutionize the digital landscape. In <span className="font-bold text-sky-700">2019</span>,
+                we evolved into <span className="font-bold text-sky-700">WealthZone Group AI</span>,
                 marking our commitment to cutting-edge artificial intelligence and innovation.
               </p>
 
               <p className="text-gray-700 leading-relaxed text-lg">
-                Today, we stand as a <span className="font-semibold text-gray-900">leading global IT powerhouse</span>, 
-                specializing in <span className="font-semibold text-blue-600">AI Solutions</span>, 
-                <span className="font-semibold text-blue-600"> Advanced Software Development</span>, 
-                <span className="font-semibold text-blue-600"> Cloud Technologies</span>, and 
+                Today, we stand as a <span className="font-semibold text-gray-900">leading global IT powerhouse</span>,
+                specializing in <span className="font-semibold text-blue-600">AI Solutions</span>,
+                <span className="font-semibold text-blue-600"> Advanced Software Development</span>,
+                <span className="font-semibold text-blue-600"> Cloud Technologies</span>, and
                 <span className="font-semibold text-blue-600"> Digital Marketing</span>.
               </p>
 
@@ -316,8 +309,8 @@ export default function AboutUs() {
             </div>
             <h3 className="text-2xl sm:text-3xl font-bold mb-4">Our Mission</h3>
             <p className="text-blue-50 leading-relaxed text-lg">
-              To empower businesses globally by delivering innovative, scalable, and intelligent 
-              technology solutions that drive sustainable growth, enhance operational efficiency, 
+              To empower businesses globally by delivering innovative, scalable, and intelligent
+              technology solutions that drive sustainable growth, enhance operational efficiency,
               and create lasting value in the digital economy.
             </p>
           </motion.div>
@@ -334,8 +327,8 @@ export default function AboutUs() {
             </div>
             <h3 className="text-2xl sm:text-3xl font-bold mb-4">Our Vision</h3>
             <p className="text-purple-50 leading-relaxed text-lg">
-              To be the world's most trusted technology partner, recognized for transforming 
-              complex challenges into elegant solutions through artificial intelligence, 
+              To be the world's most trusted technology partner, recognized for transforming
+              complex challenges into elegant solutions through artificial intelligence,
               innovation, and unwavering commitment to excellence.
             </p>
           </motion.div>
@@ -478,115 +471,6 @@ export default function AboutUs() {
         </motion.div>
 
 
-
-        {/* Featured Projects Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-20"
-        >
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-sky-700 to-blue-700 bg-clip-text text-transparent mb-4">
-              Featured Projects
-            </h2>
-            <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Showcasing innovation and excellence across diverse industries and technologies
-            </p>
-          </div>
-
-          <div className="max-w-6xl mx-auto">
-            <div className="relative overflow-hidden rounded-3xl bg-white shadow-xl p-8">
-
-              {/* Arrow – left */}
-              <button
-                onClick={() =>
-                  setProjectIndex(
-                    (i) => (i - 1 + projects.length) % projects.length
-                  )
-                }
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-3 bg-gradient-to-r from-sky-500 to-blue-600 text-white rounded-full hover:shadow-xl transition-all duration-300 hover:scale-110"
-                aria-label="Previous project"
-              >
-                <FaChevronLeft className="w-5 h-5" />
-              </button>
-
-              {/* Arrow – right */}
-              <button
-                onClick={() =>
-                  setProjectIndex((i) => (i + 1) % projects.length)
-                }
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-3 bg-gradient-to-r from-sky-500 to-blue-600 text-white rounded-full hover:shadow-xl transition-all duration-300 hover:scale-110"
-                aria-label="Next project"
-              >
-                <FaChevronRight className="w-5 h-5" />
-              </button>
-
-              {/* Cards wrapper */}
-              <div
-                className="flex transition-transform duration-700 ease-in-out px-12"
-                style={{ transform: `translateX(-${projectIndex * 50}%)` }}
-              >
-                {[...projects, projects[0]].map((project, i) => {
-                  const realIdx = i % projects.length;
-                  return (
-                    <div
-                      key={`${project.name}-${i}`}
-                      className="flex-shrink-0 w-full sm:w-1/2 px-4"
-                    >
-                      <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl overflow-hidden border border-gray-200 h-full flex flex-col shadow-md hover:shadow-xl transition-all duration-300">
-                        <div className="relative h-56 overflow-hidden">
-                          <img
-                            src={project.image}
-                            alt={project.name}
-                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                        </div>
-                        <div className="p-6 flex-1 flex flex-col">
-                          <h3 className="text-xl font-bold text-gray-900 mb-3">
-                            {project.name}
-                          </h3>
-                          <p className="text-gray-600 text-sm mb-6 flex-1 leading-relaxed">
-                            {project.shortDescription}
-                          </p>
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              const slug = projects[realIdx].slug;
-                              navigate(`/projects/${slug}`);
-                            }}
-                            className="group flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 text-white font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
-                          >
-                            View Project
-                            <span className="group-hover:translate-x-1 transition-transform">→</span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* Dots indicator */}
-              <div className="flex justify-center mt-8 gap-2">
-                {projects.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setProjectIndex(i)}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      i === projectIndex ? "bg-gradient-to-r from-sky-500 to-blue-600 w-8" : "bg-gray-300 w-2 hover:bg-gray-400"
-                    }`}
-                    aria-label={`Go to project ${i + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-       
       </div>
     </section>
   );
