@@ -5,6 +5,16 @@ import { MapPin, Building2, Sparkles, Calendar, TrendingUp } from "lucide-react"
 export default function ExpandingBranches() {
     const branches = [
         {
+            city: "Hyderabad",
+            fullName: "Hyderabad",
+            color: "from-indigo-50 to-blue-50",
+            borderColor: "border-indigo-200",
+            iconBg: "bg-indigo-100",
+            iconColor: "text-indigo-600",
+            image: "https://images.unsplash.com/photo-1605218427368-35b0f996d916?w=800&q=80",
+            description: "Headquarters & Tech Hub"
+        },
+        {
             city: "Vizag",
             fullName: "Visakhapatnam",
             color: "from-blue-50 to-cyan-50",
@@ -15,16 +25,6 @@ export default function ExpandingBranches() {
             description: "Coastal Tech Hub"
         },
         {
-            city: "Bangalore",
-            fullName: "Bengaluru",
-            color: "from-purple-50 to-pink-50",
-            borderColor: "border-purple-200",
-            iconBg: "bg-purple-100",
-            iconColor: "text-purple-600",
-            image: "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=800&q=80",
-            description: "Silicon Valley of India"
-        },
-        {
             city: "Vijayawada",
             fullName: "Vijayawada",
             color: "from-orange-50 to-red-50",
@@ -33,6 +33,16 @@ export default function ExpandingBranches() {
             iconColor: "text-orange-600",
             image: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&q=80",
             description: "Business Capital"
+        },
+        {
+            city: "Bangalore",
+            fullName: "Bengaluru",
+            color: "from-purple-50 to-pink-50",
+            borderColor: "border-purple-200",
+            iconBg: "bg-purple-100",
+            iconColor: "text-purple-600",
+            image: "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=800&q=80",
+            description: "Silicon Valley of India"
         }
     ];
 
@@ -59,7 +69,7 @@ export default function ExpandingBranches() {
                     </div>
 
                     <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-                        Our Branches 
+                        Our Branches
                         {/* <span className="text-blue-600">Opening Soon</span> */}
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -68,7 +78,7 @@ export default function ExpandingBranches() {
                 </motion.div>
 
                 {/* Branch Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                     {branches.map((branch, idx) => (
                         <motion.div
                             key={idx}

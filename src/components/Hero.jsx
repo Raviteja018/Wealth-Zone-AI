@@ -80,37 +80,29 @@ export default function Hero() {
         backgroundPosition: "center",
       }}
     >
-      {/* 19 Years Celebration Banner */}
-      <div className="w-full bg-gradient-to-r from-indigo-500 via-blue-500 to-cyan-400 py-3 sm:py-4 text-center relative z-50 overflow-visible shadow-xl">
+      {/* 20 Years Celebration Banner - Premium Highlight */}
+      <div className="w-full bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 py-4 sm:py-5 text-center relative z-50 overflow-visible shadow-2xl border-b border-yellow-500/20">
         {showConfetti && <Confetti />}
         <motion.div
-          className="text-white text-base sm:text-lg font-bold flex items-center justify-center gap-2 sm:gap-3 relative z-10"
+          className="text-white text-lg sm:text-xl font-bold flex flex-wrap items-center justify-center gap-3 relative z-10 px-4"
           initial={{ opacity: 0, y: -20 }}
           animate={{
             opacity: 1,
             y: 0,
-            scale: [1, 1.05, 1],
           }}
-          transition={{
-            duration: 0.8,
-            scale: {
-              repeat: Infinity,
-              repeatType: 'reverse',
-              duration: 2
-            }
-          }}
+          transition={{ duration: 0.8 }}
           onHoverStart={() => setShowConfetti(true)}
         >
           <motion.span
-            animate={{ rotate: [0, 10, -10, 0] }}
+            animate={{ rotate: [0, 10, -10, 0], scale: [1, 1.2, 1] }}
             transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}
-            className="inline-block"
+            className="text-2xl filter drop-shadow-lg"
           >
             ✨
           </motion.span>
 
           <motion.span
-            className="inline-block bg-gradient-to-r from-white via-yellow-200 to-white bg-clip-text text-transparent"
+            className="inline-block bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-200 bg-clip-text text-transparent font-extrabold tracking-wide drop-shadow-sm"
             style={{ backgroundSize: '200% auto' }}
             animate={{
               backgroundPosition: ['-200% center', '200% center'],
@@ -119,19 +111,22 @@ export default function Hero() {
               duration: 3,
               repeat: Infinity,
               ease: "linear",
-              repeatDelay: 2,
+              repeatDelay: 1,
             }}
           >
             Celebrating 20th Year of Innovation & Excellence
           </motion.span>
 
-          <span className="hidden sm:inline text-white/80 mx-1">•</span>
-          <span className="hidden sm:inline font-normal text-white/80">2006 - Present</span>
+          <span className="hidden sm:inline text-yellow-500/50 text-2xl">•</span>
+
+          <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-1 rounded-full border border-yellow-500/30 backdrop-blur-sm shadow-inner">
+            <span className="text-yellow-100 font-medium tracking-wider">2006 - Present</span>
+          </div>
 
           <motion.span
-            animate={{ rotate: [0, -10, 10, 0] }}
+            animate={{ rotate: [0, -10, 10, 0], scale: [1, 1.2, 1] }}
             transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse', delay: 0.5 }}
-            className="inline-block"
+            className="text-2xl filter drop-shadow-lg"
           >
             🎉
           </motion.span>
@@ -219,41 +214,6 @@ export default function Hero() {
             to revolutionize your business processes.
           </motion.p>
 
-          {/* Service Icons Grid */}
-          {/* <motion.div
-            className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            {[
-              { icon: "🤖", label: "AI Solutions", color: "from-sky-400 to-blue-600" },
-              { icon: "🔒", label: "Cyber Security", color: "from-purple-400 to-pink-600" },
-              { icon: "☁️", label: "Cloud Computing", color: "from-cyan-400 to-teal-600" },
-              { icon: "📊", label: "Digital Marketing", color: "from-orange-400 to-red-600" }
-            ].map((service, idx) => (
-              <motion.div
-                key={idx}
-                className={`relative group cursor-pointer`}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.7 + idx * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-              >
-                <div className={`bg-gradient-to-br ${service.color} rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300`}>
-                  <motion.div
-                    className="text-5xl mb-3"
-                    animate={{ y: [0, -8, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: idx * 0.2 }}
-                  >
-                    {service.icon}
-                  </motion.div>
-                  <p className="text-white font-semibold text-sm sm:text-base">{service.label}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div> */}
-
           {/* CTA Buttons */}
           <motion.div
             className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center"
@@ -296,7 +256,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 1 }}
           >
             {[
-              { number: "19+", label: "Years Experience" },
+              { number: "20+", label: "Years Experience" },
               { number: "500+", label: "Projects Delivered" },
               { number: "100%", label: "Client Satisfaction" }
             ].map((stat, idx) => (

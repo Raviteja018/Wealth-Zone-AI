@@ -1,20 +1,23 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  FaUsers, 
-  FaAward, 
-  FaLightbulb, 
+import {
+  FaUsers,
+  FaAward,
+  FaLightbulb,
   FaHandshake,
   FaLinkedinIn,
   FaEnvelope,
   FaChartLine,
-  FaGraduationCap
+  FaGraduationCap,
+  FaChevronLeft,
+  FaChevronRight
 } from 'react-icons/fa';
 
 
 const Team = () => {
   const [selectedDepartment, setSelectedDepartment] = useState('all');
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [celebrationIndex, setCelebrationIndex] = useState(0);
   const containerRef = useRef(null);
 
   const leadership = [
@@ -24,15 +27,15 @@ const Team = () => {
       qualification: 'MBA (Finance & IT)',
       description: 'Visionary leader with 19+ years of experience in technology and business innovation.',
       linkedin: '',
-      email:"bsrilakkshhmi@wealthzonegroupai.com",
+      email: "bsrilakkshhmi@wealthzonegroupai.com",
     },
     {
       name: 'B.Chakravarthy',
       designation: 'Operation Manager',
       qualification: 'MBA (Finance & IT)',
       description: 'Strategic operations expert driving organizational excellence and growth.',
-      linkedin:'https://www.linkedin.com/in/bictra-chakravarthy-847717367/',
-      email:"chakravarthy@wealthzonegroupai.com",
+      linkedin: 'https://www.linkedin.com/in/bictra-chakravarthy-847717367/',
+      email: "chakravarthy@wealthzonegroupai.com",
     },
   ];
 
@@ -84,10 +87,33 @@ const Team = () => {
     },
   ];
 
+  const celebrations = [
+    { id: 1, image: 'https://via.placeholder.com/800x400?text=Celebration+1', title: 'Annual Day' },
+    { id: 2, image: 'https://via.placeholder.com/800x400?text=Celebration+2', title: 'Team Outing' },
+    { id: 3, image: 'https://via.placeholder.com/800x400?text=Celebration+3', title: 'Festival Celebration' },
+    { id: 4, image: 'https://via.placeholder.com/800x400?text=Celebration+4', title: 'Award Ceremony' },
+  ];
+
+  const nextCelebration = () => {
+    setCelebrationIndex((prev) => (prev + 1) % celebrations.length);
+  };
+
+  const prevCelebration = () => {
+    setCelebrationIndex((prev) => (prev - 1 + celebrations.length) % celebrations.length);
+  };
+
+  // Auto-scroll for celebrations
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCelebrationIndex((prev) => (prev + 1) % celebrations.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [celebrations.length]);
+
   const departments = ['all', 'Engineering', 'Design', 'Operations', 'Quality', 'Finance'];
 
-  const filteredMembers = selectedDepartment === 'all' 
-    ? teamMembers 
+  const filteredMembers = selectedDepartment === 'all'
+    ? teamMembers
     : teamMembers.filter(member => member.department === selectedDepartment);
 
   // Reset index when department changes
@@ -117,7 +143,7 @@ const Team = () => {
         const containerWidth = container.offsetWidth;
         const cardWidth = card.offsetWidth;
         const scrollLeft = card.offsetLeft - (containerWidth / 2) + (cardWidth / 2);
-        
+
         container.scrollTo({
           left: scrollLeft,
           behavior: 'smooth'
@@ -220,9 +246,9 @@ const Team = () => {
                   <p className="text-sm text-gray-600 mb-3">{leader.qualification}</p>
                   <p className="text-gray-700 leading-relaxed">{leader.description}</p>
                   <div className="flex gap-3 mt-4">
-                    {leader.name == "B.Chakravarthy"?<a href={leader.linkedin} className="w-9 h-9 bg-blue-100 hover:bg-blue-600 text-blue-600 hover:text-white rounded-lg flex items-center justify-center transition-colors">
+                    {leader.name == "B.Chakravarthy" ? <a href={leader.linkedin} className="w-9 h-9 bg-blue-100 hover:bg-blue-600 text-blue-600 hover:text-white rounded-lg flex items-center justify-center transition-colors">
                       <FaLinkedinIn />
-                    </a>:<></>}
+                    </a> : <></>}
                     <a href={`mailto:${leader.email}`} className="w-9 h-9 bg-blue-100 hover:bg-blue-600 text-blue-600 hover:text-white rounded-lg flex items-center justify-center transition-colors">
                       <FaEnvelope />
                     </a>
@@ -269,6 +295,65 @@ const Team = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Company Celebrations Carousel */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-20"
+          >
+            <h3 className="text-2xl md:text-3xl font-bold text-blue-900 mb-8 text-center">
+              Life at Wealth Zone
+            </h3>
+
+            <div className="relative max-w-4xl mx-auto">
+              <div className="overflow-hidden rounded-2xl shadow-xl aspect-video relative group">
+                <motion.img
+                  key={celebrationIndex}
+                  src={celebrations[celebrationIndex].image}
+                  alt={celebrations[celebrationIndex].title}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                  className="w-full h-full object-cover"
+                />
+
+                {/* Overlay with title */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                  <p className="text-white text-xl font-semibold">
+                    {celebrations[celebrationIndex].title}
+                  </p>
+                </div>
+
+                {/* Navigation Buttons */}
+                <button
+                  onClick={prevCelebration}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white rounded-full flex items-center justify-center text-blue-900 shadow-lg opacity-0 group-hover:opacity-100 transition-all"
+                >
+                  <FaChevronLeft />
+                </button>
+                <button
+                  onClick={nextCelebration}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white rounded-full flex items-center justify-center text-blue-900 shadow-lg opacity-0 group-hover:opacity-100 transition-all"
+                >
+                  <FaChevronRight />
+                </button>
+              </div>
+
+              {/* Dots */}
+              <div className="flex justify-center gap-2 mt-4">
+                {celebrations.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCelebrationIndex(idx)}
+                    className={`h-2 rounded-full transition-all duration-300 ${idx === celebrationIndex ? 'w-8 bg-blue-600' : 'w-2 bg-gray-300'
+                      }`}
+                  />
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
 
@@ -307,7 +392,7 @@ const Team = () => {
 
         {/* Carousel Container */}
         <div className="relative">
-          <div 
+          <div
             ref={containerRef}
             className="flex overflow-x-auto pb-8 scrollbar-hide"
             style={{
@@ -322,36 +407,32 @@ const Team = () => {
             {loopedMembers.map((member, index) => {
               const originalIndex = index % filteredMembers.length;
               const isActive = originalIndex === currentIndex;
-              
+
               return (
                 <motion.div
                   key={`${member.name}-${index}`}
-                  className={`flex-shrink-0 w-64 mx-4 rounded-xl p-6 flex flex-col items-center text-center transition-all duration-300 cursor-pointer ${
-                    isActive 
-                      ? 'scale-110 bg-white shadow-xl z-10' 
-                      : 'scale-90 bg-gray-50 shadow-md opacity-70'
-                  }`}
+                  className={`flex-shrink-0 w-64 mx-4 rounded-xl p-6 flex flex-col items-center text-center transition-all duration-300 cursor-pointer ${isActive
+                    ? 'scale-110 bg-white shadow-xl z-10'
+                    : 'scale-90 bg-gray-50 shadow-md opacity-70'
+                    }`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: isActive ? 1 : 0.7, y: 0 }}
                   viewport={{ once: false, amount: 0.8 }}
                   transition={{ duration: 0.3 }}
                   onClick={() => setCurrentIndex(originalIndex)}
                 >
-                  <div 
-                    className={`w-20 h-20 ${member.color} rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4 transition-all duration-300 ${
-                      isActive ? 'scale-110' : 'scale-90'
-                    }`}
+                  <div
+                    className={`w-20 h-20 ${member.color} rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4 transition-all duration-300 ${isActive ? 'scale-110' : 'scale-90'
+                      }`}
                   >
                     {member.name.charAt(0)}
                   </div>
-                  <h3 className={`text-lg font-semibold mb-2 transition-colors duration-300 ${
-                    isActive ? 'text-gray-900' : 'text-gray-600'
-                  }`}>
+                  <h3 className={`text-lg font-semibold mb-2 transition-colors duration-300 ${isActive ? 'text-gray-900' : 'text-gray-600'
+                    }`}>
                     {member.name}
                   </h3>
-                  <p className={`text-sm transition-colors duration-300 ${
-                    isActive ? 'text-blue-600' : 'text-gray-500'
-                  }`}>
+                  <p className={`text-sm transition-colors duration-300 ${isActive ? 'text-blue-600' : 'text-gray-500'
+                    }`}>
                     {member.designation}
                   </p>
                 </motion.div>
@@ -365,9 +446,8 @@ const Team = () => {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  index === currentIndex ? 'w-8 bg-blue-600' : 'w-2 bg-gray-300'
-                }`}
+                className={`h-2 rounded-full transition-all duration-300 ${index === currentIndex ? 'w-8 bg-blue-600' : 'w-2 bg-gray-300'
+                  }`}
                 aria-label={`Go to team member ${index + 1}`}
               />
             ))}
