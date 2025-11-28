@@ -52,7 +52,7 @@ import PerformanceOptimization from "./pages/services/PerformanceOptimization";
 import GraphicDesign from "./pages/services/GraphicDesign";
 import WebsiteMaintenance from "./pages/services/WebsiteMaintenance";
 import CMS from "./pages/services/CMS";
-import AIAgents from "./pages/services/AIAgents";
+import AiAgents from "./pages/services/AiAgents";
 import BPOServices from "./pages/services/BPOServices";
 import CustomerSupport from "./pages/services/CustomerSupport";
 import MarketingServices from "./pages/services/MarketingServices";
@@ -233,7 +233,7 @@ function App() {
         <Route path="/services/software-testing/performance-testing" element={<PerformanceTesting />} />
         <Route path="/services/software-testing/security-testing" element={<SecurityTesting />} />
 
-        <Route path="/services/ai-agents" element={<AIAgents />} />
+        <Route path="/services/ai-agents" element={<AiAgents />} />
         <Route path="/services/ai-agents/chatbots-and-virtual-assistants" element={<ChatbotsAndVirtualAssistants />} />
         <Route path="/services/ai-agents/process-automation-agents" element={<ProcessAutomationAgents />} />
         <Route path="/services/ai-agents/data-analysis-agents" element={<DataAnalysisAgents />} />
