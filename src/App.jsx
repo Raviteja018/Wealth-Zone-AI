@@ -273,6 +273,7 @@ function App() {
         <Route path="/services/customer-support/personalized-service" element={<PersonalizedService />} />
 
         <Route path="/services/marketing-services" element={<MarketingServices />} />
+        <Route path="/services/ecommerce" element={<Ecommerce />} />
         <Route path="/services/marketing-services/digital-advertising" element={<DigitalAdvertising />} />
         <Route path="/services/marketing-services/seo-content-marketing" element={<SEOContentMarketing />} />
         <Route path="/services/marketing-services/social-media-management" element={<SocialMediaManagement />} />

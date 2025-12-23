@@ -86,8 +86,8 @@ const SplashScreen = ({ isOpen, onClose }) => {
                     >
                         {/* Decorative Background Elements */}
                         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-                            <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] bg-blue-400/20 rounded-full blur-[100px]" />
-                            <div className="absolute top-[40%] -right-[10%] w-[40%] h-[60%] bg-purple-400/20 rounded-full blur-[100px]" />
+                            <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] bg-blue-500/10 rounded-full blur-[100px]" />
+                            <div className="absolute top-[40%] -right-[10%] w-[40%] h-[60%] bg-indigo-500/10 rounded-full blur-[100px]" />
                         </div>
 
                         {/* Close Button */}
@@ -99,7 +99,7 @@ const SplashScreen = ({ isOpen, onClose }) => {
                         </button>
 
                         {/* Left Side: Visual/Branding (Hidden on mobile for space) */}
-                        <div className="hidden md:flex w-1/3 bg-gradient-to-br from-blue-600 to-purple-700 relative flex-col justify-between p-8 text-white z-10">
+                        <div className="hidden md:flex w-1/3 bg-blue-900 relative flex-col justify-between p-8 text-white z-10">
                             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
                             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30"></div>
 
@@ -115,21 +115,21 @@ const SplashScreen = ({ isOpen, onClose }) => {
                                     </div>
                                     <div>
                                         <p className="font-semibold text-sm">Accelerate Growth</p>
-                                        <p className="text-xs text-blue-100">Fast-track your career path</p>
+                                        <p className="text-xs text-blue-200">Fast-track your career path</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4">
-                                    <div className="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                                    <div className="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
                                         <FaUserGraduate className="text-xl" />
                                     </div>
                                     <div>
                                         <p className="font-semibold text-sm">Expert Mentorship</p>
-                                        <p className="text-xs text-blue-100">Learn from industry leaders</p>
+                                        <p className="text-xs text-blue-200">Learn from industry leaders</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="relative z-10 text-xs text-blue-200/80">
+                            <div className="relative z-10 text-xs text-blue-300/60">
                                 © 2024 Wealth Zone Group AI. All rights reserved.
                             </div>
                         </div>
@@ -191,7 +191,7 @@ const SplashScreen = ({ isOpen, onClose }) => {
                                             <div className="text-center md:text-left mb-8">
                                                 <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-600 mb-3">
                                                     Choose Your Path
-                                            </h2>
+                                                </h2>
                                                 <p className="text-gray-500 text-lg">
                                                     Select a program to get started with us.
                                                 </p>
@@ -230,8 +230,8 @@ const SplashScreen = ({ isOpen, onClose }) => {
 const OptionCard = ({ icon: Icon, title, description, color, onClick, showDownload }) => {
     const isBlue = color === 'blue';
     const gradient = isBlue
-        ? 'from-blue-500 to-cyan-500'
-        : 'from-purple-500 to-pink-500';
+        ? 'from-slate-700 to-slate-900'
+        : 'from-emerald-800 to-teal-950';
 
     const bgHover = isBlue
         ? 'group-hover:bg-blue-50/80'
@@ -242,8 +242,8 @@ const OptionCard = ({ icon: Icon, title, description, color, onClick, showDownlo
         : 'group-hover:border-purple-200';
 
     const textGradient = isBlue
-        ? 'group-hover:text-blue-600'
-        : 'group-hover:text-purple-600';
+        ? 'group-hover:text-slate-800'
+        : 'group-hover:text-emerald-900';
 
     const handleDownloadPDF = (e) => {
         e.stopPropagation();

@@ -198,7 +198,7 @@ export default function Hero() {
 
           {/* Floating Card 3: Satisfaction */}
           <motion.div
-            className="absolute -bottom-6 left-10 bg-white/90 backdrop-blur-md p-3 rounded-2xl shadow-xl z-20 border border-white/50 flex items-center gap-2"
+            className="absolute bottom-4 left-10 bg-white/90 backdrop-blur-md p-3 rounded-2xl shadow-xl z-30 border border-white/50 flex items-center gap-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.0 }}
@@ -210,7 +210,7 @@ export default function Hero() {
             </div>
             <div className="pl-2">
               <p className="text-sm font-bold text-slate-800">100%</p>
-              <p className="text-[10px] text-gray-500">Satisfaction</p>
+              <p className="text-[10px] text-gray-500">Client Satisfaction</p>
             </div>
           </motion.div>
 
